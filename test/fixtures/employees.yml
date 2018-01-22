@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  position: MyString
+  start_date: MyString
+  personal_development_plan: MyText
+  life_quote: MyString
+  quote: MyString
+  motto: MyString
+  strength: MyString
+  myers_briggs: MyText
+  birkman: MyText
+  vision: MyString
+  short_term_goal: MyString
+  long_term_goal: MyString
+  area_to_develop: MyString
+  objective_setting: MyString
+  personal_goal: MyString
+  project_id: 1
+  team_id: 1
+
+two:
+  name: MyString
+  position: MyString
+  start_date: MyString
+  personal_development_plan: MyText
+  life_quote: MyString
+  quote: MyString
+  motto: MyString
+  strength: MyString
+  myers_briggs: MyText
+  birkman: MyText
+  vision: MyString
+  short_term_goal: MyString
+  long_term_goal: MyString
+  area_to_develop: MyString
+  objective_setting: MyString
+  personal_goal: MyString
+  project_id: 1
+  team_id: 1
