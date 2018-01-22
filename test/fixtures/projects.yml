@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  start_date: MyString
+  end_date: MyString
+  project_type: MyString
+  role: MyString
+  key_skill: MyString
+
+two:
+  title: MyString
+  start_date: MyString
+  end_date: MyString
+  project_type: MyString
+  role: MyString
+  key_skill: MyString
