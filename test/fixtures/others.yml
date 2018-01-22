@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  occasion: MyString
+  end_project: MyString
+  birthday: MyString
+  pulse_survey: MyText
+
+two:
+  occasion: MyString
+  end_project: MyString
+  birthday: MyString
+  pulse_survey: MyText

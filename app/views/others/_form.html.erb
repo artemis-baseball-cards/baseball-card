@@ -1,0 +1,37 @@
+<%= form_with(model: other, local: true) do |form| %>
+  <% if other.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(other.errors.count, "error") %> prohibited this other from being saved:</h2>
+
+      <ul>
+      <% other.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :occasion %>
+    <%= form.text_field :occasion, id: :other_occasion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_project %>
+    <%= form.text_field :end_project, id: :other_end_project %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthday %>
+    <%= form.text_field :birthday, id: :other_birthday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pulse_survey %>
+    <%= form.text_area :pulse_survey, id: :other_pulse_survey %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
