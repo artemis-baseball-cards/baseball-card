@@ -29,6 +29,7 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
+    @project.employees.update(params[:employee])
     if @project.update(employee_params)
       flash[:notice] = "Your project has been updated!"
       redirect_to projects_path

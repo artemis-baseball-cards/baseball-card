@@ -29,6 +29,7 @@ class TeamsController < ApplicationController
 
   def update
     @team = Team.find(params[:id])
+    @team.employees.update(params[:employee])
     if @team.update(team_params)
       flash[:notice] = "Your team has been updated!"
       redirect_to teams_path
