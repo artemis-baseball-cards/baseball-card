@@ -11,37 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :project_title %>
+    <%= form.text_field :title, id: :project_title, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :start_date %>
-    <%= form.text_field :start_date, id: :project_start_date %>
+    <%= form.text_field :start_date, id: :project_start_date, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :end_date %>
-    <%= form.text_field :end_date, id: :project_end_date %>
+    <%= form.text_field :end_date, id: :project_end_date, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :project_type %>
-    <%= form.text_field :project_type, id: :project_project_type %>
+    <%= form.text_field :project_type, id: :project_project_type, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :role %>
-    <%= form.text_field :role, id: :project_role %>
+    <%= form.text_field :role, id: :project_role, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :key_skill %>
-    <%= form.text_field :key_skill, id: :project_key_skill %>
+    <%= form.text_field :key_skill, id: :project_key_skill, class:"form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-secondary' %>
   </div>
 <% end %>
