@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180124222020) do
+ActiveRecord::Schema.define(version: 20180124211443) do
 
   create_table "employees", force: :cascade do |t|
     t.string "name"
     t.string "position"
-    t.date "start_date"
+    t.string "start_date"
     t.text "personal_development_plan"
     t.string "life_quote"
     t.string "quote"
@@ -29,20 +29,9 @@ ActiveRecord::Schema.define(version: 20180124222020) do
     t.string "area_to_develop"
     t.string "objective_setting"
     t.string "personal_goal"
+    t.integer "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "mission"
-    t.text "expectation"
-    t.text "awesome"
-    t.string "need"
-    t.text "receive_feedback"
-    t.text "development"
-    t.string "area_to_develop_two"
-    t.string "area_to_develop_three"
-    t.string "area_to_develop_four"
-    t.string "personal_goal_two"
-    t.string "personal_goal_three"
-    t.string "personal_goal_four"
   end
 
   create_table "employees_projects", force: :cascade do |t|
@@ -61,8 +50,8 @@ ActiveRecord::Schema.define(version: 20180124222020) do
 
   create_table "projects", force: :cascade do |t|
     t.string "title"
-    t.date "start_date"
-    t.date "end_date"
+    t.string "start_date"
+    t.string "end_date"
     t.string "project_type"
     t.string "role"
     t.string "key_skill"
