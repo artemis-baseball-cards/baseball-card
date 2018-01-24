@@ -47,3 +47,4 @@ FactoryBot.define do
     password("Test123")
     password_confirmation("Test123")
   end
+end
