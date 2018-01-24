@@ -1,24 +1,25 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <p>
+    <strong>Occasion:</strong>
+    <%= @other.occasion %>
+  </p>
 
-<p>
-  <strong>Occasion:</strong>
-  <%= @other.occasion %>
-</p>
+  <p>
+    <strong>End project:</strong>
+    <%= @other.end_project %>
+  </p>
 
-<p>
-  <strong>End project:</strong>
-  <%= @other.end_project %>
-</p>
+  <p>
+    <strong>Birthday:</strong>
+    <%= @other.birthday %>
+  </p>
 
-<p>
-  <strong>Birthday:</strong>
-  <%= @other.birthday %>
-</p>
+  <p>
+    <strong>Pulse survey:</strong>
+    <%= @other.pulse_survey %>
+  </p>
 
-<p>
-  <strong>Pulse survey:</strong>
-  <%= @other.pulse_survey %>
-</p>
-
-<%= link_to 'Edit', edit_other_path(@other) %> |
-<%= link_to 'Back', others_path %>
+  <%= link_to 'Edit', edit_other_path(@other) %> |
+  <%= link_to 'Back', others_path %>
+</div>
