@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %>
+
+<div class="container box">
+  <h1 class="blue-text"><%= @project.title %></h1>
+  <h3><%= @project.start_date %> to <%= @project.end_date %></h3>
+  <h3><%= @project.project_type %></h3>
+  <h3>Role:</h3>
+  <p><%= @project.role %></p>
+  <h3>Key skill:</h3>
+  <p><%= @project.key_skill %></p>
+
+  <p><%= @project.employees.each do |employee| %></p>
+    <p><%= employee %></p>
+  <% end %>
+
+  <p><%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %></p>
+
+</div>

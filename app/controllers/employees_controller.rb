@@ -51,6 +51,6 @@ class EmployeesController < ApplicationController
   end
 
   def employee_params
-    params.require(:employee).permit(:name, :position, :start_date, :personal_development_plan, :life_quote, :quote, :motto, :strength, :myers_briggs, :birkman, :vision, :short_term_goal, :long_term_goal, :area_to_develop, :objective_setting, :personal_goal)
+    params.require(:employee).permit(:name, :position, :start_date, :personal_development_plan, :life_quote, :quote, :motto, :strength, :myers_briggs, :birkman, :vision, :short_term_goal, :long_term_goal, :area_to_develop, :objective_setting, :personal_goal, :mission, :expectation, :awesome, :need, :receive_feedback, :development, :area_to_develop_two, :area_to_develop_three, :area_to_develop_four, :personal_goal_two, :personal_goal_three, :personal_goal_four)
   end
 end
