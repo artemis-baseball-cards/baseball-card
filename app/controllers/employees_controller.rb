@@ -29,6 +29,7 @@ class EmployeesController < ApplicationController
 
   def update
     @employee = Employee.find(params[:id])
+    # We need to figure out how to add an employee to multiple projects. I also think that adding an employee to a project by ID number isn't as user friendly as we can make it. Adding by project name would be much better.
     if @employee.update(employee_params)
       flash[:notice] = "Your Employee has been updated!"
       redirect_to employees_path
