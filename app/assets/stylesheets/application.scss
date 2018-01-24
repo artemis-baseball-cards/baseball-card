@@ -1,1 +1,38 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans');
+
+
+.blue-text {
+  color: #355d88;
+}
+
+.grey-text {
+  color: grey;
+}
+
+.float-right {
+  float: right;
+  text-align: right;
+  font-family: 'Merriweather', serif;
+}
+
+.float-left {
+  margin-top: 125px;
+  margin-left: 50px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#right-side {
+  background-color: #8da4c9;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#right-side-text {
+  margin: 5px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.row {
+  border: 3px solid #1b3958;
+}
