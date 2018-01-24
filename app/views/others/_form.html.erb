@@ -11,27 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
+<div class="container">
+  <div class="field form-group">
     <%= form.label :occasion %>
-    <%= form.text_field :occasion, id: :other_occasion %>
+    <%= form.text_field :occasion, id: :other_occasion ,  class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :end_project %>
-    <%= form.text_field :end_project, id: :other_end_project %>
+    <%= form.text_field :end_project, id: :other_end_project,  class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :birthday %>
-    <%= form.text_field :birthday, id: :other_birthday %>
+    <%= form.text_field :birthday, id: :other_birthday,  class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :pulse_survey %>
-    <%= form.text_area :pulse_survey, id: :other_pulse_survey %>
+    <%= form.text_area :pulse_survey, id: :other_pulse_survey,  class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-secondary' %>
   </div>
+<end>  
 <% end %>
