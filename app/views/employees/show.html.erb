@@ -1,94 +1,66 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
 
-<p>
-  <strong>Name:</strong>
-  <%= @employee.name %>
-</p>
+      <div class="float-right">
+        <h1 class="blue-text"><%= @employee.name %></h1>
+        <h2><%= @employee.position %></h2>
+        <h2><%= @employee.start_date %></h2>
+        <h2 class="grey-text">Last updated</h2>
+      </div>
 
-<p>
-  <strong>Position:</strong>
-  <%= @employee.position %>
-</p>
+      <div class="float-left">
 
-<p>
-  <strong>Start date:</strong>
-  <%= @employee.start_date %>
-</p>
+          <h5>Personal development plan:</h5>
+          <p><%= @employee.personal_development_plan %></p>
 
-<p>
-  <strong>Personal development plan:</strong>
-  <%= @employee.personal_development_plan %>
-</p>
+          <h5>Life quote:</h5>
+          <p><%= @employee.life_quote %></p>
 
-<p>
-  <strong>Life quote:</strong>
-  <%= @employee.life_quote %>
-</p>
+          <h5>Quote:</h5>
+          <p><%= @employee.quote %></p>
 
-<p>
-  <strong>Quote:</strong>
-  <%= @employee.quote %>
-</p>
+          <h5>Motto:</h5>
+          <p><%= @employee.motto %></p>
 
-<p>
-  <strong>Motto:</strong>
-  <%= @employee.motto %>
-</p>
+      </div>
 
-<p>
-  <strong>Strength:</strong>
-  <%= @employee.strength %>
-</p>
+    </div>
+    <div class="col-md-6" id="right-side">
+      <div id="right-side-text">
+        <h5>Strength:</h5>
+        <p><%= @employee.strength %></p>
 
-<p>
-  <strong>Myers briggs:</strong>
-  <%= @employee.myers_briggs %>
-</p>
+        <h5>Myers briggs:</h5>
+        <p><%= @employee.myers_briggs %></p>
 
-<p>
-  <strong>Birkman:</strong>
-  <%= @employee.birkman %>
-</p>
+        <h5>Birkman:</h5>
+        <p><%= @employee.birkman %></p>
 
-<p>
-  <strong>Vision:</strong>
-  <%= @employee.vision %>
-</p>
+        <h5>Vision:</h5>
+        <p><%= @employee.vision %></p>
 
-<p>
-  <strong>Short term goal:</strong>
-  <%= @employee.short_term_goal %>
-</p>
+        <h5>Short term goal:</h5>
+        <p><%= @employee.short_term_goal %></p>
 
-<p>
-  <strong>Long term goal:</strong>
-  <%= @employee.long_term_goal %>
-</p>
+        <h5>Long term goal:</h5>
+        <p><%= @employee.long_term_goal %></p>
 
-<p>
-  <strong>Area to develop:</strong>
-  <%= @employee.area_to_develop %>
-</p>
+        <h5>Area to develop:</h5>
+        <p><%= @employee.area_to_develop %></p>
 
-<p>
-  <strong>Objective setting:</strong>
-  <%= @employee.objective_setting %>
-</p>
+        <h5>Objective setting:</h5>
+        <p><%= @employee.objective_setting %></p>
 
-<p>
-  <strong>Personal goal:</strong>
-  <%= @employee.personal_goal %>
-</p>
+        <h5>Personal goal:</h5>
+        <p><%= @employee.personal_goal %></p>
 
-<p>
-  <strong>Project:</strong>
-  <%= @employee.project_id %>
-</p>
-
-<p>
-  <strong>Team:</strong>
-  <%= @employee.team_id %>
-</p>
-
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+        <h5>Project:</h5>
+        <p><%= @employee.project_id %></p>
+      </div>
+    </div>
+  </div>
+  <%= link_to 'Edit', edit_employee_path(@employee) %> |
+  <%= link_to 'Back', employees_path %>
+</div>
