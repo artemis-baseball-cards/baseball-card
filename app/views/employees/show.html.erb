@@ -56,8 +56,15 @@
         <h5>Personal goal:</h5>
         <p><%= @employee.personal_goal %></p>
 
-        <h5>Project:</h5>
-        <p><%= @employee.project_id %></p>
+        <h5>Projects:</h5>
+        <% if @employee.projects.any? %>
+          <ul>
+            <% @employee.projects.each do |project| %>
+              <li> <%= project.title %> </li>
+            <% end %>
+          </ul>
+        <% end %>
+
       </div>
     </div>
   </div>
