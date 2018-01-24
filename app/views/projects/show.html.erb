@@ -1,34 +1,14 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+<div class="container box">
+  <h1 class="blue-text"><%= @project.title %></h1>
+  <h3><%= @project.start_date %> to <%= @project.end_date %></h3>
+  <h3><%= @project.project_type %></h3>
+  <h3>Role:</h3>
+  <p><%= @project.role %></p>
+  <h3>Key skill:</h3>
+  <p><%= @project.key_skill %></p>
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @project.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @project.end_date %>
-</p>
-
-<p>
-  <strong>Project type:</strong>
-  <%= @project.project_type %>
-</p>
-
-<p>
-  <strong>Role:</strong>
-  <%= @project.role %>
-</p>
-
-<p>
-  <strong>Key skill:</strong>
-  <%= @project.key_skill %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+</div>
