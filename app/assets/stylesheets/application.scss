@@ -56,13 +56,32 @@
   background-color: #c8c9cb;
 }
 
+.project-show-container {
+
+  font-family: 'Merriweather', serif;
+  padding-left: 15px;
+  text-align: center;
+}
+
 .other-show-container {
   height: 400px;
+}
+
+hr{
+  width: 50%;
 }
 
 h1 {
   color: #656464;
   text-align: center;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+p {
+  font-style: italic;
 }
 
 button {
