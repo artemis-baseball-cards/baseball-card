@@ -43,7 +43,14 @@
 #other-container {
   border-style: solid;
   border-color: #4f565a;
-  border-radius: 1rem;
+  padding: 3rem;
+  width: 50%;
+  background-color: #c8c9cb;
+}
+
+#project-container {
+  border-style: solid;
+  border-color: #4f565a;
   padding: 3rem;
   width: 50%;
   background-color: #c8c9cb;
@@ -55,6 +62,7 @@
 
 h1 {
   color: #656464;
+  text-align: center;
 }
 
 button {
