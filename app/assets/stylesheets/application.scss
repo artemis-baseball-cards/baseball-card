@@ -49,6 +49,10 @@
   background-color: #c8c9cb;
 }
 
+.other-show-container {
+  height: 400px;
+}
+
 h1 {
   color: #656464;
 }
@@ -61,4 +65,29 @@ button {
 
 a {
   color: #164ae8;
+}
+
+#notice {
+  text-align: center;
+  color: #b52e2e;
+}
+
+strong {
+  font-size: 20px;
+  font-style: italic;
+  color: #223e94;
+}
+
+.page-footer {
+  background-color: #333333;
+  color: #c2c2c2;
+  text-align: center;
+  height: 30%;
+}
+
+.footer-copyright {
+  background-color: #1f1f1f;
+  color: #747474;
+  text-align: center;
+  height: 15%;
 }
