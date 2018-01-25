@@ -8,11 +8,12 @@
   <p><%= @project.role %></p>
   <h3>Key skill:</h3>
   <p><%= @project.key_skill %></p>
+
   <h3>Employees Assigned:</h3>
   <% if @project.employees.any? %>
     <ul>
       <% @project.employees.each do |employee| %>
-        <li> <%= employee.name %> </li>
+        <li> <%= link_to employee.name, employee_path(employee) %> </li>
       <% end %>
     </ul>
   <% end %>
