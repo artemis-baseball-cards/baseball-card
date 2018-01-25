@@ -13,7 +13,7 @@
   <% if @project.employees.any? %>
     <ul>
       <% @project.employees.each do |employee| %>
-        <li> <%= employee.name %> </li>
+        <li> <%= link_to employee.name, employee_path(employee) %> </li>
       <% end %>
     </ul>
   <% end %>

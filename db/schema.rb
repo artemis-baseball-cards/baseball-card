@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20180125003306) do
 
-
   create_table "employees", force: :cascade do |t|
     t.string "name"
     t.string "position"
