@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans');
 
 * {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Merriweather', serif;
 }
 
 .blue-text {
@@ -65,6 +65,18 @@
 
 .other-show-container {
   height: 400px;
+}
+
+.projects-container {
+  font-family: 'Merriweather', serif;
+  padding-left: 15px;
+  text-align: center;
+  border-style: solid;
+  border-color: #4f565a;
+  width: 60%;
+  margin-left: 15px;
+  background-color: #c8c9cb;
+
 }
 
 hr{
