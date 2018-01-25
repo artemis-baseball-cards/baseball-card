@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180125003306) do
 
+
   create_table "employees", force: :cascade do |t|
     t.string "name"
     t.string "position"
@@ -45,7 +46,7 @@ ActiveRecord::Schema.define(version: 20180125003306) do
     t.string "personal_goal_four"
   end
 
-  create_table "employees_projects", force: :cascade do |t|
+  create_table "employees_projects", id: false, force: :cascade do |t|
     t.integer "employee_id"
     t.integer "project_id"
   end

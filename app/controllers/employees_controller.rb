@@ -7,9 +7,11 @@ class EmployeesController < ApplicationController
 
   def show
     @employee = Employee.find(params[:id])
+    @projects = Project.all
   end
 
   def new
+    @projects = Project.all
     @employee = Employee.new
   end
 
@@ -24,12 +26,12 @@ class EmployeesController < ApplicationController
   end
 
   def edit
+    @projects = Project.all
     @employee = Employee.find(params[:id])
   end
 
   def update
     @employee = Employee.find(params[:id])
-    # We need to figure out how to add an employee to multiple projects. I also think that adding an employee to a project by ID number isn't as user friendly as we can make it. Adding by project name would be much better.
     if @employee.update(employee_params)
       flash[:notice] = "Your Employee has been updated!"
       redirect_to employees_path
@@ -51,6 +53,6 @@ class EmployeesController < ApplicationController
   end
 
   def employee_params
-    params.require(:employee).permit(:name, :position, :start_date, :personal_development_plan, :life_quote, :quote, :motto, :strength, :myers_briggs, :birkman, :vision, :short_term_goal, :long_term_goal, :area_to_develop, :objective_setting, :personal_goal, :mission, :expectation, :awesome, :need, :receive_feedback, :development, :area_to_develop_two, :area_to_develop_three, :area_to_develop_four, :personal_goal_two, :personal_goal_three, :personal_goal_four)
+    params.require(:employee).permit(:name, :position, :start_date, :personal_development_plan, :life_quote, :quote, :motto, :strength, :myers_briggs, :birkman, :vision, :short_term_goal, :long_term_goal, :area_to_develop, :objective_setting, :personal_goal, :mission, :expectation, :awesome, :need, :receive_feedback, :development, :area_to_develop_two, :area_to_develop_three, :area_to_develop_four, :personal_goal_two, :personal_goal_three, :personal_goal_four, :project_ids => [])
   end
 end
