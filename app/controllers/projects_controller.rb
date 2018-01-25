@@ -7,10 +7,12 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @employees = Employee.all
   end
 
   def new
     @project = Project.new
+    @employees = Employee.all
   end
 
   def create
@@ -24,12 +26,12 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @employees = Employee.all
     @project = Project.find(params[:id])
   end
 
   def update
     @project = Project.find(params[:id])
-    # @project.employees.update(params[:employee])
     if @project.update(project_params)
       flash[:notice] = "Your project has been updated!"
       redirect_to projects_path
@@ -51,6 +53,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :start_date, :end_date, :project_type, :role, :key_skill, :objective, :goals)
+    params.require(:project).permit(:title, :start_date, :end_date, :project_type, :role, :key_skill, :objective, :goals, :employee_ids => [])
   end
 end

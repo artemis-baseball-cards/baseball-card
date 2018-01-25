@@ -41,7 +41,14 @@
     <%= form.text_field :key_skill, id: :project_key_skill, class:"form-control" %>
   </div>
 
+  <h3>Assign Employee:</h3>
+
+  <div class="field">
+    <%= collection_check_boxes(:project, :employee_ids, @employees, :id, :name) %>
+  </div>
+
   <div class="actions">
     <%= form.submit class: 'btn btn-secondary' %>
   </div>
+
 <% end %>
