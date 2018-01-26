@@ -11,8 +11,7 @@
     </div>
   <% end %>
 
-<div class="container" id="employeeform-container">
-
+<div class="container form-container">
   <div class="field form-group">
     <%= form.label :name %>
     <%= form.text_field  :name, id: :employee_name,  class: "form-control" %>
@@ -91,16 +90,6 @@
   <div class="field form-group">
     <%= form.label :personal_goal %>
     <%= form.text_field  :personal_goal, id: :employee_personal_goal,  class: "form-control"  %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.label :project_id %>
-    <%= form.number_field  :project_id, id: :employee_project_id,  class: "form-control"  %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.label :team_id %>
-    <%= form.number_field  :team_id, id: :employee_team_id,  class: "form-control"  %>
   </div>
 
   <div class="actions">

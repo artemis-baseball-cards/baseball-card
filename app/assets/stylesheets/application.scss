@@ -1,8 +1,9 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 * {
-  font-family: 'Merriweather', serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .blue-text {
@@ -36,8 +37,27 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.row {
-  border: 3px solid #1b3958;
+ul {
+  list-style-type: none;
+}
+
+// .card {
+//   border: 2px solid #1b3958;
+// }
+
+.project-show-left {
+  text-align: right;
+}
+
+.project-show-card {
+  width: 60%;
+  margin-left: 20%;
+  border: 2px solid black;
+}
+
+.project-show-right {
+  text-align: left;
+  background-color: #8da4c9;
 }
 
 #other-container {
@@ -48,7 +68,7 @@
   background-color: #c8c9cb;
 }
 
-#project-container {
+.form-container {
   border-style: solid;
   border-color: #4f565a;
   padding: 3rem;
@@ -93,16 +113,26 @@
 }
 
 .projects-container {
-  font-family: 'Merriweather', serif;
   padding-left: 15px;
   text-align: center;
-  border-style: solid;
-  border-color: #4f565a;
+  border-style: 10px solid #4f565a;
   width: 60%;
   margin-left: 15px;
   background-color: #c8c9cb;
-
+  text-align: center;
 }
+
+.projects-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-items-container {
+  margin: 10px;
+}
+
 
 hr{
   width: 50%;
@@ -154,13 +184,21 @@ strong {
   width:100%;
 }
 
-body {
-  margin-bottom: 100px;
-}
-
 .footer-copyright {
   background-color: #1f1f1f;
   color: #747474;
   text-align: center;
   height: 15%;
+}
+
+.boxes input {
+  margin: 5px;
+}
+
+body {
+  margin-bottom: 100px;
+}
+
+a {
+  color: #8692ba;
 }
