@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  
+
 <div class="container form-container">
   <div class="field form-group">
     <%= form.label :name %>
@@ -63,8 +63,18 @@
   </div>
 
   <div class="field form-group">
+    <%= form.label :mission %>
+    <%= form.text_area  :mission, id: :employee_mission,  class: "form-control"  %>
+  </div>
+
+  <div class="field form-group">
     <%= form.label :vision %>
     <%= form.text_field  :vision, id: :employee_vision,  class: "form-control"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :expectation %>
+    <%= form.text_area  :expectation, id: :employee_expectation,  class: "form-control"  %>
   </div>
 
   <div class="field form-group">
@@ -78,8 +88,38 @@
   </div>
 
   <div class="field form-group">
+    <%= form.label :awesome %>
+    <%= form.text_area  :awesome, id: :employee_awesome,  class: "form-control"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :need %>
+    <%= form.text_field  :need, id: :employee_need,  class: "form-control"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :receive_feedback %>
+    <%= form.text_area  :receive_feedback, id: :employee_receive_feedback,  class: "form-control"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :development %>
+    <%= form.text_area  :development, id: :employee_development,  class: "form-control"  %>
+  </div>
+
+  <div class="field form-group">
     <%= form.label :area_to_develop %>
     <%= form.text_field  :area_to_develop, id: :employee_area_to_develop,  class: "form-control"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :area_to_develop_two %>
+    <%= form.text_field  :area_to_develop_two, id: :employee_area_to_develop_two,  class: "form-control"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :area_to_develop_three %>
+    <%= form.text_field  :area_to_develop_three, id: :employee_area_to_develop_three,  class: "form-control"  %>
   </div>
 
   <div class="field form-group">
@@ -90,6 +130,16 @@
   <div class="field form-group">
     <%= form.label :personal_goal %>
     <%= form.text_field  :personal_goal, id: :employee_personal_goal,  class: "form-control"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :personal_goal_two %>
+    <%= form.text_field  :personal_goal_two, id: :employee_personal_goal_two,  class: "form-control"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :personal_goal_three %>
+    <%= form.text_field  :personal_goal_three, id: :employee_personal_goal_three,  class: "form-control"  %>
   </div>
 
   <div class="actions">
