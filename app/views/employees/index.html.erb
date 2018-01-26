@@ -4,6 +4,10 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= render 'employees' %>
+<div class="employee">
+  <% @employees.each do |employee| %>
+    <div><%= render 'employee', employee: employee %></div>
+  <% end %>
+</div>
 
 <%= link_to 'New Employee', new_employee_path %>
