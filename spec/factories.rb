@@ -10,12 +10,22 @@ FactoryBot.define do
     strength("Futuristic, Connectedness, Responsibility, Strategic, Discipline")
     myers_briggs("INFJ-A")
     birkman("Usual Behavior - Blue (Thinker); Stress Behavior – Green (Communicator)")
-    vision("")
+    mission("My mission at Artemis is to be a team player that makes a positive impact on the business.")
+    vision("My vision is we work smarter and reach profitability goals.")
+    expectation("You can expect if if I'm working on something I will deliver it on time and my work will be of high quality.")
     short_term_goal("To complete a successful project")
     long_term_goal("To write elegant code")
-    area_to_develop("communication")
-    objective_setting("test")
-    personal_goal("To be a better person")
+    awesome("I'm very organized.")
+    need("I need positive reincorcement on things I'm doing well.")
+    receive_feedback("I appreciate it when both compliments and constructive feedback.")
+    development("I'm reading a lot of books.")
+    area_to_develop("Write problem definition for projects")
+    area_to_develop_two("Ad hoc analyses")
+    area_to_develop_three("Runs analyses using model created by the manager")
+    objective_setting("Over the next 30-60 days I will draft problem definitions for two new engagements.")
+    personal_goal("Meditate every day.")
+    personal_goal_two("Take time for personal hobbies.")
+    personal_goal_three("Read 1 book a month.")
   end
 
   factory(:employee_project) do
@@ -27,7 +37,7 @@ FactoryBot.define do
     occasion("hire anniversary")
     end_project("01/02/18")
     birthday("07/11")
-    pulse_survey("Was there anything that prevented you from doing your best work?")
+    pulse_survey("Linda was amazing to work with!")
   end
 
   factory(:project) do
