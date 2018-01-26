@@ -199,6 +199,23 @@ body {
   margin-bottom: 100px;
 }
 
+#small {
+  font-size: 14px;
+}
+
 a {
   color: #8692ba;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.navbar-nav li {
+  margin: 8px;
+}
+
+.navbar-nav a:hover {
+  text-decoration: none;
+  color: #1028a0;
 }
