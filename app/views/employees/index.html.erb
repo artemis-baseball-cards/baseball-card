@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
-<% @employees.each do |employee| %>
 <div class="container">
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
+        <% @employees.each do |employee| %>
           <div class="row">
             <div class="col-md-6">
 
@@ -64,7 +64,10 @@
               </div>
             </div>
           </div>
+          <% end %>
         </div>
+        <%= link_to 'Next', :class => 'carousel-control-prev' do %>
+          
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
@@ -75,6 +78,7 @@
         </a>
       </div>
     </div>
-<% end %>
+  </div>
+
 
 <%= link_to 'New Employee', new_employee_path %>
