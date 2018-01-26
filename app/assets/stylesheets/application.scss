@@ -1,8 +1,9 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 * {
-  font-family: 'Merriweather', serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .blue-text {
@@ -68,16 +69,26 @@
 }
 
 .projects-container {
-  font-family: 'Merriweather', serif;
   padding-left: 15px;
   text-align: center;
-  border-style: solid;
-  border-color: #4f565a;
+  border-style: 10px solid #4f565a;
   width: 60%;
   margin-left: 15px;
   background-color: #c8c9cb;
-
+  text-align: center;
 }
+
+.projects-list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-items-container {
+  margin: 10px;
+}
+
 
 hr{
   width: 50%;
@@ -129,13 +140,14 @@ strong {
   width:100%;
 }
 
-body {
-  margin-bottom: 100px;
-}
-
 .footer-copyright {
   background-color: #1f1f1f;
   color: #747474;
   text-align: center;
   height: 15%;
+}
+
+body {
+  margin-bottom: 100px;
+
 }
