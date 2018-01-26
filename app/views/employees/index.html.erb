@@ -1,58 +1,60 @@
 <p id="notice"><%= notice %></p>
+<center>
+  <div class="employee-container">
+    <h1>Employees</h1>
+    <hr>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Start date</th>
+          <th>Personal development plan</th>
+          <th>Life quote</th>
+          <th>Quote</th>
+          <th>Motto</th>
+          <th>Strength</th>
+          <th>Myers briggs</th>
+          <th>Birkman</th>
+          <th>Vision</th>
+          <th>Short term goal</th>
+          <th>Long term goal</th>
+          <th>Area to develop</th>
+          <th>Objective setting</th>
+          <th>Personal goal</th>
+          <th>Team</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<h1>Employees</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Position</th>
-      <th>Start date</th>
-      <th>Personal development plan</th>
-      <th>Life quote</th>
-      <th>Quote</th>
-      <th>Motto</th>
-      <th>Strength</th>
-      <th>Myers briggs</th>
-      <th>Birkman</th>
-      <th>Vision</th>
-      <th>Short term goal</th>
-      <th>Long term goal</th>
-      <th>Area to develop</th>
-      <th>Objective setting</th>
-      <th>Personal goal</th>
-      <th>Team</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @employees.each do |employee| %>
-      <tr>
-        <td><%= employee.name %></td>
-        <td><%= employee.position %></td>
-        <td><%= employee.start_date %></td>
-        <td><%= employee.personal_development_plan %></td>
-        <td><%= employee.life_quote %></td>
-        <td><%= employee.quote %></td>
-        <td><%= employee.motto %></td>
-        <td><%= employee.strength %></td>
-        <td><%= employee.myers_briggs %></td>
-        <td><%= employee.birkman %></td>
-        <td><%= employee.vision %></td>
-        <td><%= employee.short_term_goal %></td>
-        <td><%= employee.long_term_goal %></td>
-        <td><%= employee.area_to_develop %></td>
-        <td><%= employee.objective_setting %></td>
-        <td><%= employee.personal_goal %></td>
-        <td><%= link_to 'Show', employee %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+      <tbody>
+        <% @employees.each do |employee| %>
+          <tr>
+            <td><%= employee.name %></td>
+            <td><%= employee.position %></td>
+            <td><%= employee.start_date %></td>
+            <td><%= employee.personal_development_plan %></td>
+            <td><%= employee.life_quote %></td>
+            <td><%= employee.quote %></td>
+            <td><%= employee.motto %></td>
+            <td><%= employee.strength %></td>
+            <td><%= employee.myers_briggs %></td>
+            <td><%= employee.birkman %></td>
+            <td><%= employee.vision %></td>
+            <td><%= employee.short_term_goal %></td>
+            <td><%= employee.long_term_goal %></td>
+            <td><%= employee.area_to_develop %></td>
+            <td><%= employee.objective_setting %></td>
+            <td><%= employee.personal_goal %></td>
+            <br>
+            <td><%= link_to 'Show', employee %>|</td>
+            <td><%= link_to 'Edit', edit_employee_path(employee) %>|</td>
+            <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <br>
-
 <%= link_to 'New Employee', new_employee_path %>
+</center>
