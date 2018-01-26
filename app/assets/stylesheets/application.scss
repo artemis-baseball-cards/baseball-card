@@ -76,11 +76,36 @@ ul {
   background-color: #c8c9cb;
 }
 
-.project-show-container {
+#employeeform-container {
+  border-style: solid;
+  border-color: #4f565a;
+  padding: 3rem;
+  width: 50%;
+  background-color: #c8c9cb;
+}
 
+.employee-container {
   font-family: 'Merriweather', serif;
   padding-left: 15px;
   text-align: center;
+  border-style: solid;
+  border-color: #4f565a;
+  width: 100%;
+  margin-left: 15px;
+  background-color: #c8c9cb;
+}
+
+
+
+.project-show-container {
+  font-family: 'Merriweather', serif;
+  padding-left: 15px;
+  text-align: center;
+  border-style: solid;
+  border-color: #4f565a;
+  width: 60%;
+  margin-left: 15px;
+  background-color: #c8c9cb;
 }
 
 .other-show-container {
