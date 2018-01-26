@@ -41,8 +41,8 @@ ul {
   list-style-type: none;
 }
 
-// .row {
-//   border: 3px solid #1b3958;
+// .card {
+//   border: 2px solid #1b3958;
 // }
 
 .project-show-left {
@@ -166,7 +166,14 @@ strong {
   height: 15%;
 }
 
+.boxes input {
+  margin: 5px;
+}
+
 body {
   margin-bottom: 100px;
+}
 
+a {
+  color: #8692ba;
 }

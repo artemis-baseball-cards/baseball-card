@@ -2,23 +2,20 @@
 <center>
 <div class="projects-container">
 
-    <h1>Projects</h1>
+    <h1 class="blue-text">Projects</h1>
+    <p><%= link_to 'New Project', new_project_path %></p>
     <hr>
-    
+
   <div class="projects-list-container">
     <% @projects.each do |project| %>
     <div class="project-items-container">
       <h3><%= project.title %> </h3>
       <p><%= project.start_date %> to <%= project.end_date %></p>
-      <p><%= link_to 'Show', project %>|
-      <%= link_to 'Edit', edit_project_path(project) %>|
-      <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      <p><%= link_to 'Show', project %> |
+      <%= link_to 'Edit', edit_project_path(project) %> |
+      <%= link_to ' Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     </div>
     <% end %>
-
   </div>
-
   <br>
-</div>
-
-<%= link_to 'New Project', new_project_path %></center>
+</div></center>
