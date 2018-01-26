@@ -37,8 +37,27 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.row {
-  border: 3px solid #1b3958;
+ul {
+  list-style-type: none;
+}
+
+// .row {
+//   border: 3px solid #1b3958;
+// }
+
+.project-show-left {
+  text-align: right;
+}
+
+.project-show-card {
+  width: 60%;
+  margin-left: 20%;
+  border: 2px solid black;
+}
+
+.project-show-right {
+  text-align: left;
+  background-color: #8da4c9;
 }
 
 #other-container {

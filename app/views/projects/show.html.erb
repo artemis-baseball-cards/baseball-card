@@ -4,21 +4,32 @@
 
   <h1 class="blue-text"> <%= @project.title %></h1>
   <hr>
-  <h3><%= @project.start_date %> to <%= @project.end_date %></h3>
-  <h3><%= @project.project_type %></h3>
-  <h3>Role:</h3>
-  <p><%= @project.role %></p>
-  <h3>Key skill:</h3>
-  <p><%= @project.key_skill %></p>
-
-  <h3>Employees Assigned:</h3>
-  <% if @project.employees.any? %>
-    <ul>
-      <% @project.employees.each do |employee| %>
-        <li> <%= link_to employee.name, employee_path(employee) %> </li>
-      <% end %>
-    </ul>
-  <% end %>
+  <div class="row project-show-card">
+    <div class="col-md-6 project-show-left">
+      <h5>Start:</h5>
+      <p><%= @project.start_date %></p>
+      <h5>Finish:</h5>
+      <p><%= @project.end_date %></p>
+      <h5>Project Type:</h5>
+      <p><%= @project.project_type %></p>
+      <h5>Role:</h5>
+      <p><%= @project.role %></p>
+      <h5>Key skill:</h5>
+      <p><%= @project.key_skill %></p>
+    </div>
+    <div class="col-md-6 project-show-right">
+      <h5>Employees Assigned:</h5>
+      <div class="employees">
+        <% if @project.employees.any? %>
+          <ul>
+            <% @project.employees.each do |employee| %>
+              <li> <%= link_to employee.name, employee_path(employee) %> </li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
   <br>
     <%= link_to 'Edit', edit_project_path(@project) %> |
