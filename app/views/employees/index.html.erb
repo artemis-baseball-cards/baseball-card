@@ -3,70 +3,7 @@
 <% end %>
 
 <p id="notice"><%= notice %></p>
-<div class="container">
-    <% @employees.each do |employee| %>
-      <div class="row">
-        <div class="col-md-6">
 
-          <div class="float-right">
-            <h1 class="blue-text"><%= employee.name %></h1>
-            <h2><%= employee.position %></h2>
-            <h2><%= employee.start_date %></h2>
-            <h2 class="grey-text">Last updated</h2>
-          </div>
-
-          <div class="float-left">
-
-              <h5>Personal development plan:</h5>
-              <p><%= employee.personal_development_plan %></p>
-
-              <h5>Life quote:</h5>
-              <p><%= employee.life_quote %></p>
-
-              <h5>Quote:</h5>
-              <p><%= employee.quote %></p>
-
-              <h5>Motto:</h5>
-              <p><%= employee.motto %></p>
-
-          </div>
-        </div>
-
-        <div class="col-md-6" id="right-side">
-          <div id="right-side-text">
-            <h5>Strength:</h5>
-            <p><%= employee.strength %></p>
-
-            <h5>Myers briggs:</h5>
-            <p><%= employee.myers_briggs %></p>
-
-            <h5>Birkman:</h5>
-            <p><%= employee.birkman %></p>
-
-            <h5>Vision:</h5>
-            <p><%= employee.vision %></p>
-
-            <h5>Short term goal:</h5>
-            <p><%= employee.short_term_goal %></p>
-
-            <h5>Long term goal:</h5>
-            <p><%= employee.long_term_goal %></p>
-
-            <h5>Area to develop:</h5>
-            <p><%= employee.area_to_develop %></p>
-
-            <h5>Objective setting:</h5>
-            <p><%= employee.objective_setting %></p>
-
-            <h5>Personal goal:</h5>
-            <p><%= employee.personal_goal %></p>
-
-
-          </div>
-        </div>
-    <% end %>
-  </div>
-</div>
-
+<%= render 'employees' %>
 
 <%= link_to 'New Employee', new_employee_path %>
