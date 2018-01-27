@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require rails-ujs
+//= require jquery.slick
+//= require initialize
 //= require turbolinks
 //= require_tree .
