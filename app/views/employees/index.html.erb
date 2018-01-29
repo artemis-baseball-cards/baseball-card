@@ -5,13 +5,10 @@
 <center>
   <p id="notice"><%= notice %></p>
 
-  <!-- <div class="employeeindex-container"> -->
-    <h1 class="blue-text">Employees</h1>
-    <hr>
+  <div class="employee">
     <% @employees.each do |employee| %>
       <div><%= render 'employee', employee: employee %></div>
     <% end %>
-
+  </div>
   <%= link_to 'New Employee', new_employee_path %>
-  <!-- </div> -->
 </center>
