@@ -10,7 +10,7 @@ _This is a web based application for Artemis Connection, Inc. to view and sort e
 
 ## Installation and Setup
 
-<!-- To install on your own machine, follow the instructions below:
+To install on your own machine, follow the instructions below:
 
 * Clone this repository.
 
@@ -28,7 +28,12 @@ _This is a web based application for Artemis Connection, Inc. to view and sort e
     ```ruby
     User.find_by(email: "[account email address]").update(admin: true)
     ```
-  * The account will now have admin access to the app. -->
+  * The account will now have admin access to the app.
+
+## Live app
+
+To view a live version of the app - visit:
+http://artemis-baseball-cards.herokuapp.com/
 
 ## Specifications
 
