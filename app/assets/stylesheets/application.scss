@@ -8,6 +8,16 @@
   font-family: 'Lato', sans-serif;
 }
 
+.employee-name a{
+  color: black
+}
+
+.employee-name a:hover {
+  color: white;
+  font: bold;
+  text-decoration: none;
+}
+
 .blue-text {
   color: #355d88;
 }

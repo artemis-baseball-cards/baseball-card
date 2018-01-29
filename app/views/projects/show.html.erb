@@ -23,7 +23,7 @@
         <% if @project.employees.any? %>
           <ul>
             <% @project.employees.each do |employee| %>
-              <li> <%= link_to employee.name, employee_path(employee) %> </li>
+              <li class="employee-name"> <%= link_to employee.name, employee_path(employee) %> </li>
             <% end %>
           </ul>
         <% end %>
