@@ -2,12 +2,16 @@
   <meta name="turbolinks-cache-control" content="no-cache">
 <% end %>
 
-<p id="notice"><%= notice %></p>
+<center>
+  <p id="notice"><%= notice %></p>
 
-<div class="employee">
-  <% @employees.each do |employee| %>
-    <div><%= render 'employee', employee: employee %></div>
-  <% end %>
-</div>
+  <div class="employeeindex-container">
+    <h1 class="blue-text">Employees</h1>
+    <hr>
+    <% @employees.each do |employee| %>
+      <div><%= render 'employee', employee: employee %></div>
+    <% end %>
 
-<%= link_to 'New Employee', new_employee_path %>
+  <%= link_to 'New Employee', new_employee_path %>
+  </div>
+</center>
