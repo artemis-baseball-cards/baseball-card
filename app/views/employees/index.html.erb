@@ -6,6 +6,7 @@
   <p id="notice"><%= notice %></p>
 
   <div class="employee">
+
     <% @employees.each do |employee| %>
       <div><%= render 'employee', employee: employee %></div>
     <% end %>
