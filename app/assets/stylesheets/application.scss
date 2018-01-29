@@ -97,6 +97,14 @@ ul {
   background-color: #c8c9cb;
 }
 
+.employeeindex-container {
+  border-style: solid;
+  border-color: #4f565a;
+  padding: 3rem;
+  width: 50%;
+  background-color: #c8c9cb;
+  font-family: 'Merriweather', serif;
+}
 
 
 .project-show-container {
@@ -115,13 +123,12 @@ ul {
 }
 
 .projects-container {
-  padding-left: 15px;
-  text-align: center;
-  border-style: 10px solid #4f565a;
-  width: 60%;
-  margin-left: 15px;
+  border-style: solid;
+  border-color: #4f565a;
+  padding: 3rem;
+  width: 50%;
   background-color: #c8c9cb;
-  text-align: center;
+  font-family: 'Merriweather', serif;
 }
 
 .projects-list-container {
