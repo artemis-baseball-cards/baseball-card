@@ -51,6 +51,14 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.project-link-on-card a {
+  color: black;
+}
+
+.project-link-on-card a:hover {
+  color: black;
+}
+
 ul {
   list-style-type: none;
 }
@@ -110,11 +118,11 @@ ul {
 }
 
 .employeeindex-container {
-  border-style: solid;
-  border-color: #4f565a;
+  // border-style: solid;
+  // border-color: #4f565a;
   padding: 3rem;
-  width: 50%;
-  background-color: #c8c9cb;
+  // width: 50%;
+  // background-color: #c8c9cb;
   font-family: 'Merriweather', serif;
 }
 
