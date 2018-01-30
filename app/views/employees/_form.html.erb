@@ -109,8 +109,14 @@
 
   <div class="field form-group">
     <%= form.label "Area to develop one" %>
-    <%= form.text_field  :area_to_develop, id: :employee_area_to_develop,  class: "form-control"  %>
+    <p>Leadership</p>
+    <%= check_box_tag 'area_to_develop', 'leadership', id: :employee_area_to_develop %>
   </div>
+  
+  <!-- <div class="field form-group">
+    <%= form.label "Area to develop one" %>
+    <%= form.text_field :area_to_develop, id: :employee_area_to_develop,  class: "form-control"  %>
+  </div> -->
 
   <div class="field form-group">
     <%= form.label :area_to_develop_two %>
