@@ -18,8 +18,8 @@
   </div>
 
   <div class="field form-group">
-    <%= form.label :position %>
-    <%= form.text_field  :position, id: :employee_position,  class: "form-control" %>
+    <%= form.label :position %><br>
+    <%= select_tag(:position, options_for_select([['Analyst', 1], ['Associate', 2], ['Engagement Manager', 3], ['Partner', 4], ['Principal', 5]])) %>
   </div>
 
   <div class="field form-group">
