@@ -19,7 +19,7 @@
 
   <div class="field form-group">
     <%= form.label :position %><br>
-    <%= select_tag(:position, options_for_select([['Analyst', 1], ['Associate', 2], ['Engagement Manager', 3], ['Partner', 4], ['Principal', 5]])) %>
+    <%= form.select :position, options_for_select([['Analyst', 'Analyst'] , ['Associate', 'Associate'] ,['Engagement Manager', 'Engagement Manager'] ,['Partner', 'Partner'] ,['Principal', 'Principal']], selected: @employee.position) %>
   </div>
 
   <div class="field form-group">
