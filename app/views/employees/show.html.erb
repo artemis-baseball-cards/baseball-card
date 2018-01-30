@@ -8,7 +8,7 @@
         <h1 class="blue-text"><%= @employee.name %></h1>
         <h2><%= @employee.position %></h2>
         <h2 class="grey-text"><%= @employee.start_date %></h2>
-      </div> 
+      </div>
 
       <div class="float-left">
 
@@ -67,7 +67,11 @@
         <p><%= @employee.development %></p>
 
         <h5>Areas to develop:</h5>
-        <p><%=  @employee.area_to_develop %>, <%= @employee.area_to_develop_two %>, and <%= @employee.area_to_develop_three %></p>
+        <% if @employee.areas_to_develop %>
+          <% @employee.areas_to_develop.each do |area| %>
+            <p> <%= area %> </p>
+          <% end %>
+        <% end %>
 
         <h5>Objective setting:</h5>
         <p><%= @employee.objective_setting %></p>

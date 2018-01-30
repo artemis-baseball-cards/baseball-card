@@ -108,25 +108,15 @@
   </div>
 
   <div class="field form-group">
-    <%= form.label "Area to develop one" %>
-    <p>Leadership</p>
-    <%= check_box_tag 'area_to_develop', 'leadership', id: :employee_area_to_develop %>
+    <%= form.label :areas_to_develop %><br>
+    Leadership <%= check_box_tag("employee[areas_to_develop]","Leadership") %>
+    Determination <%= check_box_tag("employee[areas_to_develop]","Determination") %> 
   </div>
-  
+
   <!-- <div class="field form-group">
     <%= form.label "Area to develop one" %>
     <%= form.text_field :area_to_develop, id: :employee_area_to_develop,  class: "form-control"  %>
   </div> -->
-
-  <div class="field form-group">
-    <%= form.label :area_to_develop_two %>
-    <%= form.text_field  :area_to_develop_two, id: :employee_area_to_develop_two,  class: "form-control"  %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.label :area_to_develop_three %>
-    <%= form.text_field  :area_to_develop_three, id: :employee_area_to_develop_three,  class: "form-control"  %>
-  </div>
 
   <div class="field form-group">
     <%= form.label :objective_setting %>
