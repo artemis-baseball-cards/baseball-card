@@ -9,5 +9,5 @@ class User < ApplicationRecord
    UserMailer.send_welcome_email(self).deliver_later
   end
 
-  belongs_to :employee
+  belongs_to :employee, optional: true
 end
