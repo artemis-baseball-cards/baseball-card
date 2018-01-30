@@ -108,7 +108,7 @@
   </div>
 
   <ul class="skills-list">
-    <% ["Leadership", "Determination"].each do |skill| %>
+    <% ["Critical thinking", "Gives effective feedback", "Conducts secondary research given key topics"].each do |skill| %>
       <li><%= check_box_tag "employee[areas_to_develop][]", skill, id: "employee_areas_to_develop_#{skill}" %> <%= skill %></li>
     <% end %>
   </ul>
