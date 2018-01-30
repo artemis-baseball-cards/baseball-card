@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180129231259) do
+ActiveRecord::Schema.define(version: 20180130191313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,9 +28,6 @@ ActiveRecord::Schema.define(version: 20180129231259) do
     t.string "vision"
     t.string "short_term_goal"
     t.string "long_term_goal"
-    t.string "area_to_develop"
-    t.string "area_to_develop_two"
-    t.string "area_to_develop_three"
     t.string "objective_setting"
     t.string "personal_goal"
     t.string "personal_goal_two"
@@ -46,6 +43,7 @@ ActiveRecord::Schema.define(version: 20180129231259) do
     t.datetime "updated_at", null: false
     t.string "start_date"
     t.integer "user_id"
+    t.string "areas_to_develop", array: true
   end
 
   create_table "employees_projects", force: :cascade do |t|
