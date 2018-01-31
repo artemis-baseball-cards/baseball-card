@@ -110,14 +110,14 @@
   <ul class="skills-list">
     <%= form.label "Skills (select all that apply)" %>
     <% ["Critical thinking", "Gives effective feedback", "Conducts secondary research given key topics"].each do |skill| %>
-      <li><%= check_box_tag "employee[skills][]", skill, id: "employee_skills_#{skill}" %> <%= skill %></li>
+      <li><%= check_box_tag "employee[skills][]", skill, false, id: "employee_skills_#{skill}" %> <%= skill %></li>
     <% end %>
   </ul>
 
   <ul class="skills-list">
     <%= form.label "Areas to Develop (select three)" %>
-    <% ["Critical thinking", "Gives effective feedback", "Conducts secondary research given key topics"].each do |skill| %>
-      <li><%= check_box_tag "employee[areas_to_develop][]", skill, id: "employee_areas_to_develop_#{skill}" %> <%= skill %></li>
+    <% ["Critical thinking", "Gives effective feedback", "Conducts secondary research given key topics"].each do |area| %>
+      <li><%= check_box_tag "employee[areas_to_develop][]", area, false, id: "employee_areas_to_develop_#{area}" %> <%= area %></li>
     <% end %>
   </ul>
 
