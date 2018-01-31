@@ -33,12 +33,19 @@
   </div>
 
   <div class="field form-group">
-    <%= form.label :role %>
-    <%= form.text_field :role, id: :project_role, class:"form-control" %>
+    <%= form.label :industry %>
+    <%= form.text_field :industry, id: :project_industry, class:"form-control" %>
   </div>
 
+  <div class="skills-list">
+    <%= form.label "Required Project Roles" %><br>
+    <% ["Intern", "Analyst", "Associate", "Engagement Manager", "Principal", "Partner", "Subject Matter Expert"].each do |role| %>
+      <%= check_box_tag "project[role][]", role, false, id: "project_role#{role}" %> <%= role %>
+    <% end %>
+  </div><br>
+
   <div class="field form-group">
-    <%= form.label :key_skill %>
+    <%= form.label "Required Skills for Project" %>
     <%= form.text_field :key_skill, id: :project_key_skill, class:"form-control" %>
   </div>
 

@@ -18,18 +18,13 @@
   </div>
 
   <div class="field form-group">
-    <%= form.label :position %><br>
+    <%= form.label "title" %><br>
     <%= form.select :position, options_for_select([['Analyst', 'Analyst'] , ['Associate', 'Associate'] ,['Engagement Manager', 'Engagement Manager'] ,['Partner', 'Partner'] ,['Principal', 'Principal']], selected: @employee.position) %>
   </div>
 
   <div class="field form-group">
     <%= form.label :start_date %>
     <%= form.text_field  :start_date, id: :employee_start_date,  class: "form-control" %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.label :personal_development_plan %>
-    <%= form.text_area  :personal_development_plan, id: :employee_personal_development_plan,  class: "form-control" %>
   </div>
 
   <div class="field form-group">
@@ -45,6 +40,21 @@
   <div class="field form-group">
     <%= form.label :motto %>
     <%= form.text_field  :motto, id: :employee_motto,  class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :home_geography %>
+    <%= form.text_field  :home_geography, id: :employee_home_geography,  class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :industry_experience %><br>
+    <%= form.select :industry_experience, options_for_select([['Healthcare', 'Healthcare'] , ['Private Equity', 'Private Equity'] ,['Technology', 'Technology'] ,['Startup', 'Startup'] ,['Non-profit', 'Non-profit'], ['E-commerce', 'E-commerce'], ['Retail', 'Retail']], selected: @employee.industry_experience) %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :willing_to_travel %>
+    <%= form.select :willing_to_travel, options_for_select([['Yes', 'Yes'] , ['No', 'No']], selected: @employee.willing_to_travel) %>
   </div>
 
   <div class="field form-group">
