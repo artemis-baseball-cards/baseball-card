@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :others
   resources :projects
   resources :employees
+  get '/employees/:id/flip', to: 'employees#flip'
+
 
 
   root "pages#show", page: "home"
