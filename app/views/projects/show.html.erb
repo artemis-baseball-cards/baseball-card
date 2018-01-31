@@ -12,14 +12,18 @@
       <p><%= @project.end_date %></p>
       <h5>Project Type:</h5>
       <p><%= @project.project_type %></p>
-      <h5>Roles:</h5>
+      <h5>Required Project Roles:</h5>
       <% @project.role.each do |role| %>
         <p><%= role %> </p>
       <% end %>
-      <h5>Key skill:</h5>
-      <p><%= @project.key_skill %></p>
     </div>
     <div class="col-md-6 project-show-right">
+      <h5>Required Skill:</h5>
+      <p><%= @project.key_skill %></p>
+
+      <h5>Industry:</h5>
+      <p><%= @project.industry %></p>
+
       <h5>Employees Assigned:</h5>
       <div class="employees">
         <% if @project.employees.any? %>
