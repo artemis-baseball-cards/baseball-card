@@ -295,8 +295,15 @@ a {
   color: #1028a0;
 }
 
+.wos {
+ font-family: 'Merriweather', serif;
+ margin-top: 10px;
+ color: #355d88;
+}
+
 html, body, .container-fluid, .row {
 	height: 100%;
+
 }
 
 .sidebar {
@@ -306,6 +313,7 @@ html, body, .container-fluid, .row {
   border-color: #333333;
   margin-top: 60px;
   margin-left: 20px;
+  position: fixed;
 }
 
 @media (min-width: 992px) {
