@@ -10,6 +10,12 @@ class EmployeesController < ApplicationController
     @projects = Project.all
   end
 
+  def flip
+    @employee = Employee.find(params[:id])
+    @projects = Project.all
+    render :flip
+  end
+
   def new
     @projects = Project.all
     @employee = Employee.new
