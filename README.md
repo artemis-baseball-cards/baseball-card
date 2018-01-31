@@ -21,7 +21,7 @@ To install on your own machine, follow the instructions below:
   rails db:seed
   rails s
   ```
-* Open ```localhost:3000``` in your web browser
+* Open ```localhost:3000``` in your web browser of choice
 * **To give an account admin privileges:**
   * In the project root run ```rails c```
   * Then run:
