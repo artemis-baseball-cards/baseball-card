@@ -18,6 +18,44 @@
   text-decoration: none;
 }
 
+.mini-cards {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.mini-card {
+  border: 1px solid black;
+  width: 140px;
+  height: 120px;
+  margin-bottom: 20px;
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+.mini-card a {
+  color: white;
+}
+
+.mini-card a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.mini-top {
+  background-color: #8da4c9;
+  color: white;
+}
+
+.mini-bottom {
+  background-color: white;
+  color: black;
+}
+
 .blue-text {
   color: #355d88;
   font-family: 'Merriweather', serif;
