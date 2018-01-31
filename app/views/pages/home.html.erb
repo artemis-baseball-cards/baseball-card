@@ -6,7 +6,7 @@
       <% @employees.each do |card| %>
         <div class="mini-card">
           <div class="mini-top">
-            <p><%= link_to card.name, employees_path(card) %></p>
+            <p><%= link_to card.name, employee_path(card.id) %></p>
           </div>
           <div class="mini-bottom">
             <p> <%= card.position %> </p>

@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
     @employees = Employee.all
+    @critical_thinking_employees = Employee.critical_thinking
   end
 
   def create
