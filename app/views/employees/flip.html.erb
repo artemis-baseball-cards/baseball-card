@@ -6,8 +6,15 @@
       <div class="col-md-3 sidebar">
         <center><h5 class ="wos">What Others Say:</h5></center>
 
+
+        <div class="wos">
+
+          <% @others.each do |other| %>
+            <div><%= render 'other', other: other %></div>
+          <% end %>
+        </div>
+
         <h5>Occasion:</h5><br>
-        <p></p>
 
         <h5>End project:</h5><br>
         <p></p>
