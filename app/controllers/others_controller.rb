@@ -14,20 +14,20 @@ class OthersController < ApplicationController
     @other = Other.new
   end
 
-  def edit
-    @employee = Employee.find(params[:employee_id])
-    @other = Other.find(params[:id])
-  end
-
   def create
     @employee = Employee.find(params[:employee_id])
     @other = @employee.others.new(other_params)
-    if @other.update(other_params)
+    if @other.save
       flash[:notice] = "Your input has been saved!"
       redirect_to employee_path(@employee)
     else
-      render :edit
+      render :new
     end
+  end
+
+  def edit
+    @employee = Employee.find(params[:employee_id])
+    @other = Other.find(params[:id])
   end
 
   def update
@@ -54,6 +54,6 @@ class OthersController < ApplicationController
     end
 
     def other_params
-      params.require(:other).permit(:occasion, :end_project, :birthday, :pulse_survey)
+      params.require(:other).permit(:occasion, :end_project, :birthday, :pulse_survey, :employee_id)
     end
 end

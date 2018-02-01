@@ -1,39 +1,27 @@
-<%= form_with(model: other, local: true) do |form| %>
-  <% if other.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(other.errors.count, "error") %> prohibited this other from being saved:</h2>
-
-      <ul>
-      <% other.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for [@employee, @other] do |f| %>
+  <div class="container" id="other-container">
+    <div class="field form-group">
+      <%= f.label :occasion %>
+      <%= f.text_field :occasion, id: :other_occasion ,  class: "form-control" %>
     </div>
-  <% end %>
 
-<div class="container" id="other-container">
-  <div class="field form-group">
-    <%= form.label :occasion %>
-    <%= form.text_field :occasion, id: :other_occasion ,  class: "form-control" %>
-  </div>
+    <div class="field form-group">
+      <%= f.label :end_project %>
+      <%= f.text_field :end_project, id: :other_end_project,  class: "form-control" %>
+    </div>
 
-  <div class="field form-group">
-    <%= form.label :end_project %>
-    <%= form.text_field :end_project, id: :other_end_project,  class: "form-control" %>
-  </div>
+    <div class="field form-group">
+      <%= f.label :birthday %>
+      <%= f.text_field :birthday, id: :other_birthday,  class: "form-control" %>
+    </div>
 
-  <div class="field form-group">
-    <%= form.label :birthday %>
-    <%= form.text_field :birthday, id: :other_birthday,  class: "form-control" %>
-  </div>
+    <div class="field form-group">
+      <%= f.label :pulse_survey %>
+      <%= f.text_area :pulse_survey, id: :other_pulse_survey,  class: "form-control" %>
+    </div>
 
-  <div class="field form-group">
-    <%= form.label :pulse_survey %>
-    <%= form.text_area :pulse_survey, id: :other_pulse_survey,  class: "form-control" %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit class: 'btn btn-secondary' %>
-  </div>
-<end>
+    <div class="actions">
+      <%= f.submit class: 'btn btn-secondary' %>
+    </div>
+  <end>
 <% end %>
