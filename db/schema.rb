@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20180201002244) do
     t.text "pulse_survey"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "employee_id"
   end
 
   create_table "projects", force: :cascade do |t|
