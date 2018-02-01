@@ -4,7 +4,6 @@ one:
   name: MyString
   position: MyString
   start_date: MyString
-  personal_development_plan: MyText
   life_quote: MyString
   quote: MyString
   motto: MyString
@@ -24,7 +23,6 @@ two:
   name: MyString
   position: MyString
   start_date: MyString
-  personal_development_plan: MyText
   life_quote: MyString
   quote: MyString
   motto: MyString

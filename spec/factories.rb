@@ -3,7 +3,6 @@ FactoryBot.define do
     name("Annie")
     position("associate")
     start_date("01/01/18")
-    personal_development_plan("test information")
     life_quote("Just keep swimming")
     quote("Laugh and the world laughs with you.")
     motto("Showing up is half the battle.")
