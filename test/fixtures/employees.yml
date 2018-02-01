@@ -4,7 +4,6 @@ one:
   name: MyString
   position: MyString
   start_date: MyString
-  personal_development_plan: MyText
   life_quote: MyString
   quote: MyString
   motto: MyString
@@ -14,7 +13,7 @@ one:
   vision: MyString
   short_term_goal: MyString
   long_term_goal: MyString
-  area_to_develop: MyString
+  areas_to_develop: MyString
   objective_setting: MyString
   personal_goal: MyString
   project_id: 1
@@ -24,7 +23,6 @@ two:
   name: MyString
   position: MyString
   start_date: MyString
-  personal_development_plan: MyText
   life_quote: MyString
   quote: MyString
   motto: MyString
@@ -34,7 +32,7 @@ two:
   vision: MyString
   short_term_goal: MyString
   long_term_goal: MyString
-  area_to_develop: MyString
+  areas_to_develop: MyString
   objective_setting: MyString
   personal_goal: MyString
   project_id: 1

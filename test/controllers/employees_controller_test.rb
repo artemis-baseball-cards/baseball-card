@@ -17,7 +17,7 @@ class EmployeesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create employee" do
     assert_difference('Employee.count') do
-      post employees_url, params: { employee: { area_to_develop: @employee.area_to_develop, birkman: @employee.birkman, life_quote: @employee.life_quote, long_term_goal: @employee.long_term_goal, motto: @employee.motto, myers_briggs: @employee.myers_briggs, name: @employee.name, objective_setting: @employee.objective_setting, personal_development_plan: @employee.personal_development_plan, personal_goal: @employee.personal_goal, position: @employee.position, project_id: @employee.project_id, quote: @employee.quote, short_term_goal: @employee.short_term_goal, start_date: @employee.start_date, strength: @employee.strength, team_id: @employee.team_id, vision: @employee.vision } }
+      post employees_url, params: { employee: { areas_to_develop: @employee.areas_to_develop, birkman: @employee.birkman, life_quote: @employee.life_quote, long_term_goal: @employee.long_term_goal, motto: @employee.motto, myers_briggs: @employee.myers_briggs, name: @employee.name, objective_setting: @employee.objective_setting,  personal_goal: @employee.personal_goal, position: @employee.position, project_id: @employee.project_id, quote: @employee.quote, short_term_goal: @employee.short_term_goal, start_date: @employee.start_date, strength: @employee.strength, team_id: @employee.team_id, vision: @employee.vision } }
     end
 
     assert_redirected_to employee_url(Employee.last)
@@ -34,7 +34,7 @@ class EmployeesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update employee" do
-    patch employee_url(@employee), params: { employee: { area_to_develop: @employee.area_to_develop, birkman: @employee.birkman, life_quote: @employee.life_quote, long_term_goal: @employee.long_term_goal, motto: @employee.motto, myers_briggs: @employee.myers_briggs, name: @employee.name, objective_setting: @employee.objective_setting, personal_development_plan: @employee.personal_development_plan, personal_goal: @employee.personal_goal, position: @employee.position, project_id: @employee.project_id, quote: @employee.quote, short_term_goal: @employee.short_term_goal, start_date: @employee.start_date, strength: @employee.strength, team_id: @employee.team_id, vision: @employee.vision } }
+    patch employee_url(@employee), params: { employee: { areas_to_develop: @employee.areas_to_develop, birkman: @employee.birkman, life_quote: @employee.life_quote, long_term_goal: @employee.long_term_goal, motto: @employee.motto, myers_briggs: @employee.myers_briggs, name: @employee.name, objective_setting: @employee.objective_setting, personal_goal: @employee.personal_goal, position: @employee.position, project_id: @employee.project_id, quote: @employee.quote, short_term_goal: @employee.short_term_goal, start_date: @employee.start_date, strength: @employee.strength, team_id: @employee.team_id, vision: @employee.vision } }
     assert_redirected_to employee_url(@employee)
   end
 
