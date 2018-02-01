@@ -13,7 +13,7 @@ one:
   vision: MyString
   short_term_goal: MyString
   long_term_goal: MyString
-  area_to_develop: MyString
+  areas_to_develop: MyString
   objective_setting: MyString
   personal_goal: MyString
   project_id: 1
@@ -32,7 +32,7 @@ two:
   vision: MyString
   short_term_goal: MyString
   long_term_goal: MyString
-  area_to_develop: MyString
+  areas_to_develop: MyString
   objective_setting: MyString
   personal_goal: MyString
   project_id: 1

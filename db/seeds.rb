@@ -4,8 +4,6 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke',
- movie: movies.first)
 Employee.destroy_all
 # Other.destroy_all
 # Project.destroy_all
@@ -25,9 +23,7 @@ employees = [
    'My vision is we work smarter and reach profitability goals to allow us to be very selective in the work we do, deliver on pro bono projects, and attract top talent to continue building out a strong team.',
    'Execture on my current projects while learning more about internal operations and how to build out a strong team.',
    'Help build a successful, well operated business where team members feel supported and day to day runs smoothly.',
-   'Write problem definition for projects.',
-   'Ad hoc analyses',
-   'Runs analyses using model created by the manager.',
+   '{Write problem definition for projects., Ad hoc analyses, Runs analyses using model created by the manager.}',
    'Over the next 30-60 days I will take more of a lead role in X project data analysis so I can improve on these skills with guidance from my manager. I will also draft problem definitions for two new engagements.',
    'Meditate every day',
    'Read 1 book a month',
@@ -47,11 +43,8 @@ employees = [
    'ESFJ: Extraversion, Sensing, Feeling, Judgment',
    'TBA',
    'My vision is to further my knowledge and to grow with experience.',
-   'My vision is to further my knowledge and to grow with experience.',
    'To grow as a developer and one day mentor those who were new to the field just as I was.',
-   'Work with team to improve/refine problem definition.',
-   'Asks questions that clarify next steps or priorities.',
-   'Takes thorough notes and identifies key takeaways.',
+   '{Work with team to improve/refine problem definition., Asks questions that clarify next steps or priorities., Takes thorough notes and identifies key takeaways.}',
    'Over the next three weeks I will focus on the internship project and dedicate my time and attention to the baseball card project to have a complete polished fully functioning app.',
    'Take daily walks.',
    'Go to Meetups.',
@@ -74,9 +67,7 @@ employees = [
    'My vision is to create a product that is both functional and visually pleasing.',
    'Provide Artemis with a functional product that will provide clarity and accessibility for years to come.',
    'To grow as a software developer, forging positive relationships with both my clients and collaborators.',
-   'Proactively ensures knowledge of next steps emerging from internal or client meetings',
-   'Proactively ensures knowledge of next steps emerging from internal or client meetings',
-   'Proactively ensures understanding of client context and perspective, even in meetings not attended',
+   '{Proactively ensures knowledge of next steps emerging from internal or client meetings, Proactively ensures knowledge of next steps emerging from internal or client meetings, Proactively ensures understanding of client context and perspective, even in meetings not attended}',
    'Over the next 30-90 days I will focus on the baseball card project, supporting and contributing to my internship team, while striving to add more skills to my coding "toolbelt".',
    'Code every day as part of #100 Days of Code.',
    'Boxing classes 3-4 times a week.',
@@ -99,9 +90,7 @@ employees = [
    'My vision is to help the people at Artemis do what they do best -  help people.',
    'Complete our intern project - baseball cards.',
    'Make a difference through supporting non-profit companys by helping Artemis function as a company.',
-   'Taking more time to think out a problem before diving into solving it.',
-   'Reaching out to team members to ask feedback.',
-   'Approach problems differently than I have before.',
+   '{Taking more time to think out a problem before diving into solving it., Reaching out to team members to ask feedback., Approach problems differently than I have before.}',
    'For the next 3 weeks, I will work as a reliable team member and accomplish and finish our baseball cards with features that go above and beyond.',
    'Sort and clean out my apartment for a fresh start to the year.',
    'Come up with a strong budget plan to stick to.',
@@ -124,9 +113,7 @@ employees = [
    'I one day hope to help build video games and helping children less fortunate than most.',
    'To present a complete application that meets Artemis standards and expectations.',
    'Become a valuable part of a programming team and maybe even help with game creation.',
-   'Communication skills. Stay active with group at all working times.',
-   'Work on proper github practices.',
-   'Increase ability to explain self/problems properly to eliminate wasted time.',
+   '{Communication skills. Stay active with group at all working times., Work on proper github practices., Increase ability to explain self/problems properly to eliminate wasted time.}',
    'I plan on dedicating full time hours to this project with my team. Providing a full and functioning app at the end of this internship.',
    'I will be striving to make my goal of bringing VR to children a reality.',
    'Working with a local hospital.',
@@ -140,9 +127,9 @@ employees = [
    'DateTime.new(2018,1,22)']
 ]
 
-employees.each do |employees_name, employees_position, employees_life_quote, employees_quote, employees_motto, employees_strength, employees_myers_briggs, employees_birkman, employees_vision, employees_short_term_goal, employees_long_term_goal, employees_area_to_develop, employees_area_to_develop_two, employees_area_to_develop_three, employees_objective_setting, employees_personal_goal, employees_personal_goal_two, employees_personal_goal_three, employees_mission, employees_expectation,
+employees.each do |employees_name, employees_position, employees_life_quote, employees_quote, employees_motto, employees_strength, employees_myers_briggs, employees_birkman, employees_vision, employees_short_term_goal, employees_long_term_goal, employees_areas_to_develop, employees_objective_setting, employees_personal_goal, employees_personal_goal_two, employees_personal_goal_three, employees_mission, employees_expectation,
 employees_awesome, employees_need, employees_receive_feedback, employees_development, employees_manager, employees_start_date|
-  Employee.create(name: employees_name, position: employees_position, life_quote: employees_life_quote, quote: employees_quote, motto: employees_motto, strength: employees_strength, myers_briggs: employees_myers_briggs, birkman: employees_birkman, vision: employees_vision, short_term_goal: employees_short_term_goal, long_term_goal: employees_long_term_goal, area_to_develop: employees_area_to_develop, area_to_develop_two: employees_area_to_develop_two, area_to_develop_three: employees_area_to_develop_three, objective_setting: employees_objective_setting, personal_goal: employees_personal_goal, personal_goal_two: employees_personal_goal_two, personal_goal_three: employees_personal_goal_three, mission: employees_mission, expectation: employees_expectation, awesome: employees_awesome, need: employees_need, receive_feedback: employees_receive_feedback, development: employees_development, start_date: employees_start_date)
+  Employee.create(name: employees_name, position: employees_position, life_quote: employees_life_quote, quote: employees_quote, motto: employees_motto, strength: employees_strength, myers_briggs: employees_myers_briggs, birkman: employees_birkman, vision: employees_vision, short_term_goal: employees_short_term_goal, long_term_goal: employees_long_term_goal, areas_to_develop: employees_areas_to_develop, objective_setting: employees_objective_setting, personal_goal: employees_personal_goal, personal_goal_two: employees_personal_goal_two, personal_goal_three: employees_personal_goal_three, mission: employees_mission, expectation: employees_expectation, awesome: employees_awesome, need: employees_need, receive_feedback: employees_receive_feedback, development: employees_development, start_date: employees_start_date)
 end
 
 User.create! do |u|
