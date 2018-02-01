@@ -12,6 +12,7 @@ class EmployeesController < ApplicationController
 
   def flip
     @employee = Employee.find(params[:id])
+    @others = Other.all
     @projects = Project.all
     render :flip
   end
