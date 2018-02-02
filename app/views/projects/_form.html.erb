@@ -28,13 +28,11 @@
   </div>
 
   <div class="field form-group">
-    <%= form.label :project_type %>
-    <%= form.text_field :project_type, id: :project_project_type, class:"form-control" %>
-  </div>
+    <%= form.label :industry %><br>
+    <%= form.select :industry, options_for_select([['Healthcare', 'Healthcare'] , ['Private Equity', 'Private Equity'] ,['Technology', 'Technology'] ,['Startup', 'Startup'] ,['Non-profit', 'Non-profit'], ['E-commerce', 'E-commerce'], ['Retail', 'Retail']], selected: @project.industry) %>
 
-  <div class="field form-group">
-    <%= form.label :industry %>
-    <%= form.text_field :industry, id: :project_industry, class:"form-control" %>
+    <%= form.label :project_type, "Other"  %>
+    <%= form.text_field :project_type, id: :project_project_type, class:"form-control-industry" %>
   </div>
 
   <div class="skills-list">
