@@ -4,15 +4,10 @@
     <div class="row">
 
       <div class="col-md-3 sidebar">
-        <center><h5 class ="wos">What Others Say:</h5></center>
+        <center><h5 class ="wos">What Others Say:</h5>
 
 
-        <div class="wos">
 
-          <% @others.each do |other| %>
-            <div><%= render 'other', other: other %></div>
-          <% end %>
-        </div>
 
         <h5>Occasion:</h5><br>
 
@@ -25,6 +20,7 @@
         <h5>Pulse survey:</h5><br>
         <p></p>
 
+        <%= link_to "Add 'What Others Say'", new_employee_other_path(@employee) %></center>
       </div>
 
       <div class="col-md-9 col-md-offset-3 content">
@@ -33,5 +29,3 @@
 
     </div>
   </div>
-
-<%= link_to "Add 'What Others Say'", new_employee_other_path(@employee) %>
