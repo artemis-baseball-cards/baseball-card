@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
-  <center><%= link_to 'Edit', edit_employee_path(@employee) %> |
+  <% if current_user.id == @employee.user_id %>
+ <center><%= link_to 'Edit', edit_employee_path(@employee) %> |
+-    <% end %> |
 
   <%= link_to 'Back', employees_path %></center><br>
   <div class="row">
