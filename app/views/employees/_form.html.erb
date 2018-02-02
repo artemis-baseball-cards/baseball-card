@@ -58,14 +58,15 @@
   </div>
 
   <div class="field form-group">
-    <%= form.label :strength %>
-    <%= form.text_field  :strength, id: :employee_strength,  class: "form-control" %>
+    <%= form.label :myers_briggs, "Myers Briggs" %>
+    <%= form.text_area  :myers_briggs, id: :employee_myers_briggs,  class: "form-control" %>
   </div>
 
   <div class="field form-group">
-    <%= form.label :myers_briggs %>
-    <%= form.text_area  :myers_briggs, id: :employee_myers_briggs,  class: "form-control" %>
+    <%= form.label :strength, "StrengthsFinder Top 5" %>
+    <%= form.text_field  :strength, id: :employee_strength,  class: "form-control" %>
   </div>
+
 
   <div class="field form-group">
     <%= form.label :birkman %>
