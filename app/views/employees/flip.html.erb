@@ -1,3 +1,46 @@
-<p><%= @employee.name %> </p>
+<center><h1 class="blue-text"><%= @employee.name %> </h1></center>
+  <div class="container-fluid">
 
-<%= link_to "Add 'What Others Say'", new_employee_other_path(@employee) %>
+    <div class="row">
+
+      <div class="col-md-3 sidebar">
+        <center><h5 class ="wos">What Others Say:</h5>
+
+          <% if @employee.others.any? %>
+            <% @employee.others.each do |other| %>
+
+            <h5>Occasion:</h5>
+            <p> <%= other.occasion %> </p>
+
+            <h5>End project:</h5>
+            <p> <%= other.end_project %> </p>
+
+            <h5>Birthday:</h5>
+            <p> <%= other.birthday %> </p>
+
+            <h5>Pulse survey:</h5>
+            <p> <%= other.pulse_survey %> </p>
+            <% end %>
+          <% end %>
+
+
+
+
+
+        <p></p>
+
+
+        <p></p>
+
+
+        <p></p>
+
+        <%= link_to "Add 'What Others Say'", new_employee_other_path(@employee) %></center>
+      </div>
+
+      <div class="col-md-9 col-md-offset-3 content">
+        <center>360 Feedback Diagram </center>
+      </div>
+
+    </div>
+  </div>
