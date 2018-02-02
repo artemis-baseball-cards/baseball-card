@@ -8,6 +8,7 @@ class EmployeesController < ApplicationController
   def show
     @employee = Employee.find(params[:id])
     @projects = Project.all
+    @survey = Survey.get_survey
   end
 
   def flip
