@@ -9,4 +9,4 @@ spreadsheet = session.spreadsheet_by_title("360 Feedback Form (Responses)")
 # Get the first worksheet
 worksheet = spreadsheet.worksheets.first
 # Print out the first 6 columns of each row
-worksheet.rows.each { |row| puts row.first(2).join(" | ") }
+worksheet.rows.each { |row| puts row.join(" | ") }

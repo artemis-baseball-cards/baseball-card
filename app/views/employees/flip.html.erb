@@ -22,25 +22,20 @@
             <p> <%= other.pulse_survey %> </p>
             <% end %>
           <% end %>
-
-
-
-
-
         <p></p>
-
-
         <p></p>
-
-
         <p></p>
-
         <%= link_to "Add 'What Others Say'", new_employee_other_path(@employee) %></center>
       </div>
 
       <div class="col-md-9 col-md-offset-3 content">
-        <center>360 Feedback Diagram </center>
-        <%= @worksheet %>
+        <center><h4>360 Feedback</h4>
+        <div class="container">
+          <p>Words used to describe <%= @employee.name %> </p></center>
+          <% @data[1][1].split(",").each do |skill| %>
+            <p> <%= skill %> </p>
+          <% end %>
+        </div>
       </div>
 
     </div>
