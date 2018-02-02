@@ -32,11 +32,15 @@
         <center><h4>360 Feedback</h4>
         <div class="container">
           <p>Words used to describe <%= @employee.name %> </p></center>
-          <% @data[1][1].split(",").each do |skill| %>
-            <p> <%= skill %> </p>
+          <hr>
+          <% @data.each do |smaller_array| %>
+            <% if smaller_array[2] ==  @employee.name %>
+              <% smaller_array[1].split(",").each do |skill| %>
+                <p> <%= skill %> </p>
+              <% end %>
+            <% end %>
           <% end %>
         </div>
       </div>
-
     </div>
   </div>
