@@ -35,9 +35,12 @@
           <hr>
           <% @data.each do |smaller_array| %>
             <% if smaller_array[2] ==  @employee.name %>
-              <% smaller_array[1].split(",").each do |skill| %>
-                <p> <%= skill %> </p>
-              <% end %>
+              <div class="container one-survey">
+                <p>Response:</p>
+                <% smaller_array[1].split(",").each do |skill| %>
+                  <p> <%= skill %> </p>
+                <% end %>
+              </div>
             <% end %>
           <% end %>
         </div>

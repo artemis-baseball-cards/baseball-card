@@ -12,6 +12,17 @@
   color: black
 }
 
+.one-survey {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.one-survey p {
+  margin: 2px;
+}
+
 .employee-name a:hover {
   color: white;
   font: bold;
