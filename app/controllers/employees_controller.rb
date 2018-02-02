@@ -14,6 +14,7 @@ class EmployeesController < ApplicationController
     @employee = Employee.find(params[:id])
     @others = Other.all
     @projects = Project.all
+    @worksheet = spreadsheet.worksheets.first
     render :flip
   end
 
