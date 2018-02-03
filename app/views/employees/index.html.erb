@@ -5,6 +5,12 @@
 <center>
   <p id="notice"><%= notice %></p>
 
+<select name="skills">
+  <% ([["Flexible", :flexible], ["Team Player", :team_player], ["Adaptable", :adaptable], ["Accountable", :accountable], ["Problem Solver", :problem_solver], ["Critical Thinker", :critical_thinker], ["Problem Definition Writer", :problem_writer], ["Experimenter", :experimenter], ["Interview Designer", :interview_designer], ["Interview Conductor", :interview_conductor], ["Survey Designer", :survey_designer], ["Interview/Survey/Research Synthesizer", :isr_synthesizer], ["Client Ready Material Producer", :crm_producer], ["Tool Developer", :tool_developer], ["Process Improver", :process_improver], ["Team Leader", :team_leader]]).each do |skill| %>
+    <option value="<%= skill %>"><%= skill %></option>
+  <% end %>
+</select>
+
   <div class="employee">
 
     <% @employees.each do |employee| %>
@@ -13,3 +19,21 @@
   </div>
   <%= link_to 'New Employee', new_employee_path %>
 </center>
+
+
+<!-- <%= select_tag(:flexible, options_for_select([['Flexible', 'flexible']])) %>
+<%= select_tag(:team_player, options_for_select([['Team Player', 'team player']])) %>
+<%= select_tag(:adaptable, options_for_select([['Adaptable', 'adaptable']])) %>
+<%= select_tag(:accountable, options_for_select([['Accountable', 'accountable']])) %>
+<%= select_tag(:problem_solver, options_for_select([['Problem Solver', 'problem solver']])) %>
+<%= select_tag(:critical_thinker, options_for_select([['Critical Thinker', 'critical thinker']])) %>
+<%= select_tag(:problem_writer, options_for_select([['Problem Writer', 'problem writer']])) %>
+<%= select_tag(:experimenter, options_for_select([['Experimenter', 'experimenter']])) %>
+<%= select_tag(:interview_designer, options_for_select([['Interview Designer', 'interview designer']])) %>
+<%= select_tag(:interview_conductor, options_for_select([['Interview Conductor', 'interview conductor']])) %>
+<%= select_tag(:survey_designer, options_for_select([['Survey Designer', 'survey designer']])) %>
+<%= select_tag(:isr_synthesizer, options_for_select([['Interview/Survey/Research Synthesizer', 'interview/survey/research synthesizer']])) %>
+<%= select_tag(:crm_producer, options_for_select([['Client Ready Material Producer', 'client ready material producer']])) %>
+<%= select_tag(:tool_developer, options_for_select([['Tool Developer', 'tool developer']])) %>
+<%= select_tag(:process_improver, options_for_select([['Process Improver', 'process improver']])) %>
+<%= select_tag(:team_leader, options_for_select([['Team Leader', 'team leader']])) %> -->
