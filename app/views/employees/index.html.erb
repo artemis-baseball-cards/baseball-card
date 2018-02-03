@@ -4,6 +4,7 @@
 
 <center>
   <p id="notice"><%= notice %></p>
+  <%= link_to 'New Employee', new_employee_path %>
 
   <div class="employee">
 
@@ -11,5 +12,4 @@
       <div><%= render 'employee', employee: employee %></div>
     <% end %>
   </div>
-  <%= link_to 'New Employee', new_employee_path %>
 </center>
