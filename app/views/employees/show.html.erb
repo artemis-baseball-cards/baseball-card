@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
-  <center><%= link_to 'Edit', edit_employee_path(@employee) %> |
+  <% if current_user.id == @employee.user_id %>
+ <center><%= link_to 'Edit', edit_employee_path(@employee) %> |
+-    <% end %> |
 
   <%= link_to 'Back', employees_path %></center><br>
   <div class="row">
@@ -12,7 +14,7 @@
       </div>
 
       <div class="float-left">
-
+        <h7>ABOUT</h7>
           <h5>Artemis Role:</h5>
           <p><%= @employee.expectation %></p>
 
@@ -25,8 +27,7 @@
           <h5>Motto:</h5>
           <p><%= @employee.motto %></p>
 
-          <h5>Strength:</h5>
-          <p><%= @employee.strength %></p>
+          <h7>MISSION & VISION</h7>
 
           <h5>Mission:</h5>
           <p><%= @employee.mission %></p>
@@ -47,11 +48,21 @@
     <div class="col-md-6" id="right-side">
       <div id="right-side-text">
 
+        <h7>STRENGTHS</h7>
+
         <h5>Myers Briggs:</h5>
         <p><%= @employee.myers_briggs %></p>
 
+        <h5>StrengthsFinder Top 5:</h5>
+        <p><%= @employee.strength %></p>
+
         <h5>Birkman:</h5>
         <p><%= @employee.birkman %></p>
+
+          <h7>CAREER GOALS & ASPIRATIONS</h7>
+
+        <h5>You at Artemis:</h5>
+        <p><%= @employee.expectation %> </p>
 
         <h5>Short term goal:</h5>
         <p><%= @employee.short_term_goal %></p>
@@ -71,6 +82,8 @@
         <h5>Personal growth:</h5>
         <p><%= @employee.development %></p>
 
+          <h7>AREAS I WANT TO DEVELOP</h7>
+
         <h5>Skills:</h5>
         <% if @employee.skills %>
           <% @employee.skills.each do |skill| %>
@@ -85,10 +98,10 @@
           <% end %>
         <% end %>
 
-        <h5>Objective setting:</h5>
+        <h7>OBJECTIVE SETTING:</h7>
         <p><%= @employee.objective_setting %></p>
 
-        <h5>Personal goals:</h5>
+        <h7>PERSONAL GOALS:</h7>
         <p><%=  @employee.personal_goal %>, <%= @employee.personal_goal_two %>, and <%= @employee.personal_goal_three %></p>
 
         <h5>Projects:</h5>

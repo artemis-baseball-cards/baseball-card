@@ -137,4 +137,5 @@ User.create! do |u|
  u.password    = 'password'
  u.password_confirmation = 'password'
  u.superadmin_role = true
+ u.approved = true
  end

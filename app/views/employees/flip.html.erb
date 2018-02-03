@@ -23,12 +23,26 @@
             <% end %>
           <% end %>
 
+          
         <%= link_to "Add 'What Others Say'", new_employee_other_path(@employee) %></center>
       </div>
 
       <div class="col-md-9 col-md-offset-3 content">
-        <center>360 Feedback Diagram </center>
+        <center><h4>360 Feedback</h4>
+        <div class="container">
+          <p>Words used to describe <%= @employee.name %> </p></center>
+          <hr>
+          <% @data.each do |smaller_array| %>
+            <% if smaller_array[2] ==  @employee.name %>
+              <div class="container one-survey">
+                <p>Response:</p>
+                <% smaller_array[1].split(",").each do |skill| %>
+                  <p> <%= skill %> </p>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
       </div>
-
     </div>
   </div>
