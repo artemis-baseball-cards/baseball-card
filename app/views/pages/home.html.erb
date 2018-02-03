@@ -5,16 +5,19 @@
     <div class="mini-cards">
       <% @employees.each do |card| %>
         <div class="mini-card">
-          <div class="mini-top">
-            <p><%= link_to card.name, employee_path(card.id) %></p>
+          <div class="mini-top container">
+            <h5><%= link_to card.name, employee_path(card.id) %></h5>
+            <h6> <%= card.position %> </h6>
           </div>
-          <div class="mini-bottom">
-            <p> <%= card.position %> </p>
+          <div class="mini-bottom container">
+            <h6> <%= card.industry_experience %> Industry Experience</h6>
+            <h6 class="mini-right"> role1, role2 </h6>
+            <h6> <%= card.myers_briggs %> </h6>
           </div>
         </div>
       <% end %>
     </div>
   <% else %>
-    <center><p>There are currently no employee baseball cards.</p></center>
+    <center><h6>There are currently no employee baseball cards.</h6></center>
   <% end %>
 <% end %>

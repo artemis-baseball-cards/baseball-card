@@ -36,13 +36,14 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   width: 70%;
-  margin-left: 15%;
+  margin-left: 20%;
 }
+
 
 .mini-card {
   border: 1px solid black;
-  width: 140px;
-  height: 120px;
+  width: 250px;
+  height: 220px;
   margin-bottom: 20px;
   margin-right: 3px;
   margin-left: 3px;
@@ -64,9 +65,11 @@
 .mini-top {
   background-color: #8da4c9;
   color: white;
+  padding-bottom: 6px;
 }
 
 .mini-bottom {
+  margin-top: 5px;
   background-color: white;
   color: black;
 }
