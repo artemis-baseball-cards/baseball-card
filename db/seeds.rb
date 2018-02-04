@@ -128,8 +128,64 @@ employees = [
    'DateTime.new(2018,1,22)']
 ]
 
-employees.each do |employees_name, employees_position, employees_life_quote, employees_quote, employees_motto, employees_strength, employees_myers_briggs, employees_birkman, employees_vision, employees_short_term_goal, employees_long_term_goal, employees_areas_to_develop, employees_objective_setting, employees_personal_goal, employees_personal_goal_two, employees_personal_goal_three, employees_mission, employees_expectation, employees_awesome, employees_need, employees_receive_feedback, employees_development, employees_start_date, employees_skills, employees_home_geography, employees_industry_experience, employees_willing_to_travel|
-  Employee.create(name: employees_name, position: employees_position, life_quote: employees_life_quote, quote: employees_quote, motto: employees_motto, strength: employees_strength, myers_briggs: employees_myers_briggs, birkman: employees_birkman, vision: employees_vision, short_term_goal: employees_short_term_goal, long_term_goal: employees_long_term_goal, areas_to_develop: employees_areas_to_develop, objective_setting: employees_objective_setting, personal_goal: employees_personal_goal, personal_goal_two: employees_personal_goal_two, personal_goal_three: employees_personal_goal_three, mission: employees_mission, expectation: employees_expectation, awesome: employees_awesome, need: employees_need, receive_feedback: employees_receive_feedback, development: employees_development, start_date: employees_start_date, skills: employees_skills, home_geography: employees_home_geography, industry_experience: employees_industry_experience, willing_to_travel: employees_willing_to_travel)
+employees.each do |employees_name,
+  employees_position,
+  employees_life_quote,
+  employees_quote,
+  employees_motto,
+  employees_strength,
+  employees_myers_briggs,
+  employees_birkman,
+  employees_vision,
+  employees_short_term_goal,
+  employees_long_term_goal,
+  employees_areas_to_develop,
+  employees_objective_setting,
+  employees_personal_goal,
+  employees_personal_goal_two,
+  employees_personal_goal_three,
+  employees_mission,
+  employees_expectation,
+  employees_awesome,
+  employees_need,
+  employees_receive_feedback,
+  employees_development,
+  employees_start_date,
+  employees_skills,
+  employees_home_geography,
+  employees_industry_experience,
+  employees_willing_to_travel,
+  employees_project_roles
+  |
+  Employee.create(name: employees_name,
+    position: employees_position,
+    life_quote: employees_life_quote,
+    quote: employees_quote,
+    motto: employees_motto,
+    strength: employees_strength,
+    myers_briggs: employees_myers_briggs,
+    birkman: employees_birkman,
+    vision: employees_vision,
+    short_term_goal: employees_short_term_goal,
+    long_term_goal: employees_long_term_goal,
+    areas_to_develop: employees_areas_to_develop,
+    objective_setting: employees_objective_setting,
+    personal_goal: employees_personal_goal,
+    personal_goal_two: employees_personal_goal_two,
+    personal_goal_three: employees_personal_goal_three,
+    mission: employees_mission,
+    expectation: employees_expectation,
+    awesome: employees_awesome,
+    need: employees_need,
+    receive_feedback: employees_receive_feedback,
+    development: employees_development,
+    start_date: employees_start_date,
+    skills: employees_skills,
+    home_geography: employees_home_geography,
+    industry_experience: employees_industry_experience,
+    willing_to_travel: employees_willing_to_travel,
+    project_roles: employees_project_roles
+  )
 end
 
 User.create! do |u|
