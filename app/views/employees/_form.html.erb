@@ -19,7 +19,7 @@
 
   <div class="field form-group">
     <%= form.label "title" %><br>
-    <%= form.select :position, options_for_select([['Analyst', 'Analyst'] , ['Associate', 'Associate'] ,['Engagement Manager', 'Engagement Manager'] ,['Partner', 'Partner'] ,['Principal', 'Principal']], selected: @employee.position) %>
+    <%= form.select :position, options_for_select([['Intern', 'Intern'],['Analyst', 'Analyst'] , ['Associate', 'Associate'] ,['Engagement Manager', 'Engagement Manager'] ,['Partner', 'Partner'] ,['Principal', 'Principal']], selected: @employee.position) %>
   </div>
 
   <div class="field form-group">
@@ -53,6 +53,14 @@
   </div>
 
   <div class="field form-group">
+    <%= form.label "Project Role" %><br>
+    <% ['Intern','Analyst', 'Associate', 'Engagement Manager', 'Partner', 'Principal'].each do |role| %>
+      <%= check_box_tag "employee[project_roles][]", role, false, id: "employee_project_roles_#{role}" %>
+      <%= role %>
+    <% end %>
+  </div>
+
+  <div class="field form-group">
     <%= form.label :willing_to_travel %>
     <%= form.select :willing_to_travel, options_for_select([['Yes', 'Yes'] , ['No', 'No']], selected: @employee.willing_to_travel) %>
   </div>
@@ -66,7 +74,6 @@
   <div class="field form-group">
     <%= form.label :strength, "StrengthsFinder Top 5" %>
     <%= form.text_field  :strength, id: :employee_strength,  class: "form-control" %>
-
   </div>
 
 
