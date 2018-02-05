@@ -1,3 +1,8 @@
+<%= javascript_include_tag "application", "chartkick" %>
+<%= javascript_include_tag "https://www.google.come/jsapi" %>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
 <center><h1 class="blue-text"><%= @employee.name %> </h1></center>
   <div class="container-fluid">
 
@@ -30,6 +35,7 @@
 
       <div class="col-md-9 col-md-offset-3 content">
         <center><h4>360 Feedback</h4>
+              <%= pie_chart [["Project management", 9], ["Communication", 10]] %>
         <div class="container">
           <p>Words used to describe <%= @employee.name %> </p></center>
           <hr>
