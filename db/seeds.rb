@@ -8,6 +8,7 @@ Employee.destroy_all
 # Other.destroy_all
 # Project.destroy_all
 User.destroy_all
+# Skill.destroy_all
 
 
 
@@ -34,7 +35,12 @@ employees = [
    'I need positive reinforcement on things I am doing well and constructive feedback on things I can improve on.',
    'I appreciate it when both compliments and constructive feedback on given in a timely manner so I can think about the specific activity or communication and learn what to keep doing or what I can do differently in the future.',
    'I am reading a lot of books, listening to business podcasts, working on personal hobbies, and actively learning from our work and playbook.',
-   DateTime.new(2017,8,1)],
+   DateTime.new(2017,8,1),
+   '{Proactive, Flexible, High emotional intelligence}',
+   'Amsterdamn, North Holland, Netherlands',
+   '{E-Commerce, Non-Profit, Technology, Healthcare}',
+   'No',
+   '{Engagment Manager, Analyst}'],
   ['Linda Luu',
    'Intern',
    'Try your best and make it count',
@@ -56,14 +62,19 @@ employees = [
    'I need constructive criticism and communication to ensure we are on the same page.',
    'I value all feedback whether positive or negative. Everything is a learning experience and I am always looking for ways to excel. In constructive criticism I also would appreciate if noted on ways I can do better.',
    'I am always looking for educational sources and taking classes on Udemy on subjects I do not feel comfortable with to better my skills. I am a strong believer that we only do not like to do something because we do not know how so I am continuing to learn.',
-   'DateTime.new(2018,1,22)'],
+   'DateTime.new(2018,1,22)',
+   '{Prepared, Needs little direction, Takes ownership}',
+   'Maple Valley, WA, USA',
+   '{E-Commerce, Retail}',
+   'Yes',
+   '{Intern}'],
   ['L. Devin MacKrell "MacK"',
    'Intern',
    'Learn every day.',
    '"I know not all that may be coming, but be it what it will be, I will go to it laughing." -- Herman Melville',
    'Showing up is more important than winning or losing.',
    'TBA',
-   'ESTP: Extraversion, Sensing, Thinking, Percieving',
+   'ENFP-T: 74% Extraversion, 63% Intuitive, 72% Feeling, 51% Prospecting, 67% Turbulent',
    'TBA',
    'My vision is to create a product that is both functional and visually pleasing.',
    'Provide Artemis with a functional product that will provide clarity and accessibility for years to come.',
@@ -79,7 +90,12 @@ employees = [
    'I need acknowledgement for those skills I have honed over the years and bring to the project, combined with patience as I learn and grow in my new field. Furthermore, I would appreciate an environment of good humor and communication.',
    'I am very responsive to feedback, both positive and negative when it is detailed. For critical feedback in particular, I appreciate the format to be discursive and for the individual providing the feedback to be willing to talk through methods they believe will lead to the performance they would like to see.',
    'I am exploring GitHub to deepen my technical competancy. I am chatting with friends in the industry to gain greater insight into their roles and learning curves. I am striving for more of a work/life balance and returning to my non-tech passions: volunteering and diving.',
-   'DateTime.new(2018,1,22)'],
+   'DateTime.new(2018,1,22)',
+   '{Coach, Organized, Strong Presenter}',
+   'Seattle, WA, USA',
+   '{Private Equity, Technology, Retail}',
+   'Yes',
+   '{Intern}'],
   ['Megan Olson',
    'Intern',
    'Strive for improvement, not perfection',
@@ -102,7 +118,12 @@ employees = [
    'I am great at setting appropriate goals and assessing what needs to be done to achieve them. This includes time-management, organizing, and always communicating.',
    'I am a big advocate for feedback - from peers, manager-roles, and everything in between. I think it is the best way the improve in any field. I appreciate it when feedback is given in a conversational setting - allowing myself to ask questions if someting is not clear and to establish a clear goal on how to improve.',
    'I am actively trying to look have a new perspective when approaching every situation. I am trying to always assume the best first.',
-   'DateTime.new(2018,1,22)'],
+   'DateTime.new(2018,1,22)',
+   '{Client-facing, Detail oriented, Sees the big picture}',
+   'Auburn, WA, USA',
+   '{Non-Profit, Retail}',
+   'No',
+   '{Intern}'],
   ['Erik Zakrzewski',
    'Intern',
    'Anything can be worked out.',
@@ -125,7 +146,13 @@ employees = [
    'I am very new to almost every aspect of this career path and I need to be reminded that I am doing it to the best of my current ability.',
    'Feedback is welcome and most appreciated paired with possible solutions if applicable. I am not great at plenty of things and can only get better if taught the right way.',
    'Taking Unity (game dev software) tutorials in my free time and attempting to start a project to bring VR experiences to children in a local hospital.',
-   'DateTime.new(2018,1,22)']
+   'DateTime.new(2018,1,22)',
+   '{Proactive, Flexible, High emotional intelligence}',
+   'Renton, WA, USA',
+   '{Healthcare, Retail}',
+   'Yes',
+   '{Intern}'
+  ]
 ]
 
 employees.each do |employees_name,
@@ -187,6 +214,32 @@ employees.each do |employees_name,
     project_roles: employees_project_roles
   )
 end
+
+# skills = [
+#   'Critical Thinker',
+#   'Strong Communicator',
+#   'Proactive',
+#   'Flexible',
+#   'High emotional intelligence',
+#   'Goes above and beyond',
+#   'Prepared',
+#   'Needs little direction',
+#   'Takes ownership',
+#   'Leader',
+#   'Coach',
+#   'Organized',
+#   'Strong Presenter',
+#   'High quality deliverables',
+#   'Client-facing',
+#   'Detail oriented',
+#   'Sees the big picture',
+#   'Process oriented',
+#   'Receptive to feedback',
+#   'Thoughtful feedback delivery'
+# ]
+# skills.each do |skill_description|
+#   Skill.create(description: skill_description)
+# end
 
 User.create! do |u|
  u.email     = 'test@test.com'
