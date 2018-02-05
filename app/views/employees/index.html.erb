@@ -1,15 +1,9 @@
-<% content_for :head do %>
-  <meta name="turbolinks-cache-control" content="no-cache">
-<% end %>
-
 <center>
   <p id="notice"><%= notice %></p>
   <%= link_to 'New Employee', new_employee_path %>
 
   <div class="employee">
-
-    <% @employees.each do |employee| %>
-      <div><%= render 'employee', employee: employee %></div>
-    <% end %>
+      <div><%= render 'employee'%></div>
   </div>
+
 </center>
