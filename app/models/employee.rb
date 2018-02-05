@@ -12,6 +12,14 @@ class Employee < ApplicationRecord
   scope :partner, -> { where("project_roles = ? ", ("{Partner}"))}
   scope :principal, -> { where("project_roles = ? ", ("{Principal}"))}
 
+  scope :healthcare, -> { where("industry_experience = ? ", ("{healthcare}"))}
+  scope :private_equity, -> { where("industry_experience = ? ", ("{private_equity}"))}
+  scope :technology, -> { where("industry_experience = ? ", ("{technology}"))}
+  scope :startup, -> { where("industry_experience = ? ", ("{startup}"))}
+  scope :non_profit, -> { where("industry_experience = ? ", ("{non profit}"))}
+  scope :ecommerce, -> { where("industry_experience = ? ", ("{ecommerce}"))}
+  scope :retail, -> { where("industry_experience = ? ", ("{retail}"))}
+
  #  filterrific(
  #   available_filters: [
  #     :intern,
