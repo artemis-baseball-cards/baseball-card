@@ -14,6 +14,8 @@ class ProjectsController < ApplicationController
     @project = Project.new
     @employees = Employee.all
 
+    @employees_filtered = Employee.filter(params.slice(:healthcare, :private_equity, :technology, :startup, :non_profit, :ecommerce, :retail))
+
     @interns = Employee.intern
     @analysts = Employee.analyst
     @associates = Employee.associate
