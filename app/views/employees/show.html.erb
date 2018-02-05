@@ -41,6 +41,11 @@
         <h5>Willing to Travel:</h5>
         <p><%= @employee.willing_to_travel %></p>
 
+        <h5>Project Roles:</h5>
+        <% @employee.project_roles.each do |role| %>
+          <%= role %>
+        <% end %>
+
       </div>
 
     </div>
