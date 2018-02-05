@@ -66,6 +66,4 @@ class EmployeesController < ApplicationController
     params.require(:employee).permit(:name, :position, :start_date, :life_quote, :quote, :motto, :strength, :myers_briggs, :birkman, :vision, :short_term_goal, :long_term_goal, :objective_setting, :personal_goal, :mission, :expectation, :awesome, :need, :receive_feedback, :development, :personal_goal_two, :personal_goal_three, :personal_goal_four, :home_geography, :industry_experience, :willing_to_travel, :project_ids => [], :areas_to_develop => [], :skills => [], :project_roles => [] )
   end
 
-
-
 end

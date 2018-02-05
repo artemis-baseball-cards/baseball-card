@@ -47,17 +47,38 @@
     <%= form.text_field :key_skill, id: :project_key_skill, class:"form-control" %>
   </div>
 
-  <h3>Assign Employee:</h3>
+  <h5>Assign Employees:</h5>
 
   <div class="field boxes">
-    <%= collection_check_boxes(:project, :employee_ids, @employees, :id, :name) %>
+    <h6>Interns:</h6>
+    <%= collection_check_boxes(:project, :employee_ids, @interns, :id, :name) %>
   </div>
-
-  <h2>Employees with Critical Thinking Skills:</h2>
 
   <div class="field boxes">
-    <%= collection_check_boxes(:project, :employee_ids, @critical_thinking_employees, :id, :name) %>
+    <h6>Analysts:</h6>
+    <%= collection_check_boxes(:project, :employee_ids, @analysts, :id, :name) %>
   </div>
+
+  <div class="field boxes">
+    <h6>Associates:</h6>
+    <%= collection_check_boxes(:project, :employee_ids, @associates, :id, :name) %>
+  </div>
+
+  <div class="field boxes">
+    <h6>Engagement Managers:</h6>
+    <%= collection_check_boxes(:project, :employee_ids, @engagement_managers, :id, :name) %>
+  </div>
+
+  <div class="field boxes">
+    <h6>Partners:</h6>
+    <%= collection_check_boxes(:project, :employee_ids, @partners, :id, :name) %>
+  </div>
+
+  <div class="field boxes">
+    <h6>Principals:</h6>
+    <%= collection_check_boxes(:project, :employee_ids, @principals, :id, :name) %>
+  </div>
+
 
   <div class="actions">
     <%= form.submit class: 'btn btn-secondary' %>
