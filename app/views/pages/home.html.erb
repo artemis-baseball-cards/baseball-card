@@ -1,22 +1,2 @@
 <h1>Welcome to Artemis Baseball Cards</h1>
 
-<% if current_user %>
-  <% if @employees.any? %>
-    <div class="mini-cards">
-      <% @employees.each do |card| %>
-        <div class="mini-card">
-          <div class="mini-top container">
-            <h5><%= link_to card.name, employee_path(card.id) %></h5>
-            <h6> <%= card.position %> </h6>
-          </div>
-          <div class="mini-bottom container">
-            </h6>
-            <h6> <%= card.myers_briggs %> </h6>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  <% else %>
-    <center><h6>There are currently no employee baseball cards.</h6></center>
-  <% end %>
-<% end %>
