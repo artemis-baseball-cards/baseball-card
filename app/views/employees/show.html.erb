@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
   <% if current_user.id == @employee.user_id %>
- <center><%= link_to 'Edit', edit_employee_path(@employee) %> | <% end %> | 
+ <center><%= link_to 'Edit', edit_employee_path(@employee) %> | <% end %> |
 
   <%= link_to 'Back', employees_path %></center><br>
   <div class="row">
@@ -9,7 +9,7 @@
       <div class="float-right">
         <h1 class="blue-text"><%= @employee.name %></h1>
         <h2><%= @employee.position %></h2>
-        <h2><%= @employee.start_date %></h2>
+        <h2><%= @employee.start_date.to_datetime.strftime("%m/%d/%Y") %></h2>
         <h2 class="grey-text">Last updated: <%= time_ago_in_words employee.updated_at %> ago</h2>
       </div>
 
