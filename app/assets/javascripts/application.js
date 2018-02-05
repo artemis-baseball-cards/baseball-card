@@ -12,8 +12,6 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require jquery.slick
 //= require chartkick
-//= require initialize
 //= require turbolinks
 //= require_tree .
