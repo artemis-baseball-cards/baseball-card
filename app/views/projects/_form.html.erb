@@ -47,77 +47,99 @@
     <%= form.text_field :key_skill, id: :project_key_skill, class:"form-control" %>
   </div>
 
-  <center><h4>Assign Employees:</h4></center>
+  <center>
+    <h4>Assign Employees:</h4>
+    <p>(sorted by project role):</p>
+  </center>
 
-  <h5>By Industry Experience:</h5><hr class="form-hr">
+  <hr class="form-hr">
 
-    <div class="field boxes">
-      <h6>Healthcare:</h6>
-      <%= collection_check_boxes(:project, :employee_ids, @healthcare, :id, :name) %>
+  <div class="row">
+    <div class="col-md-6 emp-box">
+      <div class="field boxes">
+        <h6 class="category">Interns:</h6>
+          <%= collection_check_boxes(:project, :employee_ids, @interns, :id, :name, {}) do |x| %>
+          <h6>
+            <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
+            <p><% x.object.industry_experience.each do |y| %>
+              <%= y %>,
+            <% end %></p>
+          </h6>
+        <% end %>
+      </div>
     </div>
-
-    <div class="field boxes">
-      <h6>Private Equity:</h6>
-      <%= collection_check_boxes(:project, :employee_ids, @private_equity, :id, :name) %>
+    <div class="col-md-6 emp-box">
+      <div class="field boxes">
+        <h6 class="category">Analysts:</h6>
+        <%= collection_check_boxes(:project, :employee_ids, @analysts, :id, :name, {}) do |x| %>
+          <h6>
+            <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
+            <p><% x.object.industry_experience.each do |y| %>
+              <%= y %>,
+            <% end %></p>
+          </h6>
+        <% end %>
+      </div>
     </div>
-
-    <div class="field boxes">
-      <h6>Technology:</h6>
-      <%= collection_check_boxes(:project, :employee_ids, @technology, :id, :name) %>
-    </div>
-
-    <div class="field boxes">
-      <h6>Startup:</h6>
-      <%= collection_check_boxes(:project, :employee_ids, @startup, :id, :name) %>
-    </div>
-
-    <div class="field boxes">
-      <h6>Non Profit:</h6>
-      <%= collection_check_boxes(:project, :employee_ids, @non_profit, :id, :name) %>
-    </div>
-
-    <div class="field boxes">
-      <h6>Ecommerce</h6>
-      <%= collection_check_boxes(:project, :employee_ids, @ecommerce, :id, :name) %>
-    </div>
-
-    <div class="field boxes">
-      <h6>Retail</h6>
-      <%= collection_check_boxes(:project, :employee_ids, @retail, :id, :name) %>
-    </div>
-
-  <h5>By Skillset:</h5><hr class="form-hr">
-
-  <div class="field boxes">
-    <h6>Interns:</h6>
-    <%= collection_check_boxes(:project, :employee_ids, @interns, :id, :name) %>
   </div>
 
-  <div class="field boxes">
-    <h6>Analysts:</h6>
-    <%= collection_check_boxes(:project, :employee_ids, @analysts, :id, :name) %>
-  </div>
+  <div class="row">
+    <div class="col-md-6 emp-box">
+      <div class="field boxes">
+        <h6 class="category">Engagement Managers:</h6>
+        <%= collection_check_boxes(:project, :employee_ids, @engagement_managers, :id, :name, {}) do |x| %>
+          <h6>
+            <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
+            <p><% x.object.industry_experience.each do |y| %>
+              <%= y %>,
+            <% end %></p>
+          </h6>
+        <% end %>
+      </div>
 
-  <div class="field boxes">
-    <h6>Associates:</h6>
-    <%= collection_check_boxes(:project, :employee_ids, @associates, :id, :name) %>
+    </div>
+    <div class="col-md-6 emp-box">
+      <div class="field boxes">
+        <h6 class="category">Principals:</h6>
+        <%= collection_check_boxes(:project, :employee_ids, @principals, :id, :name, {}) do |x| %>
+          <h6>
+            <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
+            <p><% x.object.industry_experience.each do |y| %>
+              <%= y %>,
+            <% end %></p>
+          </h6>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="field boxes">
-    <h6>Engagement Managers:</h6>
-    <%= collection_check_boxes(:project, :employee_ids, @engagement_managers, :id, :name) %>
+  <div class="row">
+    <div class="col-md-6 emp-box">
+      <div class="field boxes">
+        <h6 class="category">Associates:</h6>
+        <%= collection_check_boxes(:project, :employee_ids, @associates, :id, :name, {}) do |x| %>
+          <h6>
+            <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
+            <p><% x.object.industry_experience.each do |y| %>
+              <%= y %>,
+            <% end %></p>
+          </h6>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-6 emp-box">
+      <div class="field boxes">
+        <h6 class="category">Partners:</h6>
+        <%= collection_check_boxes(:project, :employee_ids, @partners, :id, :name, {}) do |x| %>
+          <h6>
+            <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
+            <p><% x.object.industry_experience.each do |y| %>
+              <%= y %>,
+            <% end %></p>
+          </h6>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="field boxes">
-    <h6>Partners:</h6>
-    <%= collection_check_boxes(:project, :employee_ids, @partners, :id, :name) %>
-  </div>
-
-  <div class="field boxes">
-    <h6>Principals:</h6>
-    <%= collection_check_boxes(:project, :employee_ids, @principals, :id, :name) %>
-  </div>
-
   <div class="actions">
     <%= form.submit class: 'btn btn-secondary' %>
   </div>

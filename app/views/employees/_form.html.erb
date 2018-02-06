@@ -59,7 +59,10 @@
 
   <div class="field form-group">
     <%= form.label :industry_experience %><br>
-    <%= form.select :industry_experience, options_for_select([['Healthcare', 'Healthcare'] , ['Private Equity', 'Private Equity'] ,['Technology', 'Technology'] ,['Startup', 'Startup'] ,['Non-profit', 'Non-profit'], ['E-commerce', 'E-commerce'], ['Retail', 'Retail']], selected: @employee.industry_experience) %>
+    <% ['Healthcare', 'Private Equity', 'Technology', 'Startup', 'Non-profit', 'E-commerce', 'Retail'].each do |field| %>
+      <%= check_box_tag "employee[industry_experience][]", field, false, id: "employee_industry_experience_#{field}" %>
+      <%= field %>
+    <% end %>
   </div>
 
   <div class="field form-group">
