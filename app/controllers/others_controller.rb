@@ -19,7 +19,7 @@ class OthersController < ApplicationController
     @other = @employee.others.new(other_params)
     if @other.save
       flash[:notice] = "Your input has been saved!"
-      redirect_to employee_path(@employee)
+      redirect_to flip_path(@employee)
     else
       render :new
     end
