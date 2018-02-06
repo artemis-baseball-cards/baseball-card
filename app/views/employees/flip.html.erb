@@ -24,6 +24,7 @@
           <% end %>
           <% if current_user.superadmin_role? || current_user.supervisor_role? %>
           	<%= link_to "Add 'What Others Say'", new_employee_other_path(@employee) %>
+
           <% end %>
 
 
