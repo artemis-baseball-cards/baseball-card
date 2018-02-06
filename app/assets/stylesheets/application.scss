@@ -16,6 +16,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  border-left: 2px solid #eee;
 }
 
 .one-survey p {
@@ -335,7 +336,6 @@ html, body, .container-fluid, .row {
   border-color: #333333;
   margin-top: 60px;
   margin-left: 20px;
-  position: fixed;
 }
 
 @media (min-width: 992px) {
