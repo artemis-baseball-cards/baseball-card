@@ -229,31 +229,31 @@ employees.each do |employees_name,
   )
 end
 
-# skills = [
-#   'Critical Thinker',
-#   'Strong Communicator',
-#   'Proactive',
-#   'Flexible',
-#   'High emotional intelligence',
-#   'Goes above and beyond',
-#   'Prepared',
-#   'Needs little direction',
-#   'Takes ownership',
-#   'Leader',
-#   'Coach',
-#   'Organized',
-#   'Strong Presenter',
-#   'High quality deliverables',
-#   'Client-facing',
-#   'Detail oriented',
-#   'Sees the big picture',
-#   'Process oriented',
-#   'Receptive to feedback',
-#   'Thoughtful feedback delivery'
-# ]
-# skills.each do |skill_description|
-#   Skill.create(description: skill_description)
-# end
+skills = [
+  'Flexible',
+  'Team Player',
+  'Adaptable',
+  'Accountable',
+  'Problem solver',
+  'Critical thinker',
+  'Problem Definition Writer',
+  'Experimenter',
+  'Interview designer',
+  'Interview conductor',
+  'Survey designer',
+  'Interview/Survey/Research synthesizer',
+  'Client ready material producer',
+  'Facilitator',
+  'Presenter',
+  'Tool developer',
+  'Process improver',
+  'Team leader',
+  'Client facing'
+]
+
+skills.each do |skill_description|
+  Skill.create(description: skill_description)
+end
 
 User.create! do |u|
  u.email     = 'test@test.com'
