@@ -43,8 +43,18 @@
   </div>
 
   <div class="field form-group">
-    <%= form.label "Location (city, state, country)" %>
-    <%= form.text_field  :home_geography, id: :employee_home_geography,  class: "form-control" %>
+    <%= form.label "Location (country)" %>
+    <%= form.text_field  :country, id: :employee_country,  class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label "Location (state)" %>
+    <%= form.text_field  :state, id: :employee_state,  class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label "Location (city)" %>
+    <%= form.text_field  :city, id: :employee_city,  class: "form-control" %>
   </div>
 
   <div class="field form-group">
