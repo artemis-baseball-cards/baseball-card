@@ -60,16 +60,36 @@
   <div class="field form-group">
     <%= form.label :industry_experience %><br>
     <% ['Healthcare', 'Private Equity', 'Technology', 'Startup', 'Non-profit', 'E-commerce', 'Retail'].each do |field| %>
-      <%= check_box_tag "employee[industry_experience][]", field, false, id: "employee_industry_experience_#{field}" %>
-      <%= field %>
+      <% if @employee.created_at == nil %>
+        <%= check_box_tag "employee[industry_experience][]", field, false, id: "employee_industry_experience_#{field}" %>
+        <%= field %>
+      <% else %>
+        <% if @employee.industry_experience.include?(field) %>
+          <%= check_box_tag "employee[industry_experience][]", field, true, id: "employee_industry_experience_#{field}" %>
+          <%= field %>
+        <% else %>
+          <%= check_box_tag "employee[industry_experience][]", field, false, id: "employee_industry_experience_#{field}" %>
+          <%= field %>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 
   <div class="field form-group">
     <%= form.label "Project Role" %><br>
     <% ['Intern','Analyst', 'Associate', 'Engagement Manager', 'Partner', 'Principal'].each do |role| %>
-      <%= check_box_tag "employee[project_roles][]", role, false, id: "employee_project_roles_#{role}" %>
-      <%= role %>
+      <% if @employee.created_at == nil %>
+        <%= check_box_tag "employee[project_roles][]", role, false, id: "employee_project_roles_#{role}" %>
+        <%= role %>
+      <% else %>
+        <% if @employee.project_roles.include?(role) %>
+          <%= check_box_tag "employee[project_roles][]", role, true, id: "employee_project_roles_#{role}" %>
+          <%= role %>
+        <% else %>
+          <%= check_box_tag "employee[project_roles][]", role, false, id: "employee_project_roles_#{role}" %>
+          <%= role %>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 
