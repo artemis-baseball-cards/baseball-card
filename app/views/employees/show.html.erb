@@ -3,8 +3,8 @@
   <% if current_user.id == @employee.user_id %>
  <center><%= link_to 'Edit', edit_employee_path(@employee) %> | <% end %>
 
-  <%= link_to 'Back', employees_path %></center><br>
-  <a href="/employees/<%= @id %>/flip">Flip</a>
+  <%= link_to 'Back', employees_path %> | <a href="/employees/<%= @id %>/flip">Flip</a>
+ </center><br>
   <div class="row">
     <div class="col-md-6">
       <div class="float-right">
