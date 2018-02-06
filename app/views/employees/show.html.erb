@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
   <% if current_user.id == @employee.user_id %>
- <center><%= link_to 'Edit', edit_employee_path(@employee) %> | <% end %> |
+ <center><%= link_to 'Edit', edit_employee_path(@employee) %> | <% end %>
 
   <%= link_to 'Back', employees_path %></center><br>
+  <a href="/employees/<%= @id %>/flip">Flip</a>
   <div class="row">
     <div class="col-md-6">
       <div class="float-right">
-        <h1 class="blue-text"><%= @employee.name %></h1>
+        <h1 class="blue-text" id="name"><%= @employee.name %></h1>
         <h2><%= @employee.position %></h2>
         <h2><%= @employee.start_date %></h2>
         <h2 class="grey-text">Last updated: <%= time_ago_in_words @employee.updated_at %> ago</h2>
@@ -45,8 +46,10 @@
         <p><%= @employee.willing_to_travel %></p>
 
         <h5>Project Roles:</h5>
-        <% @employee.project_roles.each do |role| %>
-          <%= role %>
+        <% if @employee.project_roles %>
+          <% @employee.project_roles.each do |role| %>
+            <%= role %>
+          <% end %>
         <% end %>
 
       </div>
@@ -118,8 +121,9 @@
               <li class="project-link-on-card"> <%= link_to project.title, project_path(project) %> </li>
             <% end %>
           </ul>
+        <% else %>
+          <p>No projects</p>
         <% end %>
-
 
       </div>
     </div>
