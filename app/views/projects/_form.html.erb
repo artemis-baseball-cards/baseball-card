@@ -38,7 +38,11 @@
   <div class="skills-list">
     <%= form.label "Required Project Roles" %><br>
     <% ["Intern", "Analyst", "Associate", "Engagement Manager", "Principal", "Partner", "Subject Matter Expert"].each do |role| %>
-      <%= check_box_tag "project[role][]", role, false, id: "project_role#{role}" %> <%= role %>
+      <% if @project.role.include?(role) %>
+        <%= check_box_tag "project[role][]", role, true, id: "project_role#{role}"%> <%= role %>
+      <% else %>
+        <%= check_box_tag "project[role][]", role, false, id: "project_role#{role}"%> <%= role %>
+      <% end %>
     <% end %>
   </div><br>
 
@@ -53,12 +57,15 @@
   </center>
 
   <hr class="form-hr">
+  <div id="team">
+
+  </div>
 
   <div class="row">
     <div class="col-md-6 emp-box">
       <div class="field boxes">
         <h6 class="category">Interns:</h6>
-          <%= collection_check_boxes(:project, :employee_ids, @interns, :id, :name, {}) do |x| %>
+          <%= collection_check_boxes(:project, :employee_ids, @interns, :id, :name, {} ) do |x| %>
           <h6>
             <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
             <p><% x.object.industry_experience.each do |y| %>
