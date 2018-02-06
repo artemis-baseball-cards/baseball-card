@@ -95,8 +95,8 @@
         <h7>AREAS I WANT TO DEVELOP</h7>
 
         <h5>Skills:</h5>
-        <% if @employee.skills %>
-          <% @employee.skills.each do |skill| %>
+        <% if @employee.bbcard_skills %>
+          <% @employee.bbcard_skills.each do |skill| %>
             <p> <%= skill %> </p>
           <% end %>
         <% end %>
