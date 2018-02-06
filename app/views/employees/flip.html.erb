@@ -22,14 +22,44 @@
             <p> <%= other.pulse_survey %> </p>
             <% end %>
           <% end %>
+          <% if current_user.superadmin_role? || current_user.supervisor_role? %>
+          	<%= link_to "Add 'What Others Say'", new_employee_other_path(@employee) %>
+          <% end %>
 
-          
-        <%= link_to "Add 'What Others Say'", new_employee_other_path(@employee) %></center>
+        </center>
       </div>
 
       <div class="col-md-9 col-md-offset-3 content">
         <center><h4>360 Feedback</h4>
-        <%= pie_chart [["Project management", 9], ["Communication", 10]] %>
+        <%= pie_chart [
+          ["Flexible", 6],
+          ["Team Player", 8],
+          ["Adaptable", 6],
+          ["Problem Solver", 9],
+          ["Critical Thinker", 8],
+          ["Adaptable", 10],
+          ["Problem Definition Writer", 7]],
+          donut: true
+        %>
+        <%= column_chart [
+          ["Flexible", 6],
+          ["Team Player", 8],
+          ["Adaptable", 6],
+          ["Problem Solver", 9],
+          ["Critical Thinker", 8],
+          ["Adaptable", 10],
+          ["Problem Definition Writer", 7],
+          ["Experimenter", 9],
+          ["Interview designer", 7],
+          ["Interview conductor", 6],
+          ["Survey designer", 7],
+          ["Interview/Survey/Research synthesizer", 4],
+          ["Client Ready Producer", 9],
+          ["Tool Developer", 5],
+          ["Process Improver", 9],
+          ["Team Leader", 10]
+          ], min: 0, max: 10,
+        donut: true, width: "fill", height: "500px" %>
         <div class="container">
           <p>Words used to describe <%= @employee.name %> </p></center>
           <hr>
@@ -38,7 +68,7 @@
               <div class="container one-survey">
                 <p>Response:</p>
                 <% smaller_array[1].split(",").each do |skill| %>
-                  <p> <%= skill %> </p>
+                  <p> <%=  skill  %> </p>
                 <% end %>
               </div>
             <% end %>
