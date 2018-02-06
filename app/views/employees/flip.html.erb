@@ -26,10 +26,12 @@
           	<%= link_to "Add 'What Others Say'", new_employee_other_path(@employee) %>
           <% end %>
 
+
         </center>
+
       </div>
 
-      <div class="col-md-9 col-md-offset-3 content">
+      <div class="col-md-9 content">
         <center><h4>360 Feedback</h4>
         <%= pie_chart [
           ["Flexible", 6],
@@ -63,17 +65,42 @@
         <div class="container">
           <p>Words used to describe <%= @employee.name %> </p></center>
           <hr>
+          <h5>What should this person keep doing?</h5>
           <% @data.each do |smaller_array| %>
             <% if smaller_array[2] ==  @employee.name %>
               <div class="container one-survey">
-                <p>Response:</p>
-                <% smaller_array[1].split(",").each do |skill| %>
-                  <p> <%=  skill  %> </p>
+
+                <% smaller_array[3].split(",").each do |skill| %>
+                  <p> <%= skill %> </p><br>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %><br>
+
+        <% if current_user.superadmin_role? || current_user.supervisor_role? %>
+
+          <h5>What should this person do more of?</h5>
+          <% @data.each do |smaller_array| %>
+            <% if smaller_array[2] ==  @employee.name %>
+              <div class="container one-survey">
+                <% smaller_array[4].split(",").each do |skill| %>
+                  <p> <%= skill %> </p><br>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %><br>
+          <h5>What should this person stop doing?</h5>
+          <% @data.each do |smaller_array| %>
+            <% if smaller_array[2] ==  @employee.name %>
+              <div class="container one-survey">
+                <% smaller_array[5].split(",").each do |skill| %>
+                  <p> <%= skill %> </p><br>
+
                 <% end %>
               </div>
             <% end %>
           <% end %>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>

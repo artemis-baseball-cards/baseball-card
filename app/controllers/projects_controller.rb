@@ -14,22 +14,22 @@ class ProjectsController < ApplicationController
     @project = Project.new
     @employees = Employee.all
 
+    # Scoped
     @interns = Employee.intern
     @analysts = Employee.analyst
     @associates = Employee.associate
     @engagement_managers = Employee.engagement_manager
     @partners = Employee.partner
     @principals = Employee.principal
-    # @filterrific = initialize_filterrific(
-    #    Employee,
-    #    params[:filterrific]
-    #  ) or return
-    #  @employees_default = @filterrific.find.page(params[:page])
-    #
-    #  respond_to do |format|
-    #    format.html
-    #    format.js
-    #  end
+
+    @healthcare = Employee.healthcare
+    @private_equity = Employee.private_equity
+    @technology = Employee.technology
+    @startup = Employee.startup
+    @non_profit = Employee.non_profit
+    @ecommerce = Employee.ecommerce
+    @retail = Employee.retail
+
   end
 
   def create

@@ -47,7 +47,46 @@
     <%= form.text_field :key_skill, id: :project_key_skill, class:"form-control" %>
   </div>
 
-  <h5>Assign Employees:</h5>
+  <center><h4>Assign Employees:</h4></center>
+
+  <h5>By Industry Experience:</h5><hr class="form-hr">
+
+    <div class="field boxes">
+      <h6>Healthcare:</h6>
+      <%= collection_check_boxes(:project, :employee_ids, @healthcare, :id, :name) %>
+    </div>
+
+    <div class="field boxes">
+      <h6>Private Equity:</h6>
+      <%= collection_check_boxes(:project, :employee_ids, @private_equity, :id, :name) %>
+    </div>
+
+    <div class="field boxes">
+      <h6>Technology:</h6>
+      <%= collection_check_boxes(:project, :employee_ids, @technology, :id, :name) %>
+    </div>
+
+    <div class="field boxes">
+      <h6>Startup:</h6>
+      <%= collection_check_boxes(:project, :employee_ids, @startup, :id, :name) %>
+    </div>
+
+    <div class="field boxes">
+      <h6>Non Profit:</h6>
+      <%= collection_check_boxes(:project, :employee_ids, @non_profit, :id, :name) %>
+    </div>
+
+    <div class="field boxes">
+      <h6>Ecommerce</h6>
+      <%= collection_check_boxes(:project, :employee_ids, @ecommerce, :id, :name) %>
+    </div>
+
+    <div class="field boxes">
+      <h6>Retail</h6>
+      <%= collection_check_boxes(:project, :employee_ids, @retail, :id, :name) %>
+    </div>
+
+  <h5>By Skillset:</h5><hr class="form-hr">
 
   <div class="field boxes">
     <h6>Interns:</h6>
@@ -78,7 +117,6 @@
     <h6>Principals:</h6>
     <%= collection_check_boxes(:project, :employee_ids, @principals, :id, :name) %>
   </div>
-
 
   <div class="actions">
     <%= form.submit class: 'btn btn-secondary' %>
