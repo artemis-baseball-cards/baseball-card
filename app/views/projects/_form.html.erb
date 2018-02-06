@@ -38,10 +38,14 @@
   <div class="skills-list">
     <%= form.label "Required Project Roles" %><br>
     <% ["Intern", "Analyst", "Associate", "Engagement Manager", "Principal", "Partner", "Subject Matter Expert"].each do |role| %>
-      <% if @project.role.include?(role) %>
-        <%= check_box_tag "project[role][]", role, true, id: "project_role#{role}"%> <%= role %>
-      <% else %>
+      <% if @project.created_at == nil %>
         <%= check_box_tag "project[role][]", role, false, id: "project_role#{role}"%> <%= role %>
+      <% else %>
+        <% if @project.role.include?(role) %>
+          <%= check_box_tag "project[role][]", role, true, id: "project_role#{role}"%> <%= role %>
+        <% else %>
+          <%= check_box_tag "project[role][]", role, false, id: "project_role#{role}"%> <%= role %>
+        <% end %>
       <% end %>
     <% end %>
   </div><br>
