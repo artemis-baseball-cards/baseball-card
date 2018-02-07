@@ -8,7 +8,7 @@ Employee.destroy_all
 # Other.destroy_all
 # Project.destroy_all
 User.destroy_all
-# Skill.destroy_all
+Skill.destroy_all
 
 
 
@@ -188,7 +188,7 @@ employees.each do |employees_name,
   employees_receive_feedback,
   employees_development,
   employees_start_date,
-  employees_skills,
+  employees_bbcard_skills,
   employees_country,
   employees_state,
   employees_city,
@@ -219,7 +219,7 @@ employees.each do |employees_name,
     receive_feedback: employees_receive_feedback,
     development: employees_development,
     start_date: employees_start_date,
-    skills: employees_skills,
+    bbcard_skills: employees_bbcard_skills,
     country: employees_country,
     state: employees_state,
     city: employees_city,
