@@ -135,7 +135,7 @@ employees = [
    '{Non-Profit, Retail}',
    'No',
    '{Intern}',
-   'No'],
+   false],
   ['Erik Zakrzewski',
    'Intern',
    'Anything can be worked out.',
@@ -164,9 +164,9 @@ employees = [
    'WA',
    'Renton',
    '{Healthcare, Retail}',
-   'Yes',
+   'true',
    '{Intern}',
-   'Yes'
+   'true'
   ]
 ]
 
@@ -232,7 +232,7 @@ employees.each do |employees_name,
     industry_experience: employees_industry_experience,
     willing_to_travel: employees_willing_to_travel,
     project_roles: employees_project_roles,
-    project_remote: employees_remote
+    remote: employees_remote
   )
 end
 
