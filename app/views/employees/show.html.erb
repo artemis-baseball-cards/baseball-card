@@ -102,11 +102,7 @@
         <% end %>
 
         <h5>Areas to develop:</h5>
-        <% if @employee.areas_to_develop %>
-          <% @employee.areas_to_develop.each do |area| %>
-            <p> <%= area %> </p>
-          <% end %>
-        <% end %>
+        <%= @employee.areas_to_develop %> </p>
 
         <h7>OBJECTIVE SETTING:</h7>
         <p><%= @employee.objective_setting %></p>
