@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180206201320) do
+ActiveRecord::Schema.define(version: 20180207180303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20180206201320) do
     t.text "development"
     t.boolean "manager", default: false
     t.integer "user_id"
-    t.string "areas_to_develop", array: true
     t.string "bbcard_skills", array: true
     t.string "industry_experience", array: true
     t.datetime "created_at"
@@ -51,6 +50,7 @@ ActiveRecord::Schema.define(version: 20180206201320) do
     t.date "start_date"
     t.boolean "willing_to_travel"
     t.string "areas_to_develop"
+    t.boolean "remote"
   end
 
   create_table "employees_projects", force: :cascade do |t|
@@ -85,6 +85,9 @@ ActiveRecord::Schema.define(version: 20180206201320) do
     t.datetime "updated_at", null: false
     t.string "industry"
     t.string "role", array: true
+    t.string "country"
+    t.string "state"
+    t.string "city"
   end
 
   create_table "projects_skills", force: :cascade do |t|
@@ -94,11 +97,6 @@ ActiveRecord::Schema.define(version: 20180206201320) do
 
   create_table "skills", force: :cascade do |t|
     t.string "description"
-  end
-
-  create_table "skills_projects", force: :cascade do |t|
-    t.integer "skills_id"
-    t.integer "projects_id"
   end
 
   create_table "users", force: :cascade do |t|
