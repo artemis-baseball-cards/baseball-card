@@ -21,7 +21,6 @@
           <a class="navbar-brand" href="/">Artemis Cards</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-
           <% if current_user %>
             <% if current_user.superadmin_role? || current_user.supervisor_role? %>
               <li><%= link_to 'Admin', rails_admin_path %></li>
