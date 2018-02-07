@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20180206201144) do
     t.string "city"
     t.date "start_date"
     t.boolean "willing_to_travel"
+    t.string "areas_to_develop"
   end
 
   create_table "employees_projects", force: :cascade do |t|

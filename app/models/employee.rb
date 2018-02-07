@@ -31,4 +31,11 @@ class Employee < ApplicationRecord
     data = worksheet.rows.each { |row| puts row.join(" | ") }
   end
 
+  def self.get_atd
+    session = GoogleDrive::Session.from_service_account_key("client_secret.json")
+    spreadsheet = session.spreadsheet_by_title("Artemis revised baseball cards for epicodus team to build.xlsx")
+    worksheet = spreadsheet.worksheets.first
+    area_data = worksheet.rows.each { |row| puts row.join(" | ") }
+  end
+
 end

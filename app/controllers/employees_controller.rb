@@ -22,11 +22,13 @@ class EmployeesController < ApplicationController
   def new
     @projects = Project.all
     @employee = Employee.new
+    @atd_data = Employee.get_atd
   end
 
   def create
     @employee = Employee.new(employee_params)
     @employee.user_id = current_user.id
+    @atd_data = Employee.get_atd
     if @employee.save
       flash[:notice] = "Your Employee has been saved!"
       redirect_to employees_path
@@ -38,6 +40,12 @@ class EmployeesController < ApplicationController
   def edit
     @projects = Project.all
     @employee = Employee.find(params[:id])
+  end
+
+  def show_list
+    respond_to do |format|
+      format.js
+    end
   end
 
   def update
@@ -64,7 +72,7 @@ class EmployeesController < ApplicationController
   end
 
   def employee_params
-    params.require(:employee).permit(:name, :position, :start_date, :life_quote, :quote, :motto, :strength, :myers_briggs, :birkman, :vision, :short_term_goal, :long_term_goal, :objective_setting, :personal_goal, :mission, :expectation, :awesome, :need, :receive_feedback, :development, :personal_goal_two, :personal_goal_three, :personal_goal_four, :country, :state, :city, :willing_to_travel, :industry_experience => [], :project_ids => [], :areas_to_develop => [], :bbcard_skills => [], :project_roles => [] )
+    params.require(:employee).permit(:name, :position, :start_date, :life_quote, :quote, :motto, :strength, :myers_briggs, :birkman, :vision, :short_term_goal, :long_term_goal, :objective_setting, :personal_goal, :mission, :expectation, :awesome, :need, :receive_feedback, :development, :personal_goal_two, :personal_goal_three, :personal_goal_four, :country, :state, :city, :willing_to_travel, :industry_experience => [], :project_ids => [], :areas_to_develop, :bbcard_skills => [], :project_roles => [] )
   end
 
 end
