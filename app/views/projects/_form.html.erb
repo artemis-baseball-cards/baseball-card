@@ -14,17 +14,17 @@
 <div class="container form-container">
   <div class="field form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :project_title, class:"form-control" %>
+    <%= form.text_field :title, id: :project_title, placeholder: "Intern", class:"form-control" %>
   </div>
 
   <div class="field form-group">
     <%= form.label :start_date %>
-    <%= form.text_field :start_date, id: :project_start_date, class:"form-control" %>
+    <%= form.text_field :start_date, id: :project_start_date, placeholder: "January 16, 2018", class:"form-control" %>
   </div>
 
   <div class="field form-group">
     <%= form.label :end_date %>
-    <%= form.text_field :end_date, id: :project_end_date, class:"form-control" %>
+    <%= form.text_field :end_date, id: :project_end_date, placeholder: "February 16, 2018", class:"form-control" %>
   </div>
 
   <div class="field form-group">
@@ -32,7 +32,7 @@
     <%= form.select :industry, options_for_select([['Healthcare', 'Healthcare'] , ['Private Equity', 'Private Equity'] ,['Technology', 'Technology'] ,['Startup', 'Startup'] ,['Non-profit', 'Non-profit'], ['E-commerce', 'E-commerce'], ['Retail', 'Retail']], selected: @project.industry) %>
 
     <%= form.label :project_type, "Other"  %>
-    <%= form.text_field :project_type, id: :project_project_type, class:"form-control-industry" %>
+    <%= form.text_field :project_type, id: :project_project_type, placeholder: "Specify For Other", class:"form-control-industry" %>
   </div>
 
   <div class="skills-list">
@@ -52,7 +52,7 @@
 
   <div class="field form-group">
     <%= form.label "Required Skills for Project" %>
-    <%= form.text_field :key_skill, id: :project_key_skill, class:"form-control" %>
+    <%= form.text_field :key_skill, id: :project_key_skill, placeholder: "Developer", class:"form-control" %>
   </div>
 
   <center>
