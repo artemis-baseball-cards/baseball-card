@@ -15,6 +15,5 @@ class CreateSkillsEmployeeJoinTable < ActiveRecord::Migration[5.1]
       t.column :skill_id, :integer
       t.column :project_id, :integer
     end
-
   end
 end
