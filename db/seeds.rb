@@ -42,7 +42,8 @@ employees = [
    'Amsterdamn',
    '{E-Commerce, Non-Profit, Technology, Healthcare}',
    'No',
-   '{Engagment Manager, Analyst}'],
+   '{Engagment Manager, Analyst}',
+   'No'],
   ['Linda Luu',
    'Intern',
    'Try your best and make it count',
@@ -71,7 +72,8 @@ employees = [
    'Maple Valley',
    '{E-Commerce, Retail}',
    'Yes',
-   '{Intern}'],
+   '{Intern}',
+   'Yes'],
   ['L. Devin MacKrell "MacK"',
    'Intern',
    'Learn every day.',
@@ -101,7 +103,8 @@ employees = [
    'Seattle',
    '{Private Equity, Technology, Retail}',
    'Yes',
-   '{Intern}'],
+   '{Intern}',
+   'Yes'],
   ['Megan Olson',
    'Intern',
    'Strive for improvement, not perfection',
@@ -131,7 +134,8 @@ employees = [
    'Auburn',
    '{Non-Profit, Retail}',
    'No',
-   '{Intern}'],
+   '{Intern}',
+   'No'],
   ['Erik Zakrzewski',
    'Intern',
    'Anything can be worked out.',
@@ -161,7 +165,8 @@ employees = [
    'Renton',
    '{Healthcare, Retail}',
    'Yes',
-   '{Intern}'
+   '{Intern}',
+   'Yes'
   ]
 ]
 
@@ -194,7 +199,8 @@ employees.each do |employees_name,
   employees_city,
   employees_industry_experience,
   employees_willing_to_travel,
-  employees_project_roles
+  employees_project_roles,
+  employees_remote
   |
   Employee.create(name: employees_name,
     position: employees_position,
@@ -225,7 +231,8 @@ employees.each do |employees_name,
     city: employees_city,
     industry_experience: employees_industry_experience,
     willing_to_travel: employees_willing_to_travel,
-    project_roles: employees_project_roles
+    project_roles: employees_project_roles,
+    project_remote: employees_remote
   )
 end
 
