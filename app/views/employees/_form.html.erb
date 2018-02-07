@@ -167,12 +167,14 @@
     <% end %>
   </ul>
 
-  <ul class="skills-list">
-    <%= form.label "Areas to Develop (select three)" %>
-    <% ["Critical thinking", "Gives effective feedback", "Conducts secondary research given key topics"].each do |area| %>
-      <li><%= check_box_tag "employee[areas_to_develop][]", area, false, id: "employee_areas_to_develop_#{area}" %> <%= area %></li>
-    <% end %>
-  </ul>
+  <div class="field form-group">
+    <%= form.label "Areas to Develop (choose three from below)" %>
+    <%= form.text_field  :areas_to_develop, id: :employee_areas_to_develop,  class: "form-control"  %>
+  </div>
+
+  <div class="list">
+    <%= render 'atd' %>
+  </div>
 
   <div class="field form-group">
     <%= form.label :objective_setting %>
