@@ -4,13 +4,37 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+Skill.destroy_all
 Employee.destroy_all
 # Other.destroy_all
 # Project.destroy_all
 User.destroy_all
-Skill.destroy_all
 
+skills = [
+  'Flexible',
+  'Team Player',
+  'Adaptable',
+  'Accountable',
+  'Problem solver',
+  'Critical thinker',
+  'Problem Definition Writer',
+  'Experimenter',
+  'Interview designer',
+  'Interview conductor',
+  'Survey designer',
+  'Interview/Survey/Research synthesizer',
+  'Client ready material producer',
+  'Facilitator',
+  'Presenter',
+  'Tool developer',
+  'Process improver',
+  'Team leader',
+  'Client facing'
+]
 
+skills.each do |skill_description|
+  Skill.create(description: skill_description)
+end
 
 employees = [
   ['Jordan Clark',
@@ -36,7 +60,6 @@ employees = [
    'I appreciate it when both compliments and constructive feedback on given in a timely manner so I can think about the specific activity or communication and learn what to keep doing or what I can do differently in the future.',
    'I am reading a lot of books, listening to business podcasts, working on personal hobbies, and actively learning from our work and playbook.',
    DateTime.new(2017,8,1),
-   '{Proactive, Flexible, High emotional intelligence}',
    'Netherlands',
    'North Holland',
    'Amsterdamn',
@@ -67,7 +90,6 @@ employees = [
    'I value all feedback whether positive or negative. Everything is a learning experience and I am always looking for ways to excel. In constructive criticism I also would appreciate if noted on ways I can do better.',
    'I am always looking for educational sources and taking classes on Udemy on subjects I do not feel comfortable with to better my skills. I am a strong believer that we only do not like to do something because we do not know how so I am continuing to learn.',
    'DateTime.new(2018,1,22)',
-   '{Prepared, Needs little direction, Takes ownership}',
    'USA',
    'WA',
    'Maple Valley',
@@ -128,7 +150,6 @@ employees = [
    'I am a big advocate for feedback - from peers, manager-roles, and everything in between. I think it is the best way the improve in any field. I appreciate it when feedback is given in a conversational setting - allowing myself to ask questions if someting is not clear and to establish a clear goal on how to improve.',
    'I am actively trying to look have a new perspective when approaching every situation. I am trying to always assume the best first.',
    'DateTime.new(2018,1,22)',
-   '{Client-facing, Detail oriented, Sees the big picture}',
    'USA',
    'WA',
    'Auburn',
@@ -159,7 +180,6 @@ employees = [
    'Feedback is welcome and most appreciated paired with possible solutions if applicable. I am not great at plenty of things and can only get better if taught the right way.',
    'Taking Unity (game dev software) tutorials in my free time and attempting to start a project to bring VR experiences to children in a local hospital.',
    'DateTime.new(2018,1,22)',
-   '{Proactive, Flexible, High emotional intelligence}',
    'USA',
    'WA',
    'Renton',
@@ -193,7 +213,6 @@ employees.each do |employees_name,
   employees_receive_feedback,
   employees_development,
   employees_start_date,
-  employees_bbcard_skills,
   employees_country,
   employees_state,
   employees_city,
@@ -225,7 +244,6 @@ employees.each do |employees_name,
     receive_feedback: employees_receive_feedback,
     development: employees_development,
     start_date: employees_start_date,
-    bbcard_skills: employees_bbcard_skills,
     country: employees_country,
     state: employees_state,
     city: employees_city,
@@ -234,32 +252,6 @@ employees.each do |employees_name,
     project_roles: employees_project_roles,
     remote: employees_remote
   )
-end
-
-skills = [
-  'Flexible',
-  'Team Player',
-  'Adaptable',
-  'Accountable',
-  'Problem solver',
-  'Critical thinker',
-  'Problem Definition Writer',
-  'Experimenter',
-  'Interview designer',
-  'Interview conductor',
-  'Survey designer',
-  'Interview/Survey/Research synthesizer',
-  'Client ready material producer',
-  'Facilitator',
-  'Presenter',
-  'Tool developer',
-  'Process improver',
-  'Team leader',
-  'Client facing'
-]
-
-skills.each do |skill_description|
-  Skill.create(description: skill_description)
 end
 
 User.create! do |u|
