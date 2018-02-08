@@ -4,7 +4,7 @@
       <% @employees.each do |card| %>
         <div class="mini-card">
           <div class="mini-top container">
-            <h5><%= link_to card.name, employee_path(card.id) %></h5>
+            <h5><%= link_to card.name, employee_path(card.id), class: "employee-name" %></h5>
             <h6> <%= card.position %> </h6>
           </div>
           <div class="mini-bottom container">
