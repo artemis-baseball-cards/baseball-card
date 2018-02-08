@@ -169,19 +169,6 @@
     <% end %>
   </div>
 
-
-
-
-
-
-
-
-    <%= form.label "Skills (select all that apply)" %>
-    <% ["Critical thinking", "Gives effective feedback", "Conducts secondary research given key topics"].each do |skill| %>
-      <li><%= check_box_tag "employee[bbcard_skills][]", skill, false, id: "employee_bbcard_skills_#{skill}" %> <%= skill %></li>
-    <% end %>
-  </ul>
-
   <div class="field form-group">
     <%= form.label "Areas to Develop (choose three from below)" %>
     <%= form.text_field  :areas_to_develop, id: :employee_areas_to_develop, placeholder: "Flexibility, being a team player, adaptability",  class: "form-control"  %>
