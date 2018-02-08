@@ -20,8 +20,12 @@
       <% end %>
     </div>
     <div class="col-md-6 project-show-right">
-      <h5>Required Skill:</h5>
-      <p><%= @project.key_skill %></p>
+      <h5>Required Skills:</h5>
+      <% if @project.skills %>
+        <% @project.skills.each do |skill| %>
+          <p><%= skill.description %></p>
+        <% end %>
+      <% end %>
 
       <h5>Industry:</h5>
       <p><%= @project.industry %></p>
