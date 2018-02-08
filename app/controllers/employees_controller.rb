@@ -19,18 +19,21 @@ class EmployeesController < ApplicationController
     @employee = Employee.find(params[:id])
     @id = @employee.id
     @projects = Project.all
+    @skills = Skill.all
   end
 
   def flip
     @employee = Employee.find(params[:id])
     @others = Other.all
     @projects = Project.all
+    @skills = Skill.all
     @data = Employee.get_data
     render :flip
   end
 
   def new
     @projects = Project.all
+    @skills = Skill.all
     @employee = Employee.new
     @atd_data = Employee.get_atd
   end
@@ -49,6 +52,7 @@ class EmployeesController < ApplicationController
 
   def edit
     @projects = Project.all
+    @skills = Skill.all
     @employee = Employee.find(params[:id])
   end
 
@@ -82,7 +86,7 @@ class EmployeesController < ApplicationController
   end
 
   def employee_params
-    params.require(:employee).permit(:name, :position, :start_date, :life_quote, :quote, :motto, :strength, :myers_briggs, :birkman, :vision, :short_term_goal, :long_term_goal,  :objective_setting, :personal_goal, :mission, :expectation, :awesome, :need, :receive_feedback, :development, :personal_goal_two, :personal_goal_three, :personal_goal_four, :country, :state, :city, :willing_to_travel, :areas_to_develop, :remote, :industry_experience => [], :project_ids => [], :bbcard_skills => [], :project_roles => [])
+    params.require(:employee).permit(:name, :position, :start_date, :life_quote, :quote, :motto, :strength, :myers_briggs, :birkman, :vision, :short_term_goal, :long_term_goal,  :objective_setting, :personal_goal, :mission, :expectation, :awesome, :need, :receive_feedback, :development, :personal_goal_two, :personal_goal_three, :personal_goal_four, :country, :state, :city, :willing_to_travel, :areas_to_develop, :remote, :industry_experience => [], :project_ids => [], :skill_ids => [], :project_roles => [])
   end
 
 end
