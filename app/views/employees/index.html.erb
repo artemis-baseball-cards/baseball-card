@@ -2,6 +2,30 @@
   <p id="notice"><%= notice %></p>
   <%= link_to 'New Employee', new_employee_path %>
 
+<div class="well">
+  <%= form_for_filterrific @filterrific do |f| %>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group chardin_box" data-intro="Search by name" data-position="top">
+        <label>Search</label>
+        <input class="filterrific-periodically-observed form-control" type="text" name="filterrific[search_query]" id="filterrific_search_query">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group chardin_box" data-intro="Filter by skill" data-position="top">
+        <label>Skills</label>
+        <% @skills.each do |skill| %>
+          <input class="filterrific-periodically-observed form-control" type="checkbox" name="filterrific[search_query]" id="filterrific_search_query"> <%= skill.description %> </input>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
   <div class="employee">
       <div><%= render 'employee'%></div>
   </div>
