@@ -14,7 +14,7 @@
 <div class="container form-container">
   <div class="field form-group">
     <%= form.label :name %>
-    <%= form.text_field  :name, id: :employee_name,  class: "form-control" %>
+    <%= form.text_field  :name, id: :employee_name, placeholder: "Jane Doe",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
@@ -24,37 +24,37 @@
 
   <div class="field form-group">
     <%= form.label :start_date %>
-    <%= form.text_field  :start_date, id: :employee_start_date,  class: "form-control" %>
+    <%= form.text_field  :start_date, id: :employee_start_date, placeholder: "01/16/2018",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
     <%= form.label :life_quote %>
-    <%= form.text_field  :life_quote, id: :employee_life_quote,  class: "form-control" %>
+    <%= form.text_field  :life_quote, id: :employee_life_quote, placeholder: "Believe you can and you're halfway there. - T. Roosevelt",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
     <%= form.label :quote %>
-    <%= form.text_field  :quote, id: :employee_quote,  class: "form-control" %>
+    <%= form.text_field  :quote, id: :employee_quote, placeholder: "Every failure is a step to success. - William Whewell",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
     <%= form.label :motto %>
-    <%= form.text_field  :motto, id: :employee_motto,  class: "form-control" %>
+    <%= form.text_field  :motto, id: :employee_motto, placeholder: "Happiness depends upon ourselves. -Aristotle",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
     <%= form.label "Location (country)" %>
-    <%= form.text_field  :country, id: :employee_country,  class: "form-control" %>
+    <%= form.text_field  :country, id: :employee_country, placeholder: "United States",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
     <%= form.label "Location (state)" %>
-    <%= form.text_field  :state, id: :employee_state,  class: "form-control" %>
+    <%= form.text_field  :state, id: :employee_state, placeholder: "Washington",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
     <%= form.label "Location (city)" %>
-    <%= form.text_field  :city, id: :employee_city,  class: "form-control" %>
+    <%= form.text_field  :city, id: :employee_city, placeholder: "Seattle",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
@@ -101,63 +101,63 @@
   <div class="field form-group">
 
     <%= form.label :myers_briggs, "Myers Briggs" %>
-    <%= form.text_area  :myers_briggs, id: :employee_myers_briggs,  class: "form-control" %>
+    <%= form.text_area  :myers_briggs, id: :employee_myers_briggs, placeholder: "ESFJ- Extraversion, Sensing, Feeling, Judgment",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
     <%= form.label :strength, "StrengthsFinder Top 5" %>
-    <%= form.text_field  :strength, id: :employee_strength,  class: "form-control" %>
+    <%= form.text_field  :strength, id: :employee_strength, placeholder: "Futuristic, Connectedness, Responsibility, Strategic, Discipline",  class: "form-control" %>
   </div>
 
 
   <div class="field form-group">
     <%= form.label :birkman %>
-    <%= form.text_area  :birkman, id: :employee_birkman,  class: "form-control" %>
+    <%= form.text_area  :birkman, id: :employee_birkman, placeholder: "Interests - Blue (Thinker), Usual Behavior - Blue (Thinker), Needs - Communicator (Green), Stress Behavior - Communicator (Green)",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
     <%= form.label :mission %>
-    <%= form.text_area  :mission, id: :employee_mission,  class: "form-control" %>
+    <%= form.text_area  :mission, id: :employee_mission, placeholder: "Stay focused on the mission",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
     <%= form.label :vision %>
-    <%= form.text_field  :vision, id: :employee_vision,  class: "form-control" %>
+    <%= form.text_field  :vision, id: :employee_vision, placeholder: "A strong team can take any crazy vision and turn it into reality",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
     <%= form.label "Artemis Role" %>
-    <%= form.text_area  :expectation, id: :employee_expectation,  class: "form-control" %>
+    <%= form.text_area  :expectation, id: :employee_expectation, placeholder: "Intern",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
     <%= form.label :short_term_goal %>
-    <%= form.text_field :short_term_goal, id: :employee_short_term_goal,  class: "form-control" %>
+    <%= form.text_field :short_term_goal, id: :employee_short_term_goal, placeholder: "Complete a project",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
     <%= form.label :long_term_goal %>
-    <%= form.text_field  :long_term_goal, id: :employee_long_term_goal,  class: "form-control"  %>
+    <%= form.text_field  :long_term_goal, id: :employee_long_term_goal, placeholder: "To grow as a software developer, forging positive relationships with both my clients and collaborators.",  class: "form-control"  %>
   </div>
 
   <div class="field form-group">
     <%= form.label "Awesome Attributes" %>
-    <%= form.text_area  :awesome, id: :employee_awesome,  class: "form-control"  %>
+    <%= form.text_area  :awesome, id: :employee_awesome, placeholder: "Excellent communication skills and detail oriented",  class: "form-control"  %>
   </div>
 
   <div class="field form-group">
     <%= form.label "Need from others" %>
-    <%= form.text_field  :need, id: :employee_need,  class: "form-control"  %>
+    <%= form.text_field  :need, id: :employee_need, placeholder: "I need positive reinforcement on things I am doing well and constructive feedback on things I can improve on.", class: "form-control"  %>
   </div>
 
   <div class="field form-group">
     <%= form.label "Prefer feedback" %>
-    <%= form.text_area  :receive_feedback, id: :employee_receive_feedback,  class: "form-control"  %>
+    <%= form.text_area  :receive_feedback, id: :employee_receive_feedback, placeholder: "I appreciate it when feedback is given in a conversational setting",  class: "form-control"  %>
   </div>
 
   <div class="field form-group">
     <%= form.label "Personal growth" %>
-    <%= form.text_area  :development, id: :employee_development,  class: "form-control"  %>
+    <%= form.text_area  :development, id: :employee_development, placeholder: "Striving for work/life balance",  class: "form-control"  %>
   </div>
 
   <ul class="skills-list">
@@ -169,7 +169,7 @@
 
   <div class="field form-group">
     <%= form.label "Areas to Develop (choose three from below)" %>
-    <%= form.text_field  :areas_to_develop, id: :employee_areas_to_develop,  class: "form-control"  %>
+    <%= form.text_field  :areas_to_develop, id: :employee_areas_to_develop, placeholder: "Flexibility, being a team player, adaptability",  class: "form-control"  %>
   </div>
 
   <div class="list">
@@ -178,22 +178,22 @@
 
   <div class="field form-group">
     <%= form.label :objective_setting %>
-    <%= form.text_field  :objective_setting, id: :employee_objective_setting,  class: "form-control"  %>
+    <%= form.text_field  :objective_setting, id: :employee_objective_setting, placeholder: "Supporting and contributing to my internship team.",  class: "form-control"  %>
   </div>
 
   <div class="field form-group">
     <%= form.label "Personal goal one" %>
-    <%= form.text_field  :personal_goal, id: :employee_personal_goal,  class: "form-control"  %>
+    <%= form.text_field  :personal_goal, id: :employee_personal_goal, placeholder: "Read daily",  class: "form-control"  %>
   </div>
 
   <div class="field form-group">
     <%= form.label :personal_goal_two %>
-    <%= form.text_field  :personal_goal_two, id: :employee_personal_goal_two,  class: "form-control"  %>
+    <%= form.text_field  :personal_goal_two, id: :employee_personal_goal_two, placeholder: "Work out at least three times a week",  class: "form-control"  %>
   </div>
 
   <div class="field form-group">
     <%= form.label :personal_goal_three %>
-    <%= form.text_field :personal_goal_three, id: :employee_personal_goal_three,  class: "form-control"  %>
+    <%= form.text_field :personal_goal_three, id: :employee_personal_goal_three, placeholder: "Pay it forward everyday",  class: "form-control"  %>
   </div>
 
   <div class="actions">
