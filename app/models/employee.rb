@@ -32,7 +32,8 @@ class Employee < ApplicationRecord
      :with_country_id,
      :with_created_at_gte,
      :with_skill,
-     :with_project
+     :with_project,
+     :with_project_role
    ]
  )
 
@@ -74,6 +75,10 @@ scope :sorted_by, lambda { |sort_option|
 
 scope :with_project, lambda { |project_ids|
  where(:project_id => [*project_ids])
+}
+
+scope :with_project_role, lambda { |project_role|
+  where(:project_role => [*employee.project_role])
 }
 
   def self.get_data
