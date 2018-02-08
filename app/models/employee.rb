@@ -31,6 +31,17 @@ class Employee < ApplicationRecord
     data = worksheet.rows.each { |row| puts row.join(" | ") }
   end
 
+  def self.find_score(skill, data, employee)
+    total = []
+    data.each do |inner_array|
+      if inner_array[2] == employee.name
+        value = inner_array[1].split(",").map(&:strip).count(skill)
+        total.push(value)
+      end
+    end
+    total.sum
+  end
+
   def self.get_atd
     session = GoogleDrive::Session.from_service_account_key("client_secret.json")
     spreadsheet = session.spreadsheet_by_title("Artemis revised baseball cards for epicodus team to build.xlsx")
