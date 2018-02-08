@@ -2,7 +2,17 @@ class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
 
   def index
-    @employees = Employee.all
+    @filterrific = initialize_filterrific(
+      Employee,
+      params[:filterrific]
+    ) or return
+    @employees = @filterrific.find.page(params[:page])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+    @skills = Skill.all
   end
 
   def show
