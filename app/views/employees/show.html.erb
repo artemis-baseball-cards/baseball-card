@@ -92,14 +92,14 @@
         <h5>Personal growth:</h5>
         <p><%= @employee.development %></p>
 
-        <h7>AREAS I WANT TO DEVELOP</h7>
-
         <h5>Skills:</h5>
-        <% if @employee.bbcard_skills %>
-          <% @employee.bbcard_skills.each do |skill| %>
-            <p> <%= skill %> </p>
-          <% end %>
+        <% if @employee.skills %>
+        <% @employee.skills.each do |skill| %>
+        <p> <%= skill.description %> </p>
         <% end %>
+        <% end %>
+
+        <h7>AREAS I WANT TO DEVELOP</h7>
 
         <h5>Areas to develop:</h5>
         <%= @employee.areas_to_develop %> </p>
