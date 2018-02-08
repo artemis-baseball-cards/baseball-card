@@ -38,4 +38,4 @@ end
 
 def skill_params
   params.require(:skill).permit(:description)
-end 
+end
