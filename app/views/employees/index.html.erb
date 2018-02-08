@@ -17,7 +17,7 @@
       <div class="form-group chardin_box" data-intro="Filter by skill" data-position="top">
         <label>Skills</label>
         <% @skills.each do |skill| %>
-          <input class="filterrific-periodically-observed form-control" type="checkbox" name="filterrific[search_query]" id="filterrific_search_query"> <%= skill.description %> </input>
+          <input class="filterrific-periodically-observed form-control" type="checkbox" name="filterrific[with_skill]" id="filterrific_with_skill"> <%= skill.description %> </input>
         <% end %>
       </div>
     </div>
