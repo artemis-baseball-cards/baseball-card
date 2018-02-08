@@ -4,5 +4,5 @@ rvm:
 
 script:
   - bundle install
-  - rake db:reset
-  - rake db:seed
+  - bundle exec rake db:reset
+  - bundle exec rake db:seed

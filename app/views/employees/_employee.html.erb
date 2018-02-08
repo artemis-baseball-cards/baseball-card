@@ -9,7 +9,7 @@
           </div>
           <div class="mini-bottom container">
             <h6>
-              <% card.industry_experience.each do |ie| %>
+              <% card.industry_experience && card.industry_experience.each do |ie| %>
                 <%= ie %>,
               <% end %>
             </h6>
