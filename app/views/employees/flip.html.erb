@@ -34,43 +34,38 @@
 
       <div class="col-md-9 content">
         <center><h4>360 Feedback</h4>
-        <%= pie_chart [
-          ["Flexible", 6],
-          ["Team Player", 8],
-          ["Adaptable", 6],
-          ["Problem Solver", 9],
-          ["Critical Thinker", 8],
-          ["Adaptable", 10],
-          ["Problem Definition Writer", 7]],
-          donut: true
-        %>
         <%= column_chart [
-          ["Flexible", 6],
-          ["Team Player", 8],
-          ["Adaptable", 6],
-          ["Problem Solver", 9],
-          ["Critical Thinker", 8],
-          ["Adaptable", 10],
-          ["Problem Definition Writer", 7],
-          ["Experimenter", 9],
-          ["Interview designer", 7],
-          ["Interview conductor", 6],
-          ["Survey designer", 7],
-          ["Interview/Survey/Research synthesizer", 4],
-          ["Client Ready Producer", 9],
-          ["Tool Developer", 5],
-          ["Process Improver", 9],
-          ["Team Leader", 10]
+          ["Critical Thinker", @critical_thinking ],
+          ["Strong Communicator", @strong_communicator],
+          ["Proactive", @proactive],
+          ["Flexible", @flexible],
+          ["Positive Thinker", @positive_thinker],
+          ["High Emotional Intelligence", @emot_intelligence],
+          ["Goes above and beyond", @above_beyond],
+          ["Prepared", @prepared],
+          ["Needs little direction", @little_direction],
+          ["Takes owernship", @ownership],
+          ["Survey designer", @survey_designer],
+          ["Leader", @leader],
+          ["Coach", @coach],
+          ["Organized", @organized],
+          ["Strong Presenter", @presenter],
+          ["High quality deliverables", @quality_deliverables],
+          ["Client-facing", @client_facing],
+          ["Detail oriented", @detail_oriented],
+          ["Sees the big picture", @big_picture],
+          ["Process oriented", @process_oriented],
+          ["Receptive to feedback", @receptive_feedback],
+          ["Thoughtful feedback delivery", @thoughtful_feedback]
           ], min: 0, max: 10,
-        donut: true, width: "fill", height: "500px" %>
+        donut: true, width: "1000px", height: "500px" %>
         <div class="container">
-          <p>Words used to describe <%= @employee.name %> </p></center>
+          <p>Client insight for <strong><%= @employee.name %></strong> </p></center>
           <hr>
           <h5>What should this person keep doing?</h5>
           <% @data.each do |smaller_array| %>
             <% if smaller_array[2] ==  @employee.name %>
               <div class="container one-survey">
-
                 <% smaller_array[3].split(",").each do |skill| %>
                   <p> <%= skill %> </p><br>
                 <% end %>
@@ -105,3 +100,4 @@
       </div>
     </div>
   </div>
+</div>

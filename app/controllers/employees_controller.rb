@@ -16,6 +16,28 @@ class EmployeesController < ApplicationController
     @others = Other.all
     @projects = Project.all
     @data = Employee.get_data
+    @critical_thinking = Employee.find_score("Critical Thinker", @data, @employee)
+    @strong_communicator = Employee.find_score("Strong Communicator", @data, @employee)
+    @proactive = Employee.find_score("Proactive", @data, @employee)
+    @flexible = Employee.find_score("Flexible", @data, @employee)
+    @positive_thinker = Employee.find_score("Positive Thinker", @data, @employee)
+    @emot_intelligence = Employee.find_score("High Emotional Intelligence", @data, @employee)
+    @above_beyond = Employee.find_score("Goes above and beyond", @data, @employee)
+    @prepared = Employee.find_score("Prepared", @data, @employee)
+    @little_direction = Employee.find_score("Needs little direction", @data, @employee)
+    @ownership = Employee.find_score("Takes owernship", @data, @employee)
+    @survey_designer = Employee.find_score("Survey designer", @data, @employee)
+    @leader = Employee.find_score("Leader", @data, @employee)
+    @coach = Employee.find_score("Coach", @data, @employee)
+    @organized = Employee.find_score("Organized", @data, @employee)
+    @presenter = Employee.find_score("Strong Presenter", @data, @employee)
+    @quality_deliverables = Employee.find_score("High quality deliverables", @data, @employee)
+    @client_facing = Employee.find_score("Client-facing", @data, @employee)
+    @detail_oriented = Employee.find_score("Detail oriented", @data, @employee)
+    @big_picture = Employee.find_score("Sees the big picture", @data, @employee)
+    @process_oriented = Employee.find_score("Process oriented", @data, @employee)
+    @receptive_feedback = Employee.find_score("Receptive to feedback", @data, @employee)
+    @thoughtful_feedback = Employee.find_score("Thoughtful feedback delivery", @data, @employee)
     render :flip
   end
 
