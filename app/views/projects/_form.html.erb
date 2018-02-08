@@ -50,10 +50,14 @@
     <% end %>
   </div><br>
 
-  <div class="field form-group">
-    <%= form.label "Required Skills for Project" %>
-    <%= form.text_field :key_skill, id: :project_key_skill, placeholder: "Developer", class:"form-control" %>
-  </div>
+  <ul class="skills-list">
+    <h6 class="category">Skills:</h6>
+      <%= collection_check_boxes(:project, :skill_ids, @skills, :id, :description, {} ) do |t| %>
+      <h6>
+        <%= t.label { t.check_box + t.object.description } %>
+      </h6>
+    <% end %>
+  </ul>
 
   <center>
     <h4>Assign Employees:</h4>
