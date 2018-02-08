@@ -10,7 +10,31 @@ Employee.destroy_all
 User.destroy_all
 Skill.destroy_all
 
+skills = [
+  'Flexible',
+  'Team Player',
+  'Adaptable',
+  'Accountable',
+  'Problem solver',
+  'Critical thinker',
+  'Problem Definition Writer',
+  'Experimenter',
+  'Interview designer',
+  'Interview conductor',
+  'Survey designer',
+  'Interview/Survey/Research synthesizer',
+  'Client ready material producer',
+  'Facilitator',
+  'Presenter',
+  'Tool developer',
+  'Process improver',
+  'Team leader',
+  'Client facing'
+]
 
+skills.each do |skill_description|
+  Skill.create(description: skill_description)
+end
 
 employees = [
   ['Jordan Clark',
@@ -234,32 +258,6 @@ employees.each do |employees_name,
     project_roles: employees_project_roles,
     remote: employees_remote
   )
-end
-
-skills = [
-  'Flexible',
-  'Team Player',
-  'Adaptable',
-  'Accountable',
-  'Problem solver',
-  'Critical thinker',
-  'Problem Definition Writer',
-  'Experimenter',
-  'Interview designer',
-  'Interview conductor',
-  'Survey designer',
-  'Interview/Survey/Research synthesizer',
-  'Client ready material producer',
-  'Facilitator',
-  'Presenter',
-  'Tool developer',
-  'Process improver',
-  'Team leader',
-  'Client facing'
-]
-
-skills.each do |skill_description|
-  Skill.create(description: skill_description)
 end
 
 User.create! do |u|
