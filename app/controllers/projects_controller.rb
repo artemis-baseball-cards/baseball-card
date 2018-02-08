@@ -8,11 +8,13 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @employees = Employee.all
+    @skills = Skill.all
   end
 
   def new
     @project = Project.new
     @employees = Employee.all
+    @skills = Skill.all
     @interns = Employee.intern
     @analysts = Employee.analyst
     @associates = Employee.associate
@@ -33,6 +35,7 @@ class ProjectsController < ApplicationController
 
   def edit
     @employees = Employee.all
+    @skills = Skill.all
     @project = Project.find(params[:id])
     @interns = Employee.intern
     @analysts = Employee.analyst
