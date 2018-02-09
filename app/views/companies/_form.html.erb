@@ -1,21 +1,22 @@
 <%= render 'layouts/errors', :object => @company %>
-
-<%= form_for [@company] do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control"%>
-  </div>
-  <div class="form-group">
-    <%= f.label :company_goals %>
-    <%= f.text_field :company_goals, class: "form-control"%>
-  </div>
-  <div class="form-group">
-    <%= f.label :personal_dev_goals %>
-    <%= f.text_field :personal_dev_goals, class: "form-control"%>
-  </div>
-  <div class="form-group">
-    <%= f.label :future_work_opportunities %>
-    <%= f.text_field :future_work_opportunities, class: "form-control"%>
-  </div>
-  <%= f.submit class: "btn" %>
-<% end %>
+<div class="container all-companies">
+  <%= form_for [@company] do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: "Name", class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :company_goals %>
+      <%= f.text_field :company_goals, placeholder: "Goals", class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :personal_dev_goals %>
+      <%= f.text_field :personal_dev_goals, placeholder: "Personal Goals", class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :future_work_opportunities %>
+      <%= f.text_field :future_work_opportunities, placeholder: "Future opportunities", class: "form-control"%>
+    </div>
+    <%= f.submit class: 'btn btn-secondary' %>
+  <% end %>
+</div>
