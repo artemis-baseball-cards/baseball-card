@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 Skill.destroy_all
+Role.destroy_all
 Employee.destroy_all
 # Other.destroy_all
 # Project.destroy_all
@@ -34,6 +35,20 @@ skills = [
 
 skills.each do |skill_description|
   Skill.create(description: skill_description)
+end
+
+roles = [
+  'Intern',
+  'Analyst',
+  'Associate',
+  'Engagement Manager',
+  'Principal',
+  'Partner',
+  'Subject Matter Expert'
+]
+
+roles.each do |role_name|
+  Role.create(name: role_name)
 end
 
 employees = [
