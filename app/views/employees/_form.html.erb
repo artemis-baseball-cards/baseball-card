@@ -160,14 +160,19 @@
     <%= form.text_area  :development, id: :employee_development, placeholder: "Striving for work/life balance",  class: "form-control"  %>
   </div>
 
-  <ul class="skills-list">
-    <h6 class="category">Skills:</h6>
-      <%= collection_check_boxes(:employee, :skill_ids, @skills, :id, :description, {} ) do |x| %>
-      <h6>
-        <%= x.label { x.check_box + x.object.description } %>
-      </h6>
-    <% end %>
+  <div class="skills">
+    <div class="col-md-12">
+      <ul class="skills-list">
+        <h6 class="category">Skills:</h6>
+          <%= collection_check_boxes(:employee, :skill_ids, @skills, :id, :description, {} ) do |x| %>
+          <h6>
+            <%= x.label { x.check_box + x.object.description } %>
+          </h6>
+        <% end %>
+    </div>
   </div>
+
+
 
   <div class="field form-group">
     <%= form.label "Areas to Develop (choose three from below)" %>
