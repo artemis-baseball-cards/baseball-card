@@ -35,23 +35,17 @@
     <%= form.text_field :project_type, id: :project_project_type, placeholder: "Specify For Other", class:"form-control-industry" %>
   </div>
 
-  <div class="skills-list">
-    <%= form.label "Required Project Roles" %><br>
-    <% ["Intern", "Analyst", "Associate", "Engagement Manager", "Principal", "Partner", "Subject Matter Expert"].each do |role| %>
-      <% if @project.created_at == nil %>
-        <%= check_box_tag "project[role][]", role, false, id: "project_role#{role}"%> <%= role %>
-      <% else %>
-        <% if @project.role.include?(role) %>
-          <%= check_box_tag "project[role][]", role, true, id: "project_role#{role}"%> <%= role %>
-        <% else %>
-          <%= check_box_tag "project[role][]", role, false, id: "project_role#{role}"%> <%= role %>
-        <% end %>
-      <% end %>
+  <ul class="skills-list">
+    <h6 class="category">Project Roles Needed:</h6>
+      <%= collection_check_boxes(:project, :role_ids, @roles, :id, :name, {} ) do |r| %>
+      <h6>
+        <%= r.label { r.check_box + r.object.name } %>
+      </h6>
     <% end %>
-  </div><br>
+  </ul>
 
   <ul class="skills-list">
-    <h6 class="category">Skills:</h6>
+    <h6 class="category">Desired Skills:</h6>
       <%= collection_check_boxes(:project, :skill_ids, @skills, :id, :description, {} ) do |t| %>
       <h6>
         <%= t.label { t.check_box + t.object.description } %>
