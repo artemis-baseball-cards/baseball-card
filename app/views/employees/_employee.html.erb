@@ -14,9 +14,9 @@
               <% end %>
             </h6>
             <h6 class="mini-right">
-              <% if card.project_roles %>
-                <% card.project_roles.each do |role| %>
-                  <%= role %>,
+              <% if card.roles %>
+                <% card.roles.each do |role| %>
+                  <%= role.name %>,
                 <% end %>
               <% end %>
             </h6>
