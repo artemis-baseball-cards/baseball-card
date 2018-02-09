@@ -1,0 +1,11 @@
+<h1> <%= @company.name %> </h1>
+
+<li><%= link_to "Add Client", new_company_client_path(@company) %></li>
+
+<% if @company.clients.any? %>
+  <% @company.clients.each do |client|%>
+    <h4><%= client.name %></h4>
+  <% end %>
+<% else %>
+  <p>No Clients</p>
+<% end %>
