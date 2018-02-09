@@ -75,22 +75,17 @@
     <% end %>
   </div>
 
-  <div class="field form-group">
-    <%= form.label "Project Role" %><br>
-    <% ['Intern','Analyst', 'Associate', 'Engagement Manager', 'Partner', 'Principal'].each do |role| %>
-      <% if @employee.created_at == nil %>
-        <%= check_box_tag "employee[project_roles][]", role, false, id: "employee_project_roles_#{role}" %>
-        <%= role %>
-      <% else %>
-        <% if @employee.project_roles.include?(role) %>
-          <%= check_box_tag "employee[project_roles][]", role, true, id: "employee_project_roles_#{role}" %>
-          <%= role %>
-        <% else %>
-          <%= check_box_tag "employee[project_roles][]", role, false, id: "employee_project_roles_#{role}" %>
-          <%= role %>
+
+  <div class="roles">
+    <div class="col-md-12">
+      <ul class="roles-list">
+        <h6 class="category">Roles:</h6>
+          <%= collection_check_boxes(:employee, :role_ids, @roles, :id, :name, {} ) do |r| %>
+          <h6>
+            <%= r.label { r.check_box + r.object.name } %>
+          </h6>
         <% end %>
-      <% end %>
-    <% end %>
+    </div>
   </div>
 
   <div class="field form-group">

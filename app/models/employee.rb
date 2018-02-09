@@ -5,6 +5,7 @@ class Employee < ApplicationRecord
   include Filterable
   has_and_belongs_to_many :projects
   has_and_belongs_to_many :skills
+  has_and_belongs_to_many :roles
   has_many :others
   # scope :critical_thinking, -> { where("skills = ? ", ("{Critical thinking}"))}
   scope :intern, -> { where("project_roles = ? ", ('{Intern}'))}

@@ -13,9 +13,9 @@
       <h5>Project Type:</h5>
       <p><%= @project.project_type %></p>
       <h5>Required Project Roles:</h5>
-      <% if @project.role %>
-        <% @project.role.each do |role| %>
-          <p><%= role %> </p>
+      <% if @project.roles %>
+        <% @project.roles.each do |role| %>
+          <p><%= role.name %> </p>
         <% end %>
       <% end %>
     </div>

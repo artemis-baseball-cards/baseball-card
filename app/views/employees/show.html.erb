@@ -17,7 +17,7 @@
       <div class="float-left">
 
         <h7>ABOUT</h7>
-        
+
         <h5>Life quote:</h5>
         <p><%= @employee.life_quote %></p>
 
@@ -45,9 +45,9 @@
         <p><%= @employee.willing_to_travel %></p>
 
         <h5>Project Roles:</h5>
-        <% if @employee.project_roles %>
-          <% @employee.project_roles.each do |role| %>
-            <%= role %>
+        <% if @employee.roles %>
+          <% @employee.roles.each do |role| %>
+            <%= role.name %>
           <% end %>
         <% end %>
 
@@ -90,7 +90,7 @@
 
         <h5>Personal growth:</h5>
         <p><%= @employee.development %></p>
-        
+
         <h5>Skills:</h5>
         <% if @employee.skills %>
         <% @employee.skills.each do |skill| %>

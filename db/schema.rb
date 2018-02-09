@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180208225225) do
+ActiveRecord::Schema.define(version: 20180209185737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,11 @@ ActiveRecord::Schema.define(version: 20180208225225) do
     t.integer "project_id"
   end
 
+  create_table "employees_roles", force: :cascade do |t|
+    t.integer "employee_id"
+    t.integer "role_id"
+  end
+
   create_table "employees_skills", force: :cascade do |t|
     t.integer "skill_id"
     t.integer "employee_id"
@@ -88,9 +93,18 @@ ActiveRecord::Schema.define(version: 20180208225225) do
     t.string "city"
   end
 
+  create_table "projects_roles", force: :cascade do |t|
+    t.integer "role_id"
+    t.integer "project_id"
+  end
+
   create_table "projects_skills", force: :cascade do |t|
     t.integer "skill_id"
     t.integer "project_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "skills", force: :cascade do |t|
