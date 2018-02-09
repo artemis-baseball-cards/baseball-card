@@ -73,6 +73,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :start_date, :end_date, :project_type, :objective, :industry, :goals, :employee_ids => [], :role => [], :skill_ids => [], :role_ids => [])
+    params.require(:project).permit(:title, :start_date, :end_date, :project_type, :objective, :industry, :goals, :employee_ids => [], :skill_ids => [], :role_ids => [])
   end
 end
