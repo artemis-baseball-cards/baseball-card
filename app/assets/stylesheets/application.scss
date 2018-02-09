@@ -7,6 +7,21 @@
   font-family: 'Lato', sans-serif;
 }
 
+.skills{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 500px;
+  height: 500px;
+  overflow: scroll;
+  border: 2px solid black;
+  margin-bottom: 40px;
+  background-color: #dcdee2;
+}
+
 .employee-name a{
   color: black
 }
@@ -23,6 +38,7 @@
   overflow: scroll;
   border: 2px solid black;
   margin-bottom: 40px;
+  background-color: #dcdee2;
 }
 
 .area {
@@ -93,6 +109,12 @@
   background-color: #8da4c9;
   color: white;
   padding-bottom: 6px;
+  font-family: 'Merriweather', serif;
+
+}
+
+.employee-name {
+  font-family: 'Merriweather', serif;
 }
 
 .mini-bottom {
@@ -106,7 +128,7 @@
   text-align: right;
 }
 
-.blue-text {
+.blue-text{
   color: #355d88;
   font-family: 'Merriweather', serif;
 
