@@ -1,4 +1,4 @@
 class Company < ApplicationRecord
-  have_many :clients
-  have_many :projects
+  has_many :clients
+  has_many :projects
 end

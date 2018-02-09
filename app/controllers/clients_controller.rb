@@ -19,7 +19,7 @@ class ClientsController < ApplicationController
     @client = @company.clients.new(client_params)
     if @client.save
       flash[:notice] = "The Client has been saved!"
-      redirect_to clients_path
+      redirect_to company_path(@company)
     else
       render :new
     end
@@ -54,5 +54,5 @@ def set_client
 end
 
 def client_params
-  params.require(:client).permit(:name, :contact, :position, :meetings, :email, :formatting, :other)
+  params.require(:client).permit(:name, :contact, :position, :meetings, :emails, :formatting, :other)
 end
