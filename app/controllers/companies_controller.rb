@@ -2,38 +2,38 @@ class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
   def index
-    @roles = Role.all
+    @companies = Company.all
   end
 
   def show
-    @role = Role.find(params[:id])
+    @company = Company.find(params[:id])
   end
 
   def new
-    @role = Skill.new
+    @company = Company.new
   end
 
   def create
-    @role = Role.new(skill_params)
-    if @role.save
-      flash[:notice] = "The Role has been saved!"
-      redirect_to roles_path
+    @company = Company.new(company_params)
+    if @company.save
+      flash[:notice] = "The Company has been saved!"
+      redirect_to companies_path
     else
       render :new
     end
   end
 
   def destroy
-    @role = Role.find(params[:id])
-    @role.destroy
-    redirect_to roles_path
+    @company = Company.find(params[:id])
+    @company.destroy
+    redirect_to companies_path
   end
 end
 
-def set_role
-  @role = Role.find(params[:id])
+def set_company
+  @company = Company.find(params[:id])
 end
 
-def role_params
-  params.require(:role).permit(:name)
+def company_params
+  params.require(:company).permit(:name, :company_goals, :personal_dev_goals, :future_work_opportunities)
 end
