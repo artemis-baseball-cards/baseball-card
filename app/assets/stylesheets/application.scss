@@ -12,6 +12,21 @@
   width: 50%;
 }
 
+.company-container{
+  border-style: solid;
+  border-color: #4f565a;
+  padding: 3rem;
+  width: 50%;
+  background-color: #9db8d6;
+  font-family: 'Merriweather', serif;
+  overflow: scroll;
+  height: 550px;
+}
+
+.company-name {
+  color: black;
+}
+
 .skills{
   display: flex;
   flex-direction: row;
