@@ -46,7 +46,7 @@ class EmployeesController < ApplicationController
   def new
     @projects = Project.all
     @skills = Skill.all
-    @role = Role.all
+    @roles = Role.all
     @employee = Employee.new
     @atd_data = Employee.get_atd
   end
