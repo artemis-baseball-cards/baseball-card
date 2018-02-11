@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180209205449) do
+ActiveRecord::Schema.define(version: 20180211070717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,11 @@ ActiveRecord::Schema.define(version: 20180209205449) do
     t.boolean "remote"
   end
 
+  create_table "employees_industries", force: :cascade do |t|
+    t.integer "employee_id"
+    t.integer "industry_id"
+  end
+
   create_table "employees_projects", force: :cascade do |t|
     t.integer "employee_id"
     t.integer "project_id"
@@ -85,6 +90,15 @@ ActiveRecord::Schema.define(version: 20180209205449) do
   create_table "employees_skills", force: :cascade do |t|
     t.integer "skill_id"
     t.integer "employee_id"
+  end
+
+  create_table "industries", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "industries_projects", force: :cascade do |t|
+    t.integer "industry_id"
+    t.integer "project_id"
   end
 
   create_table "others", force: :cascade do |t|
