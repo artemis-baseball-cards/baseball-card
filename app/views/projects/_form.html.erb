@@ -35,14 +35,12 @@
     <%= form.text_field :project_type, id: :project_project_type, placeholder: "Specify For Other", class:"form-control-industry" %>
   </div>
 
-  <ul class="skills-list">
-    <h6 class="category">Project Roles Needed:</h6>
-      <%= collection_check_boxes(:project, :role_ids, @roles, :id, :name, {} ) do |r| %>
-      <h6>
-        <%= r.label { r.check_box + r.object.name } %>
-      </h6>
+  <h5>Project Roles:</h5>
+  <% if @employee.roles %>
+    <% @employee.roles.each do |role| %>
+      <%= role.name %>
     <% end %>
-  </ul>
+  <% end %>
 
   <ul class="skills-list">
     <h6 class="category">Desired Skills:</h6>

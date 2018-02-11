@@ -52,33 +52,6 @@ roles.each do |role_name|
   Role.create(name: role_name)
 end
 
-
-skills = [
-  'Flexible',
-  'Team Player',
-  'Adaptable',
-  'Accountable',
-  'Problem solver',
-  'Critical thinker',
-  'Problem Definition Writer',
-  'Experimenter',
-  'Interview designer',
-  'Interview conductor',
-  'Survey designer',
-  'Interview/Survey/Research synthesizer',
-  'Client ready material producer',
-  'Facilitator',
-  'Presenter',
-  'Tool developer',
-  'Process improver',
-  'Team leader',
-  'Client facing'
-]
-
-skills.each do |skill_description|
-  Skill.create(description: skill_description)
-end
-
 industries = [
   'Healthcare',
   'Private Equity',
