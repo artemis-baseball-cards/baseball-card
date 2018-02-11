@@ -28,7 +28,12 @@
         <p><%= @employee.motto %></p>
 
         <h5>Industry Experience:</h5>
-        <p><%= @employee.industry_experience %></p>
+        <% if @employee.industries %>
+          <% @employee.industries.each do |industry| %>
+            <%= industry.name %>
+          <% end %>
+        <% end %>
+        <br>
 
         <h7><u>MISSION & VISION</u></h7>
         <br>
@@ -37,6 +42,7 @@
 
         <h5>Vision:</h5>
         <p><%= @employee.vision %></p>
+        <br>
 
         <h5>Location:</h5>
         <p><%= @employee.city %>, <%= @employee.state %>, <%= @employee.country %></p>
@@ -67,6 +73,7 @@
 
         <h5>Birkman:</h5>
         <p><%= @employee.birkman %></p>
+        <br>
 
         <h7><u>CAREER GOALS & ASPIRATIONS</u></h7>
 
@@ -97,11 +104,10 @@
         <p> <%= skill.description %> </p>
         <% end %>
         <% end %>
+        <br>
 
-        <h7><u>AREAS I WANT TO DEVELOP</u></h7>
-
-        <h5>Areas to develop:</h5>
-        <%= @employee.areas_to_develop %> </p>
+        <h7><u>AREAS I WANT TO DEVELOP:</u></h7>
+        <p><%= @employee.areas_to_develop %> </p>
 
         <h7>OBJECTIVE SETTING:</h7>
         <p><%= @employee.objective_setting %></p>
