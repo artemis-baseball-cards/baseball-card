@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
     @skills = Skill.all
     @roles = Role.all
     @industries = Industry.all
+    @companies = Company.all
 
   end
 
@@ -20,6 +21,7 @@ class ProjectsController < ApplicationController
     @skills = Skill.all
     @roles = Role.all
     @industries = Industry.all
+    @companies = Company.all
     @interns = Employee.intern
     @analysts = Employee.analyst
     @associates = Employee.associate
@@ -34,6 +36,7 @@ class ProjectsController < ApplicationController
     @skills = Skill.all
     @roles = Role.all
     @industries = Industry.all
+    @companies = Company.all
     @interns = Employee.intern
     @analysts = Employee.analyst
     @associates = Employee.associate
@@ -53,6 +56,7 @@ class ProjectsController < ApplicationController
     @skills = Skill.all
     @roles = Role.all
     @industries = Industry.all
+    @companies = Company.all
     @project = Project.find(params[:id])
     @interns = Employee.intern
     @analysts = Employee.analyst
@@ -86,6 +90,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :start_date, :end_date, :project_type, :objective, :goals, :employee_ids => [], :skill_ids => [], :role_ids => [], :industry_ids => [])
+    params.require(:project).permit(:title, :start_date, :end_date, :project_type, :objective, :goals, :company_id, :employee_ids => [], :skill_ids => [], :role_ids => [], :industry_ids => [])
   end
 end
