@@ -1,24 +1,21 @@
 <center>
-<p id="notice"><%= notice %></p>
-<br>
-<h1 class="blue-text">Projects</h1>
-<br>
-  <div class="projects-container">
-
-    <%= link_to 'New Project', new_project_path %>
-
-
-  <div class="projects-list-container">
-    <% @projects.each do |project| %>
-    <div class="project-items-container">
-      <h3><%= project.title %> </h3>
-      <p><%= project.start_date %> to <%= project.end_date %></p>
-      <p><%= link_to 'Show', project %> |
-      <%= link_to 'Edit', edit_project_path(project) %> |
-      <%= link_to ' Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    </div>
-    <% end %>
-  </div>
+  <p id="notice"><%= notice %></p>
   <br>
-</div>
+  <%= link_to 'Create Project', new_project_path, class: 'new-button' %>
+  <br><br><br>
+  <% if @projects.any? %>
+    <div class="projects-container">
+      <div class="projects-list-container">
+        <% @projects.each do |project| %>
+          <div class="project-items-container">
+            <h3><%= project.title %> </h3>
+            <p><%= project.start_date %> to <%= project.end_date %></p>
+            <p><%= link_to 'Show', project %> |
+            <%= link_to 'Edit', edit_project_path(project) %> |
+            <%= link_to ' Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          </div>
+        <% end %>
+      </div><br>
+    </div>
+  <% end %>
 </center>

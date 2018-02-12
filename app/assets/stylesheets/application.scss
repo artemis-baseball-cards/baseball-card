@@ -117,12 +117,7 @@
   background-color: #8da4c9;
   color: white;
   padding-bottom: 6px;
-  font-family: 'Merriweather', serif;
 
-}
-
-.employee-name {
-  font-family: 'Merriweather', serif;
 }
 
 .mini-bottom {
@@ -138,8 +133,6 @@
 
 .blue-text{
   color: #355d88;
-  font-family: 'Merriweather', serif;
-
 }
 
 .grey-text {
@@ -149,7 +142,6 @@
 .float-right {
   float: right;
   text-align: right;
-  font-family: 'Merriweather', serif;
 }
 
 .float-left {
@@ -227,7 +219,6 @@ ul {
 }
 
 .employee-container {
-  font-family: 'Merriweather', serif;
   padding-left: 15px;
   text-align: center;
   border-style: solid;
@@ -243,12 +234,10 @@ ul {
   padding: 3rem;
   // width: 50%;
   // background-color: #c8c9cb;
-  font-family: 'Merriweather', serif;
 }
 
 
 .project-show-container {
-  font-family: 'Merriweather', serif;
   padding-left: 15px;
   text-align: center;
   border-style: solid;
@@ -268,7 +257,6 @@ ul {
   padding: 3rem;
   width: 50%;
   background-color: #c8c9cb;
-  font-family: 'Merriweather', serif;
 }
 
 .projects-list-container {
@@ -357,12 +345,32 @@ body {
   flex-direction: column;
 }
 
+#new-proj {
+
+}
+
 #small {
   font-size: 14px;
   color: white;
   border-radius: 30px;
   border: 2px solid white;
   padding: 7px;
+}
+
+.new-button {
+  border: 2px solid #355d88;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  background-color: #355d88
+}
+
+.new-button a {
+  margin-bottom: 100px;
+}
+
+.new-button:hover {
+  color: white;
 }
 
 .regular-nav-link {
@@ -404,7 +412,6 @@ a {
 }
 
 .wos {
- font-family: 'Merriweather', serif;
  margin-top: 10px;
  color: #355d88;
 }
@@ -436,6 +443,7 @@ html, body, .container-fluid, .row {
     background-color: #CCCCCC;
   }
 }
+
 
 .form-control-industry {
   width: 40%;
