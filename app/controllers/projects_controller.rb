@@ -32,17 +32,6 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @employees = Employee.all
-    @skills = Skill.all
-    @roles = Role.all
-    @industries = Industry.all
-    @companies = Company.all
-    @interns = Employee.intern
-    @analysts = Employee.analyst
-    @associates = Employee.associate
-    @engagement_managers = Employee.engagement_manager
-    @partners = Employee.partner
-    @principals = Employee.principal
     if @project.save
       flash[:notice] = "Your Project has been saved!"
       redirect_to projects_path
