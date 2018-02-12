@@ -13,15 +13,32 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   margin-right: 20px;
   margin-left: 20px;
-  width: 500px;
-  height: 500px;
+  width: 80%;
+  height: 1%;
   overflow: scroll;
   border: 2px solid black;
+  border-radius: 20px;
   margin-bottom: 40px;
   background-color: #dcdee2;
+}
+
+.role {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.skill {
+  margin-right: 30px;
+}
+
+.all-skills {
+  display: flex;
+  flex-direction: row;
+  // justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 #welcome {
@@ -56,6 +73,9 @@
 .category{
   font-weight: bolder;
   font-size: 20px;
+}
+
+h6 label {
 }
 
 .emp-box {
