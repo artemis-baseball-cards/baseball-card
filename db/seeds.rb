@@ -95,7 +95,18 @@ employees = [
    '{E-Commerce, Non-Profit, Technology, Healthcare}',
    'No',
    '{Engagment Manager, Analyst}',
-   'No'],
+   'No',
+   ['Experimenter',
+   'Interview designer',
+   'Interview conductor',
+   'Survey designer',],
+   ['Engagement Manager',
+   'Subject Matter Expert'],
+   ['Healthcare',
+   'Private Equity',
+   'Technology',
+   'Startup']
+ ],
   ['Linda Luu',
    'Intern',
    'Try your best and make it count',
@@ -125,7 +136,14 @@ employees = [
    '{E-Commerce, Retail}',
    'Yes',
    '{Intern}',
-   'Yes'],
+   'Yes',
+   ['Team leader',
+   'Client facing'],
+   ['Intern'],
+   ['Healthcare',
+   'Startup',
+   'Retail']
+ ],
   ['L. Devin MacKrell "MacK"',
    'Intern',
    'Learn every day.',
@@ -155,7 +173,15 @@ employees = [
    '{Private Equity, Retail, Non-Profit}',
    'Yes',
    '{Intern}',
-   'Yes'],
+   'Yes',
+   ['Presenter',
+   'Tool developer',
+   'Process improver'],
+   ['Intern'],
+   ['Non-profit',
+   'E-commerce',
+   'Retail']
+ ],
   ['Megan Olson',
    'Intern',
    'Strive for improvement, not perfection',
@@ -185,7 +211,15 @@ employees = [
    '{Non-Profit, Retail}',
    'No',
    '{Intern}',
-   false],
+   false,
+   ['Interview designer',
+   'Interview conductor',
+   'Survey designer',],
+   ['Intern'],
+   ['Healthcare',
+   'Private Equity',
+   'Retail']
+    ],
   ['Erik Zakrzewski',
    'Intern',
    'Anything can be worked out.',
@@ -215,7 +249,14 @@ employees = [
    '{Healthcare, Retail}',
    'true',
    '{Intern}',
-   'true'
+   'true',
+   ['Team Player',
+   'Adaptable',
+   'Accountable'],
+   ['Intern'],
+   ['Healthcare',
+   'E-commerce',
+   'Retail']
   ]
 ]
 
@@ -248,7 +289,10 @@ employees.each do |employees_name,
   employees_industry_experience,
   employees_willing_to_travel,
   employees_project_roles,
-  employees_remote
+  employees_remote,
+  employees_skills,
+  employees_roles,
+  employees_industries
   |
   Employee.create(name: employees_name,
     position: employees_position,
@@ -279,7 +323,10 @@ employees.each do |employees_name,
     industry_experience: employees_industry_experience,
     willing_to_travel: employees_willing_to_travel,
     project_roles: employees_project_roles,
-    remote: employees_remote
+    remote: employees_remote,
+    skill_ids: Skill.where(:description => employees_skills).pluck(:id),
+    role_ids: Role.where(:name => employees_roles).pluck(:id),
+    industry_ids: Industry.where(:name => employees_industries).pluck(:id)
   )
 end
 
