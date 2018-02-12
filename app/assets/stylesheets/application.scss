@@ -322,11 +322,14 @@ strong {
   color: #c2c2c2;
   text-align: center;
   height: 30%;
-  position:fixed;
   left:0px;
   bottom:0px;
   height: 90px;
   width:100%;
+}
+
+.site-content {
+  flex: 1;
 }
 
 .footer-copyright {
@@ -341,7 +344,9 @@ strong {
 }
 
 body {
-  margin-bottom: 100px;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 #small {

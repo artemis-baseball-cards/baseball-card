@@ -15,46 +15,49 @@
   </head>
 
   <body>
-    <nav class="navbar">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">Artemis Cards</a>
+    <div class="site-content">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">Artemis Cards</a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <% if current_user %>
+              <% if current_user.superadmin_role? || current_user.supervisor_role? %>
+                <li><%= link_to 'Admin', rails_admin_path %></li>
+              <% end %>
+              <li><%= link_to 'Projects', projects_path %></li>
+              <li><%= link_to 'Employees', employees_path %></li>
+              <% if current_user.superadmin_role? || current_user.supervisor_role? %>
+                <li><%= link_to 'Companies', companies_path %></li>
+              <% end %>
+              <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+              <li class="grey-text" id="small"><%= current_user.email %></li>
+            <% else %>
+              <li><%= link_to 'Sign In', new_user_session_path %></li>
+              <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <% end %>
+          </ul>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-          <% if current_user %>
-            <% if current_user.superadmin_role? || current_user.supervisor_role? %>
-              <li><%= link_to 'Admin', rails_admin_path %></li>
-            <% end %>
-            <li><%= link_to 'Projects', projects_path %></li>
-            <li><%= link_to 'Employees', employees_path %></li>
-            <% if current_user.supervisor_role? %>
-              <li><%= link_to 'Companies', companies_path %></li>
-            <% end %>
-            <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-            <li class="grey-text" id="small"><%= current_user.email %></li>
-          <% else %>
-            <li><%= link_to 'Sign In', new_user_session_path %></li>
-            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <% end %>
-        </ul>
+      </nav>
+      <%= yield %>
+    </div>
+
+    <footer class="page-footer center-on-small-only">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="container">
+            <p>STRATEGY FOR INNOVATIVE LEADERS</p>
+          </div>
+        </div>
       </div>
-    </nav>
-    <%= yield %>
+      <div class="footer-copyright">
+        <div class="container-fluid">
+          © 2018 <a href="https://www.artemisconnection.com/">Artemis Connection, Inc.</a> | All rights reserved.
+        </div>
+      </div>
+    </footer>
   </body>
 
-  <footer class="page-footer center-on-small-only">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="container">
-          <p>STRATEGY FOR INNOVATIVE LEADERS</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container-fluid">
-        © 2018 <a href="https://www.artemisconnection.com/">Artemis Connection, Inc.</a> | All rights reserved.
-      </div>
-    </div>
-  </footer>
 
 </html>
