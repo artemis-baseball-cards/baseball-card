@@ -38,6 +38,8 @@ skills.each do |skill_description|
   Skill.create(description: skill_description)
 end
 
+@skills = Skill.all
+
 roles = [
   'Intern',
   'Analyst',
@@ -95,7 +97,12 @@ employees = [
    '{E-Commerce, Non-Profit, Technology, Healthcare}',
    'No',
    '{Engagment Manager, Analyst}',
-   'No'],
+   'No',
+   ['Experimenter',
+   'Interview designer',
+   'Interview conductor',
+   'Survey designer',]
+ ],
   ['Linda Luu',
    'Intern',
    'Try your best and make it count',
@@ -125,7 +132,10 @@ employees = [
    '{E-Commerce, Retail}',
    'Yes',
    '{Intern}',
-   'Yes'],
+   'Yes',
+   ['Team leader',
+   'Client facing']
+ ],
   ['L. Devin MacKrell "MacK"',
    'Intern',
    'Learn every day.',
@@ -155,7 +165,11 @@ employees = [
    '{Private Equity, Retail, Non-Profit}',
    'Yes',
    '{Intern}',
-   'Yes'],
+   'Yes',
+   ['Presenter',
+   'Tool developer',
+   'Process improver']
+ ],
   ['Megan Olson',
    'Intern',
    'Strive for improvement, not perfection',
@@ -185,7 +199,11 @@ employees = [
    '{Non-Profit, Retail}',
    'No',
    '{Intern}',
-   false],
+   false,
+   ['Interview designer',
+   'Interview conductor',
+   'Survey designer',]
+    ],
   ['Erik Zakrzewski',
    'Intern',
    'Anything can be worked out.',
@@ -215,7 +233,10 @@ employees = [
    '{Healthcare, Retail}',
    'true',
    '{Intern}',
-   'true'
+   'true',
+   ['Team Player',
+   'Adaptable',
+   'Accountable']
   ]
 ]
 
@@ -248,7 +269,8 @@ employees.each do |employees_name,
   employees_industry_experience,
   employees_willing_to_travel,
   employees_project_roles,
-  employees_remote
+  employees_remote,
+  employees_skills
   |
   Employee.create(name: employees_name,
     position: employees_position,
@@ -279,7 +301,8 @@ employees.each do |employees_name,
     industry_experience: employees_industry_experience,
     willing_to_travel: employees_willing_to_travel,
     project_roles: employees_project_roles,
-    remote: employees_remote
+    remote: employees_remote,
+    skill_ids: Skill.where(:description => employees_skills).pluck(:id)
   )
 end
 
