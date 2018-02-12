@@ -12,6 +12,7 @@
     <% @projects.each do |project| %>
     <div class="project-items-container">
       <h3><%= project.title %> </h3>
+      <h7><%= project.company.name %></h7>
       <p><%= project.start_date %> to <%= project.end_date %></p>
       <p><%= link_to 'Show', project %> |
       <%= link_to 'Edit', edit_project_path(project) %> |
