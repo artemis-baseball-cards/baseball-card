@@ -71,7 +71,7 @@
           <%= collection_check_boxes(:project, :employee_ids, @interns, :id, :name, {} ) do |x| %>
           <h6>
             <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
-            <p><% x.object.each do |y| %>
+            <p><% x.object.industry_experience.each do |y| %>
               <%= y %>,
             <% end %></p>
           </h6>
