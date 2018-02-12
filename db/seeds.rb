@@ -101,7 +101,11 @@ employees = [
    'Interview conductor',
    'Survey designer',],
    ['Engagement Manager',
-   'Subject Matter Expert']
+   'Subject Matter Expert'],
+   ['Healthcare',
+   'Private Equity',
+   'Technology',
+   'Startup']
  ],
   ['Linda Luu',
    'Intern',
@@ -135,7 +139,10 @@ employees = [
    'Yes',
    ['Team leader',
    'Client facing'],
-   ['Intern']
+   ['Intern'],
+   ['Healthcare',
+   'Startup',
+   'Retail']
  ],
   ['L. Devin MacKrell "MacK"',
    'Intern',
@@ -170,7 +177,10 @@ employees = [
    ['Presenter',
    'Tool developer',
    'Process improver'],
-   ['Intern']
+   ['Intern'],
+   ['Non-profit',
+   'E-commerce',
+   'Retail']
  ],
   ['Megan Olson',
    'Intern',
@@ -205,7 +215,10 @@ employees = [
    ['Interview designer',
    'Interview conductor',
    'Survey designer',],
-   ['Intern']
+   ['Intern'],
+   ['Healthcare',
+   'Private Equity',
+   'Retail']
     ],
   ['Erik Zakrzewski',
    'Intern',
@@ -240,7 +253,10 @@ employees = [
    ['Team Player',
    'Adaptable',
    'Accountable'],
-   ['Intern']
+   ['Intern'],
+   ['Healthcare',
+   'E-commerce',
+   'Retail']
   ]
 ]
 
@@ -275,7 +291,8 @@ employees.each do |employees_name,
   employees_project_roles,
   employees_remote,
   employees_skills,
-  employees_roles
+  employees_roles,
+  employees_industries
   |
   Employee.create(name: employees_name,
     position: employees_position,
@@ -308,7 +325,8 @@ employees.each do |employees_name,
     project_roles: employees_project_roles,
     remote: employees_remote,
     skill_ids: Skill.where(:description => employees_skills).pluck(:id),
-    role_ids: Role.where(:name => employees_roles).pluck(:id)
+    role_ids: Role.where(:name => employees_roles).pluck(:id),
+    industry_ids: Industry.where(:name => employees_industries).pluck(:id)
   )
 end
 
