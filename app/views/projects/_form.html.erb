@@ -18,6 +18,12 @@
   </div>
 
   <div class="field form-group">
+    <%= form.label "company" %><br>
+    <%= form.collection_select(:company_id, Company.all, :id, :name, { :prompt => 'Select Company', :selected => @project.company_id }, { class: 'form-control' }) %>
+  </div>
+
+
+  <div class="field form-group">
     <%= form.label :start_date %>
     <%= form.text_field :start_date, id: :project_start_date, placeholder: "January 16, 2018", class:"form-control" %>
   </div>
