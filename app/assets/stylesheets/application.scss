@@ -93,6 +93,7 @@
 
 .mini-card {
   border: 1px solid black;
+  border-radius: 10%;
   width: 250px;
   height: 280px;
   margin-bottom: 80px;
@@ -117,7 +118,7 @@
   background-color: #8da4c9;
   color: white;
   padding-bottom: 6px;
-
+  border-radius: 25px 25px 0px 0px;
 }
 
 .mini-bottom {
