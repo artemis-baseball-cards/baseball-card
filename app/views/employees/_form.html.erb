@@ -19,7 +19,7 @@
 
   <div class="field form-group">
     <%= form.label "title" %><br>
-    <%= form.select :position, options_for_select([['Intern', 'Intern'],['Analyst', 'Analyst'] , ['Associate', 'Associate'] ,['Engagement Manager', 'Engagement Manager'] ,['Partner', 'Partner'] ,['Principal', 'Principal']], selected: @employee.position) %>
+    <%= form.text_field  :position, id: :employee_position, placeholder: "Project Manager",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
