@@ -6,6 +6,8 @@
 
   <div class="row project-show-card">
     <div class="col-md-6 project-show-left">
+      <h5>Company:</h5>
+      <p><%= @project.company.name %></p>
       <h5>Start:</h5>
       <p><%= @project.start_date %></p>
       <h5>Finish:</h5>
@@ -30,7 +32,7 @@
       <h5>Industry:</h5>
       <% if @project.industries %>
         <% @project.industries.each do |industry| %>
-          <p><%= industry.name %></p>  
+          <p><%= industry.name %></p>
         <% end %>
       <% end %>
 
