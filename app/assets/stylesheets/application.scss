@@ -25,6 +25,8 @@
   background-color: #dcdee2;
 }
 
+
+
 .role {
   margin-right: 5px;
   margin-left: 5px;
@@ -50,6 +52,67 @@
 .employee-name a{
   margin-top: 20px;
   color: black
+}
+
+.clients {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+#work-op {
+  width: 20%;
+}
+
+.client {
+  margin-left: 20px;
+  border: 2px solid #656464;
+  border-radius: 20px;
+  padding: 10px;
+  width: 500px;
+}
+
+.client .col-md-6 {
+  text-align: center;
+}
+
+.goals {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.goal {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+#client-heading {
+  font-size: 30px;
+}
+
+.all-companies {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.company {
+  border: 2px solid #656464;
+  border-radius: 20px;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.company a {
+  color: #355d88;
+}
+
+.company a:hover {
+  color: #355d88;
 }
 
 .all_areas {
@@ -476,6 +539,11 @@ html, body, .container-fluid, .row {
   background-color: #c4cbe4;
   height: 600px;
   overflow-y: auto;
+}
+
+.results {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .form-control-industry {

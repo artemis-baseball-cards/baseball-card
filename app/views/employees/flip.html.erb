@@ -3,22 +3,24 @@
     <center>
       <h5 class ="wos">What Others Say:</h5>
       <hr>
-      <% if @employee.others.any? %>
-        <% @employee.others.each do |other| %>
-        <h5>Occasion:</h5>
-        <p> <%= other.occasion %> </p>
+      <div class="results">
+        <% if @employee.others.any? %>
+          <% @employee.others.each do |other| %>
+          <h5>Occasion:</h5>
+          <p> <%= other.occasion %> </p>
 
-        <h5>End project:</h5>
-        <p> <%= other.end_project %> </p>
+          <h5>End project:</h5>
+          <p> <%= other.end_project %> </p>
 
-        <h5>Birthday:</h5>
-        <p> <%= other.birthday %> </p>
+          <h5>Birthday:</h5>
+          <p> <%= other.birthday %> </p>
 
-        <h5>Pulse survey:</h5>
-        <p> <%= other.pulse_survey %> </p>
-        <hr>
+          <h5>Pulse survey:</h5>
+          <p> <%= other.pulse_survey %> </p>
+          <hr>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
       <% if current_user.superadmin_role? || current_user.supervisor_role? %>
         <%= link_to "Add Feedback", new_employee_other_path(@employee), id: "wos" %>
       <% end %>
