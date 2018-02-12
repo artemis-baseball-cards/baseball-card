@@ -38,8 +38,6 @@ skills.each do |skill_description|
   Skill.create(description: skill_description)
 end
 
-@skills = Skill.all
-
 roles = [
   'Intern',
   'Analyst',
@@ -101,7 +99,9 @@ employees = [
    ['Experimenter',
    'Interview designer',
    'Interview conductor',
-   'Survey designer',]
+   'Survey designer',],
+   ['Engagement Manager',
+   'Subject Matter Expert']
  ],
   ['Linda Luu',
    'Intern',
@@ -134,7 +134,8 @@ employees = [
    '{Intern}',
    'Yes',
    ['Team leader',
-   'Client facing']
+   'Client facing'],
+   ['Intern']
  ],
   ['L. Devin MacKrell "MacK"',
    'Intern',
@@ -168,7 +169,8 @@ employees = [
    'Yes',
    ['Presenter',
    'Tool developer',
-   'Process improver']
+   'Process improver'],
+   ['Intern']
  ],
   ['Megan Olson',
    'Intern',
@@ -202,7 +204,8 @@ employees = [
    false,
    ['Interview designer',
    'Interview conductor',
-   'Survey designer',]
+   'Survey designer',],
+   ['Intern']
     ],
   ['Erik Zakrzewski',
    'Intern',
@@ -236,7 +239,8 @@ employees = [
    'true',
    ['Team Player',
    'Adaptable',
-   'Accountable']
+   'Accountable'],
+   ['Intern']
   ]
 ]
 
@@ -270,7 +274,8 @@ employees.each do |employees_name,
   employees_willing_to_travel,
   employees_project_roles,
   employees_remote,
-  employees_skills
+  employees_skills,
+  employees_roles
   |
   Employee.create(name: employees_name,
     position: employees_position,
@@ -302,7 +307,8 @@ employees.each do |employees_name,
     willing_to_travel: employees_willing_to_travel,
     project_roles: employees_project_roles,
     remote: employees_remote,
-    skill_ids: Skill.where(:description => employees_skills).pluck(:id)
+    skill_ids: Skill.where(:description => employees_skills).pluck(:id),
+    role_ids: Role.where(:name => employees_roles).pluck(:id)
   )
 end
 
