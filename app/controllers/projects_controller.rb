@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
     @employees = Employee.all
     @skills = Skill.all
     @roles = Role.all
+    @industries = Industry.all
 
   end
 
@@ -18,6 +19,7 @@ class ProjectsController < ApplicationController
     @employees = Employee.all
     @skills = Skill.all
     @roles = Role.all
+    @industries = Industry.all
     @interns = Employee.intern
     @analysts = Employee.analyst
     @associates = Employee.associate
@@ -28,6 +30,16 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @employees = Employee.all
+    @skills = Skill.all
+    @roles = Role.all
+    @industries = Industry.all
+    @interns = Employee.intern
+    @analysts = Employee.analyst
+    @associates = Employee.associate
+    @engagement_managers = Employee.engagement_manager
+    @partners = Employee.partner
+    @principals = Employee.principal
     if @project.save
       flash[:notice] = "Your Project has been saved!"
       redirect_to projects_path
@@ -40,6 +52,7 @@ class ProjectsController < ApplicationController
     @employees = Employee.all
     @skills = Skill.all
     @roles = Role.all
+    @industries = Industry.all
     @project = Project.find(params[:id])
     @interns = Employee.intern
     @analysts = Employee.analyst
@@ -73,6 +86,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :start_date, :end_date, :project_type, :objective, :industry, :goals, :employee_ids => [], :skill_ids => [], :role_ids => [])
+    params.require(:project).permit(:title, :start_date, :end_date, :project_type, :objective, :goals, :employee_ids => [], :skill_ids => [], :role_ids => [], :industry_ids => [])
   end
 end

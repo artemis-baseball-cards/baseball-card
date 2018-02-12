@@ -27,16 +27,17 @@
     <%= form.text_field :end_date, id: :project_end_date, placeholder: "February 16, 2018", class:"form-control" %>
   </div>
 
-  <div class="field form-group">
-    <%= form.label :industry %><br>
-    <%= form.select :industry, options_for_select([['Healthcare', 'Healthcare'] , ['Private Equity', 'Private Equity'] ,['Technology', 'Technology'] ,['Startup', 'Startup'] ,['Non-profit', 'Non-profit'], ['E-commerce', 'E-commerce'], ['Retail', 'Retail']], selected: @project.industry) %>
+  <ul class="field form-group">
+    <h6 class="category">Industry Type:</h6>
+      <%= collection_check_boxes(:project, :industry_ids, @industries, :id, :name, {} ) do |t| %>
+      <h6>
+        <%= t.label { t.check_box + t.object.name } %>
+      </h6>
+    <% end %>
+  </ul>
 
-    <%= form.label :project_type, "Other"  %>
-    <%= form.text_field :project_type, id: :project_project_type, placeholder: "Specify For Other", class:"form-control-industry" %>
-  </div>
-
-  <ul class="skills-list">
-    <h6 class="category">Project Roles Needed:</h6>
+  <ul class="field form-group">
+    <h6 class="category">Desired Project Roles:</h6>
       <%= collection_check_boxes(:project, :role_ids, @roles, :id, :name, {} ) do |r| %>
       <h6>
         <%= r.label { r.check_box + r.object.name } %>
