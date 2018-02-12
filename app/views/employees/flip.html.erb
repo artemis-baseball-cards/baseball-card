@@ -1,104 +1,94 @@
-<br>
-<center><h1 class="blue-text"><%= link_to @employee.name, employee_path(@employee), class: "employee-name"%> </h1></center>
-  <div class="container-fluid">
+<div class="row flip-side-content">
+  <div class="col-md-3 flip-sidebar">
+    <center>
+      <h5 class ="wos">What Others Say:</h5>
+      <hr>
+      <% if @employee.others.any? %>
+        <% @employee.others.each do |other| %>
+        <h5>Occasion:</h5>
+        <p> <%= other.occasion %> </p>
 
-    <div class="row">
+        <h5>End project:</h5>
+        <p> <%= other.end_project %> </p>
 
-      <div class="col-md-3 sidebar">
-        <center><h5 class ="wos">What Others Say:</h5>
+        <h5>Birthday:</h5>
+        <p> <%= other.birthday %> </p>
 
-          <% if @employee.others.any? %>
-            <% @employee.others.each do |other| %>
-
-            <h5>Occasion:</h5>
-            <p> <%= other.occasion %> </p>
-
-            <h5>End project:</h5>
-            <p> <%= other.end_project %> </p>
-
-            <h5>Birthday:</h5>
-            <p> <%= other.birthday %> </p>
-
-            <h5>Pulse survey:</h5>
-            <p> <%= other.pulse_survey %> </p>
+        <h5>Pulse survey:</h5>
+        <p> <%= other.pulse_survey %> </p>
+        <hr>
+        <% end %>
+      <% end %>
+      <% if current_user.superadmin_role? || current_user.supervisor_role? %>
+        <%= link_to "Add Feedback", new_employee_other_path(@employee), id: "wos" %>
+      <% end %>
+    </center>
+  </div>
+  <div class="col-md-9">
+    <br><br>
+    <h1 class="blue-text"><%= link_to @employee.name, employee_path(@employee), class: "employee-name"%></h1>
+    <%= column_chart [
+      ["Critical Thinker", @critical_thinking ],
+      ["Strong Communicator", @strong_communicator],
+      ["Proactive", @proactive],
+      ["Flexible", @flexible],
+      ["Positive Thinker", @positive_thinker],
+      ["High Emotional Intelligence", @emot_intelligence],
+      ["Goes above and beyond", @above_beyond],
+      ["Prepared", @prepared],
+      ["Needs little direction", @little_direction],
+      ["Takes owernship", @ownership],
+      ["Survey designer", @survey_designer],
+      ["Leader", @leader],
+      ["Coach", @coach],
+      ["Organized", @organized],
+      ["Strong Presenter", @presenter],
+      ["High quality deliverables", @quality_deliverables],
+      ["Client-facing", @client_facing],
+      ["Detail oriented", @detail_oriented],
+      ["Sees the big picture", @big_picture],
+      ["Process oriented", @process_oriented],
+      ["Receptive to feedback", @receptive_feedback],
+      ["Thoughtful feedback delivery", @thoughtful_feedback]
+      ], min: 0, max: 10,
+    donut: true, width: "1000px", height: "500px" %>
+  </div>
+  <div class="container">
+    <br>
+      <center><p>Client insight for <strong><%= @employee.name %></strong> </p></center>
+      <hr>
+      <h5>What should this person keep doing?</h5>
+      <% @data.each do |smaller_array| %>
+        <% if smaller_array[2] ==  @employee.name %>
+          <div class="container one-survey">
+            <% smaller_array[3].split(",").each do |skill| %>
+              <p> <%= skill %> </p><br>
             <% end %>
+          </div>
+        <% end %>
+      <% end %><br>
+
+      <% if current_user.superadmin_role? || current_user.supervisor_role? %>
+        <h5>What should this person do more of?</h5>
+        <% @data.each do |smaller_array| %>
+          <% if smaller_array[2] ==  @employee.name %>
+            <div class="container one-survey">
+              <% smaller_array[4].split(",").each do |skill| %>
+                <p> <%= skill %> </p><br>
+              <% end %>
+            </div>
           <% end %>
-          <% if current_user.superadmin_role? || current_user.supervisor_role? %>
-          	<%= link_to "Add 'What Others Say'", new_employee_other_path(@employee) %>
-
-          <% end %>
-
-
-        </center>
-
-      </div>
-
-      <div class="col-md-9 content">
-        <center><h4>360 Feedback</h4>
-        <%= column_chart [
-          ["Critical Thinker", @critical_thinking ],
-          ["Strong Communicator", @strong_communicator],
-          ["Proactive", @proactive],
-          ["Flexible", @flexible],
-          ["Positive Thinker", @positive_thinker],
-          ["High Emotional Intelligence", @emot_intelligence],
-          ["Goes above and beyond", @above_beyond],
-          ["Prepared", @prepared],
-          ["Needs little direction", @little_direction],
-          ["Takes owernship", @ownership],
-          ["Survey designer", @survey_designer],
-          ["Leader", @leader],
-          ["Coach", @coach],
-          ["Organized", @organized],
-          ["Strong Presenter", @presenter],
-          ["High quality deliverables", @quality_deliverables],
-          ["Client-facing", @client_facing],
-          ["Detail oriented", @detail_oriented],
-          ["Sees the big picture", @big_picture],
-          ["Process oriented", @process_oriented],
-          ["Receptive to feedback", @receptive_feedback],
-          ["Thoughtful feedback delivery", @thoughtful_feedback]
-          ], min: 0, max: 10,
-        donut: true, width: "1000px", height: "500px" %>
-        <div class="container">
-          <p>Client insight for <strong><%= @employee.name %></strong> </p></center>
-          <hr>
-          <h5>What should this person keep doing?</h5>
-          <% @data.each do |smaller_array| %>
-            <% if smaller_array[2] ==  @employee.name %>
-              <div class="container one-survey">
-                <% smaller_array[3].split(",").each do |skill| %>
-                  <p> <%= skill %> </p><br>
-                <% end %>
-              </div>
-            <% end %>
-          <% end %><br>
-
-        <% if current_user.superadmin_role? || current_user.supervisor_role? %>
-
-          <h5>What should this person do more of?</h5>
-          <% @data.each do |smaller_array| %>
-            <% if smaller_array[2] ==  @employee.name %>
-              <div class="container one-survey">
-                <% smaller_array[4].split(",").each do |skill| %>
-                  <p> <%= skill %> </p><br>
-                <% end %>
-              </div>
-            <% end %>
-          <% end %><br>
-          <h5>What should this person stop doing?</h5>
-          <% @data.each do |smaller_array| %>
-            <% if smaller_array[2] ==  @employee.name %>
-              <div class="container one-survey">
-                <% smaller_array[5].split(",").each do |skill| %>
-                  <p> <%= skill %> </p><br>
-
-                <% end %>
-              </div>
-            <% end %>
+        <% end %><br>
+        <h5>What should this person stop doing?</h5>
+        <% @data.each do |smaller_array| %>
+          <% if smaller_array[2] ==  @employee.name %>
+            <div class="container one-survey">
+              <% smaller_array[5].split(",").each do |skill| %>
+                <p> <%= skill %> </p><br>
+              <% end %>
+            </div>
           <% end %>
         <% end %>
-      </div>
+      <% end %>
     </div>
-  </div>
 </div>
