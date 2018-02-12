@@ -203,11 +203,12 @@ ul {
 }
 
 .form-container {
-  border-style: solid;
-  border-color: #4f565a;
+  border: 2px solid #4f565a;
+  border-radius: 25px;
   padding: 3rem;
   width: 50%;
   background-color: #c8c9cb;
+  margin-bottom: 50px;
 }
 
 #employeeform-container {
