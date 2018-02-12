@@ -28,7 +28,11 @@
       <% end %>
 
       <h5>Industry:</h5>
-      <p><%= @project.industry %></p>
+      <% if @project.industries %>
+        <% @project.industries.each do |industry| %>
+          <p><%= industry.name %></p>  
+        <% end %>
+      <% end %>
 
       <h5>Employees Assigned:</h5>
       <div class="employees">

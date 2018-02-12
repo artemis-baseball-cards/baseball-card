@@ -27,20 +27,23 @@
     <%= form.text_field :end_date, id: :project_end_date, placeholder: "February 16, 2018", class:"form-control" %>
   </div>
 
-  <div class="field form-group">
-    <%= form.label :industry %><br>
-    <%= form.select :industry, options_for_select([['Healthcare', 'Healthcare'] , ['Private Equity', 'Private Equity'] ,['Technology', 'Technology'] ,['Startup', 'Startup'] ,['Non-profit', 'Non-profit'], ['E-commerce', 'E-commerce'], ['Retail', 'Retail']], selected: @project.industry) %>
-
-    <%= form.label :project_type, "Other"  %>
-    <%= form.text_field :project_type, id: :project_project_type, placeholder: "Specify For Other", class:"form-control-industry" %>
-  </div>
-
-  <h5>Project Roles:</h5>
-  <% if @employee.roles %>
-    <% @employee.roles.each do |role| %>
-      <%= role.name %>
+  <ul class="field form-group">
+    <h6 class="category">Industry Type:</h6>
+      <%= collection_check_boxes(:project, :industry_ids, @industries, :id, :name, {} ) do |t| %>
+      <h6>
+        <%= t.label { t.check_box + t.object.name } %>
+      </h6>
     <% end %>
-  <% end %>
+  </ul>
+
+  <ul class="field form-group">
+    <h6 class="category">Desired Project Roles:</h6>
+      <%= collection_check_boxes(:project, :role_ids, @roles, :id, :name, {} ) do |r| %>
+      <h6>
+        <%= r.label { r.check_box + r.object.name } %>
+      </h6>
+    <% end %>
+  </ul>
 
   <ul class="skills-list">
     <h6 class="category">Desired Skills:</h6>
@@ -68,7 +71,7 @@
           <%= collection_check_boxes(:project, :employee_ids, @interns, :id, :name, {} ) do |x| %>
           <h6>
             <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
-            <p><% x.object.industry_experience.each do |y| %>
+            <p><% x.object.each do |y| %>
               <%= y %>,
             <% end %></p>
           </h6>
