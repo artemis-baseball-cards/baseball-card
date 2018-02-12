@@ -1,10 +1,15 @@
 <p id="notice"><%= notice %></p>
-<div class="container">
-  <% if current_user.id == @employee.user_id %>
- <center><%= link_to 'Edit', edit_employee_path(@employee) %> | <% end %>
 
-  <%= link_to 'Back', employees_path %> | <a href="/employees/<%= @id %>/flip">Flip</a>
- </center><br>
+<a href="/employees" class="new-button" id="back">Back</a>
+<a href="/employees/<%= @id %>/flip" class="new-button" id="flip">Flip</a>
+
+<center>
+  <% if current_user.id == @employee.user_id %>
+    <%= link_to 'Edit', edit_employee_path(@employee), class: "new-button" %>
+  <% end %>
+</center>
+<div class="container" id="full-card">
+  <br>
   <div class="row">
     <div class="col-md-6">
       <div class="float-right">
@@ -16,7 +21,7 @@
 
       <div class="float-left">
 
-        <h7>ABOUT</h7>
+        <h7><u>ABOUT</u></h7>
 
         <h5>Life quote:</h5>
         <p><%= @employee.life_quote %></p>

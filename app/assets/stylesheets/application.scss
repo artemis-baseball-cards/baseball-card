@@ -48,6 +48,7 @@
 }
 
 .employee-name a{
+  margin-top: 20px;
   color: black
 }
 
@@ -113,7 +114,7 @@ h6 label {
 
 .mini-card {
   border: 1px solid black;
-  border-radius: 10%;
+  border-radius: 6%;
   width: 250px;
   height: 280px;
   margin-bottom: 80px;
@@ -138,7 +139,11 @@ h6 label {
   background-color: #8da4c9;
   color: white;
   padding-bottom: 6px;
-  border-radius: 25px 25px 0px 0px;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.mini-top a {
+  margin-top: 20px;
 }
 
 .mini-bottom {
@@ -163,6 +168,19 @@ h6 label {
 .float-right {
   float: right;
   text-align: right;
+  font-family: 'Lato', sans-serif;
+}
+
+#flip {
+  float: right;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+
+#back {
+  margin-left: 30px;
+  float: left;
+  margin-top: 30px;
 }
 
 .float-left {
@@ -248,16 +266,20 @@ ul {
   width: 100%;
   margin-left: 15px;
   background-color: #c8c9cb;
+  font-family: 'Lato', sans-serif;
+}
+
+#full-card {
+  margin-bottom: 100px;
+}
+
+#full-card p {
+  font-family: 'Lato', sans-serif;
 }
 
 .employeeindex-container {
-  // border-style: solid;
-  // border-color: #4f565a;
   padding: 3rem;
-  // width: 50%;
-  // background-color: #c8c9cb;
 }
-
 
 .project-show-container {
   padding-left: 15px;
@@ -369,10 +391,6 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-}
-
-#new-proj {
-
 }
 
 #small {
