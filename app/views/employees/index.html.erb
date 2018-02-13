@@ -1,8 +1,10 @@
 <center>
   <p id="notice"><%= notice %></p>
-  <%= link_to 'New Employee', new_employee_path %>
+  <br>
+  <%= link_to 'Create Employee', new_employee_path, class: 'new-button' %>
+  <br><br>
 
   <div class="employee">
-      <div><%= render 'employee'%></div>
+    <div><%= render 'employee'%></div>
   </div>
 </center>

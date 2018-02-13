@@ -19,7 +19,7 @@
 
   <div class="field form-group">
     <%= form.label "title" %><br>
-    <%= form.select :position, options_for_select([['Intern', 'Intern'],['Analyst', 'Analyst'] , ['Associate', 'Associate'] ,['Engagement Manager', 'Engagement Manager'] ,['Partner', 'Partner'] ,['Principal', 'Principal']], selected: @employee.position) %>
+    <%= form.text_field  :position, id: :employee_position, placeholder: "Project Manager",  class: "form-control" %>
   </div>
 
   <div class="field form-group">
@@ -42,42 +42,46 @@
     <%= form.text_field  :motto, id: :employee_motto, placeholder: "Happiness depends upon ourselves. -Aristotle",  class: "form-control" %>
   </div>
 
-  <div class="field form-group">
-    <%= form.label "Location (country)" %>
-    <%= form.text_field  :country, id: :employee_country, placeholder: "United States",  class: "form-control" %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.label "Location (state)" %>
-    <%= form.text_field  :state, id: :employee_state, placeholder: "Washington",  class: "form-control" %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.label "Location (city)" %>
-    <%= form.text_field  :city, id: :employee_city, placeholder: "Seattle",  class: "form-control" %>
-  </div>
-
-  <div class="field form-group">
-    <div class="col-md-12">
-      <ul class="industries-list">
-        <h6 class="category">Industry Experience:</h6>
-          <%= collection_check_boxes(:employee, :industry_ids, @industries, :id, :name, {} ) do |r| %>
-          <h6>
-            <%= r.label { r.check_box + r.object.name } %>
-          </h6>
-        <% end %>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="field form-group">
+        <%= form.label "Country" %>
+        <%= form.text_field  :country, id: :employee_country, placeholder: "United States",  class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="field form-group">
+        <%= form.label "State" %>
+        <%= form.text_field  :state, id: :employee_state, placeholder: "Washington",  class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="field form-group">
+        <%= form.label "City" %>
+        <%= form.text_field  :city, id: :employee_city, placeholder: "Seattle",  class: "form-control" %>
+      </div>
     </div>
   </div>
 
   <div class="field form-group">
     <div class="col-md-12">
-      <ul class="roles-list">
-        <h6 class="category">Roles:</h6>
-          <%= collection_check_boxes(:employee, :role_ids, @roles, :id, :name, {} ) do |r| %>
-          <h6>
-            <%= r.label { r.check_box + r.object.name } %>
-          </h6>
+      <div class="industries-list">
+        <h6 class="category">Industry Experience:</h6>
+        <%= collection_check_boxes(:employee, :industry_ids, @industries, :id, :name, {} ) do |r| %>
+        <%= r.label { r.check_box + r.object.name } %>
         <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <div class="col-md-12">
+      <div class="roles-list">
+        <h6 class="category">Roles:</h6>
+        <%= collection_check_boxes(:employee, :role_ids, @roles, :id, :name, {} ) do |r| %>
+          <span class="role"><%= r.label { r.check_box + r.object.name } %></span>
+        <% end %>
+      </div>
     </div>
   </div>
 
@@ -148,20 +152,19 @@
     <%= form.text_area  :development, id: :employee_development, placeholder: "Striving for work/life balance",  class: "form-control"  %>
   </div>
 
-  <div class="skills">
-    <div class="col-md-12">
-      <ul class="skills-list">
-        <h6 class="category">Skills:</h6>
+  <% if current_user.superadmin_role? || current_user.supervisor_role? %>
+    <div class="skills">
+      <div class="col-md-12">
+        <div class="skills-list">
+          <h6 class="category">Skills:</h6>
           <%= collection_check_boxes(:employee, :skill_ids, @skills, :id, :description, {} ) do |x| %>
-          <h6>
-            <%= x.label { x.check_box + x.object.description } %>
-          </h6>
-        <% end %>
+            <span class="skill"><%= x.label { x.check_box + x.object.description } %></span>
+          <% end %>
+        </div>
+      </div>
     </div>
-  </div>
-
-
-
+  <% end %>
+  
   <div class="field form-group">
     <%= form.label "Areas to Develop (choose three from below)" %>
     <%= form.text_field  :areas_to_develop, id: :employee_areas_to_develop, placeholder: "Flexibility, being a team player, adaptability",  class: "form-control"  %>

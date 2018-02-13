@@ -1,29 +1,120 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
 
 
 * {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
 }
 
 .skills{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   margin-right: 20px;
   margin-left: 20px;
-  width: 500px;
-  height: 500px;
+  width: 80%;
+  height: 1%;
   overflow: scroll;
   border: 2px solid black;
+  border-radius: 20px;
   margin-bottom: 40px;
   background-color: #dcdee2;
 }
 
+.dark-blue {
+  color: #355d88;
+}
+
+.role {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.skill {
+  margin-right: 30px;
+}
+
+.all-skills {
+  display: flex;
+  flex-direction: row;
+  // justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+#welcome {
+  margin-top: 10%;
+  color: #656464;
+  text-align: center;
+}
+
 .employee-name a{
+  margin-top: 20px;
   color: black
+}
+
+.clients {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+#work-op {
+  width: 20%;
+}
+
+.client {
+  margin-left: 20px;
+  border: 2px solid #656464;
+  border-radius: 20px;
+  padding: 10px;
+  width: 500px;
+}
+
+.client .col-md-6 {
+  text-align: center;
+}
+
+.goals {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.goal {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+#client-heading {
+  font-size: 30px;
+}
+
+.all-companies {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.company {
+  border: 2px solid #656464;
+  border-radius: 20px;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.company a {
+  color: #355d88;
+}
+
+.company a:hover {
+  color: #355d88;
 }
 
 .all_areas {
@@ -50,6 +141,9 @@
   font-size: 20px;
 }
 
+h6 label {
+}
+
 .emp-box {
   margin-bottom: 30px;
 }
@@ -64,6 +158,7 @@
 
 .one-survey p {
   margin: 2px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .employee-name a:hover {
@@ -85,6 +180,7 @@
 
 .mini-card {
   border: 1px solid black;
+  border-radius: 6%;
   width: 250px;
   height: 280px;
   margin-bottom: 80px;
@@ -109,12 +205,11 @@
   background-color: #8da4c9;
   color: white;
   padding-bottom: 6px;
-  font-family: 'Merriweather', serif;
-
+  border-radius: 15px 15px 0px 0px;
 }
 
-.employee-name {
-  font-family: 'Merriweather', serif;
+.mini-top a {
+  margin-top: 20px;
 }
 
 .mini-bottom {
@@ -130,8 +225,6 @@
 
 .blue-text{
   color: #355d88;
-  font-family: 'Merriweather', serif;
-
 }
 
 .grey-text {
@@ -141,7 +234,19 @@
 .float-right {
   float: right;
   text-align: right;
-  font-family: 'Merriweather', serif;
+  font-family: 'Lato', sans-serif;
+}
+
+#flip {
+  float: right;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+
+#back {
+  margin-left: 30px;
+  float: left;
+  margin-top: 30px;
 }
 
 .float-left {
@@ -203,11 +308,12 @@ ul {
 }
 
 .form-container {
-  border-style: solid;
-  border-color: #4f565a;
+  border: 2px solid #4f565a;
+  border-radius: 25px;
   padding: 3rem;
   width: 50%;
   background-color: #c8c9cb;
+  margin-bottom: 50px;
 }
 
 #employeeform-container {
@@ -219,7 +325,6 @@ ul {
 }
 
 .employee-container {
-  font-family: 'Merriweather', serif;
   padding-left: 15px;
   text-align: center;
   border-style: solid;
@@ -227,20 +332,22 @@ ul {
   width: 100%;
   margin-left: 15px;
   background-color: #c8c9cb;
+  font-family: 'Lato', sans-serif;
+}
+
+#full-card {
+  margin-bottom: 100px;
+}
+
+#full-card p {
+  font-family: 'Lato', sans-serif;
 }
 
 .employeeindex-container {
-  // border-style: solid;
-  // border-color: #4f565a;
   padding: 3rem;
-  // width: 50%;
-  // background-color: #c8c9cb;
-  font-family: 'Merriweather', serif;
 }
 
-
 .project-show-container {
-  font-family: 'Merriweather', serif;
   padding-left: 15px;
   text-align: center;
   border-style: solid;
@@ -260,7 +367,6 @@ ul {
   padding: 3rem;
   width: 50%;
   background-color: #c8c9cb;
-  font-family: 'Merriweather', serif;
 }
 
 .projects-list-container {
@@ -311,6 +417,10 @@ a {
   color: #b52e2e;
 }
 
+#error_explanation {
+  text-align: center;
+}
+
 strong {
   font-size: 20px;
   font-style: italic;
@@ -322,11 +432,14 @@ strong {
   color: #c2c2c2;
   text-align: center;
   height: 30%;
-  position:fixed;
   left:0px;
   bottom:0px;
   height: 90px;
   width:100%;
+}
+
+.site-content {
+  flex: 1;
 }
 
 .footer-copyright {
@@ -341,17 +454,44 @@ strong {
 }
 
 body {
-  margin-bottom: 100px;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 #small {
   font-size: 14px;
+  color: white;
+  border-radius: 30px;
+  border: 2px solid white;
+  padding: 7px;
+}
+
+.new-button {
+  border: 2px solid #355d88;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  background-color: #355d88
+}
+
+.new-button a {
+  margin-bottom: 100px;
+}
+
+.new-button:hover {
+  color: white;
+}
+
+.regular-nav-link {
+  margin-top: 5px;
+  font-size: 22px;
+  letter-spacing: 2px;
 }
 
 a {
   color: #8692ba;
 }
-
 
 .user-signup {
   width: 20%;
@@ -366,43 +506,46 @@ a {
   margin: 8px;
 }
 
+#logo {
+  color: #355d88;
+  font-size: 25px;
+}
+
 .navbar-nav a:hover {
   text-decoration: none;
-  color: #1028a0;
+  color: white;
+}
+
+.navbar a {
+  color: white;
+  font-size: 12px;
 }
 
 .wos {
- font-family: 'Merriweather', serif;
  margin-top: 10px;
  color: #355d88;
 }
 
+#wos {
+  color: #f4f8ff;
+}
+
 html, body, .container-fluid, .row {
-
-
 }
 
-.sidebar {
-  background-color: #CCCCCC;
-  height: 70%;
-  border-style: solid;
-  border-color: #333333;
-  margin-top: 9%;
-  margin-left: 20px;
-  position: absolute;
-  overflow: auto;
+.flip-side-content {
+  margin-bottom: 50px;
 }
 
-@media (min-width: 992px) {
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1000;
-    display: block;
-    background-color: #CCCCCC;
-  }
+.flip-sidebar {
+  background-color: #c4cbe4;
+  height: 600px;
+  overflow-y: auto;
+}
+
+.results {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .form-control-industry {
@@ -411,6 +554,10 @@ html, body, .container-fluid, .row {
 
 a:hover {
   text-decoration: none;
+}
+
+.navbar li {
+  margin-left: 20px;
 }
 
 .navbar {

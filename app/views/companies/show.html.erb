@@ -1,11 +1,58 @@
-<h1> <%= @company.name %> </h1>
+<br>
+<center>
+  <h1> <%= @company.name %> </h1>
+  <div class="goals">
+    <div class="goal">
+      <h6>Company Goals</h6>
+      <hr>
+      <p> <%= @company.company_goals %> </p>
+    </div>
+    <div class="goal">
+      <h6>Personal Development Goals</h6>
+      <hr>
+      <p> <%= @company.personal_dev_goals %> </p>
+    </div>
+  </div>
+  <h6>Future Work Opportunities</h6>
+  <hr id="work-op">
+  <p> <%= @company.future_work_opportunities %> </p>
+</center><br>
 
-<li><%= link_to "Add Client", new_company_client_path(@company) %></li>
-
-<% if @company.clients.any? %>
-  <% @company.clients.each do |client|%>
-    <h4><%= client.name %></h4>
+<hr>
+<center><p id='client-heading'>Clients</p>
+<%= link_to "Add Client", new_company_client_path(@company), class: "new-button" %></center><br>
+<div class="clients">
+  <% if @company.clients.any? %>
+    <div class="client">
+      <% @company.clients.each do |client|%>
+        <h5><center><%= client.name %></center></h5>
+        <div class="row">
+          <div class="col-md-6">
+            <p> <%= client.contact %> </p>
+          </div>
+          <div class="col-md-6">
+            <p> <%= client.emails %> </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p> <%= client.position %> </p>
+          </div>
+          <div class="col-md-6">
+            <p> <%= client.meetings %> </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p> <%= client.formatting %> </p>
+          </div>
+          <div class="col-md-6">
+            <p> <%= client.other %> </p>
+          </div>
+        </div>
+      <% end %>
+    </div><br>
+  <% else %>
+    <p>No Clients</p>
   <% end %>
-<% else %>
-  <p>No Clients</p>
-<% end %>
+</div>

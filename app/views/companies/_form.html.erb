@@ -1,21 +1,23 @@
 <%= render 'layouts/errors', :object => @company %>
 
-<%= form_for [@company] do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control"%>
-  </div>
-  <div class="form-group">
-    <%= f.label :company_goals %>
-    <%= f.text_field :company_goals, class: "form-control"%>
-  </div>
-  <div class="form-group">
-    <%= f.label :personal_dev_goals %>
-    <%= f.text_field :personal_dev_goals, class: "form-control"%>
-  </div>
-  <div class="form-group">
-    <%= f.label :future_work_opportunities %>
-    <%= f.text_field :future_work_opportunities, class: "form-control"%>
-  </div>
-  <%= f.submit class: "btn" %>
-<% end %>
+<div class="container form-container"
+  <%= form_for [@company] do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :company_goals %>
+      <%= f.text_field :company_goals, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :personal_dev_goals %>
+      <%= f.text_field :personal_dev_goals, class: "form-control"%>
+    </div>
+    <div class="form-group">
+      <%= f.label :future_work_opportunities %>
+      <%= f.text_field :future_work_opportunities, class: "form-control"%>
+    </div>
+    <center><%= f.submit class: "btn new-button" %></center>
+  <% end %>
+</div>
