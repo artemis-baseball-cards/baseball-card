@@ -1,7 +1,10 @@
+<br>
+<center><h1>Companies</h1><br>
+<%= link_to "New Company", new_company_path, class: 'new-button' %></center><br><br>
 <div class="all-companies">
-  <h1>Companies</h1>
-  <%= link_to "New Company", new_company_path %>
   <% @companies.each do |company| %>
-    <h3><%= link_to company.name, company_path(company) %></h3>
+    <div class="company">
+      <%= link_to company.name, company_path(company) %>
+    </div>
   <% end %>
 </div>
