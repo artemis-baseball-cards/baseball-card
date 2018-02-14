@@ -98,8 +98,8 @@
           <%= collection_check_boxes(:project, :employee_ids, @interns, :id, :name, {} ) do |x| %>
           <h6>
             <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
-            <p><% x.object.industry_experience.each do |y| %>
-              <%= y %>,
+            <p><% x.object.industries.each do |y| %>
+              <%= y.name %>,
             <% end %></p>
           </h6>
         <% end %>
@@ -111,8 +111,8 @@
         <%= collection_check_boxes(:project, :employee_ids, @analysts, :id, :name, {}) do |x| %>
           <h6>
             <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
-            <p><% x.object.industry_experience.each do |y| %>
-              <%= y %>,
+            <p><% x.object.industries.each do |y| %>
+              <%= y.name %>,
             <% end %></p>
           </h6>
         <% end %>
@@ -127,8 +127,8 @@
         <%= collection_check_boxes(:project, :employee_ids, @engagement_managers, :id, :name, {}) do |x| %>
           <h6>
             <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
-            <p><% x.object.industry_experience.each do |y| %>
-              <%= y %>,
+            <p><% x.object.industries.each do |y| %>
+              <%= y.name %>,
             <% end %></p>
           </h6>
         <% end %>
@@ -141,8 +141,8 @@
         <%= collection_check_boxes(:project, :employee_ids, @principals, :id, :name, {}) do |x| %>
           <h6>
             <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
-            <p><% x.object.industry_experience.each do |y| %>
-              <%= y %>,
+            <p><% x.object.industries.each do |y| %>
+              <%= y.name %>,
             <% end %></p>
           </h6>
         <% end %>
@@ -156,8 +156,8 @@
         <%= collection_check_boxes(:project, :employee_ids, @associates, :id, :name, {}) do |x| %>
           <h6>
             <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
-            <p><% x.object.industry_experience.each do |y| %>
-              <%= y %>,
+            <p><% x.object.industries.each do |y| %>
+              <%= y.name %>,
             <% end %></p>
           </h6>
         <% end %>
@@ -169,8 +169,8 @@
         <%= collection_check_boxes(:project, :employee_ids, @partners, :id, :name, {}) do |x| %>
           <h6>
             <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
-            <p><% x.object.industry_experience.each do |y| %>
-              <%= y %>,
+            <p><% x.object.industries.each do |y| %>
+              <%= y.name %>,
             <% end %></p>
           </h6>
         <% end %>
