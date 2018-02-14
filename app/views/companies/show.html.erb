@@ -1,6 +1,7 @@
 <br>
 <center>
   <h1> <%= @company.name %> </h1>
+  <h2 class="grey-text">Last updated: <%= time_ago_in_words @company.updated_at %> ago</h2>
   <div class="goals">
     <div class="goal">
       <h6>Company Goals</h6>
@@ -16,6 +17,14 @@
   <h6>Future Work Opportunities</h6>
   <hr id="work-op">
   <p> <%= @company.future_work_opportunities %> </p>
+  <br>
+  <h6>Project History:</h6>
+  <hr id="work-op">
+  <% if @company.projects.any? %>
+    <% @company.projects.each do |project| %>
+      <p><%= project.title %></p>
+    <% end  %>
+  <% end %>
 </center><br>
 
 <hr>

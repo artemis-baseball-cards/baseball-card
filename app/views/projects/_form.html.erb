@@ -34,13 +34,34 @@
   </div>
 
   <ul class="field form-group">
-    <h6 class="category">Industry Type:</h6>
+    <h6 class="category">Industry/Project Type:</h6>
       <%= collection_check_boxes(:project, :industry_ids, @industries, :id, :name, {} ) do |t| %>
       <h6>
         <%= t.label { t.check_box + t.object.name } %>
       </h6>
     <% end %>
   </ul>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="field form-group">
+          <%= form.label "Country" %>
+          <%= form.text_field  :country, id: :project_country, placeholder: "United States",  class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="field form-group">
+          <%= form.label "State" %>
+          <%= form.text_field  :state, id: :project_state, placeholder: "Washington",  class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="field form-group">
+          <%= form.label "City" %>
+          <%= form.text_field  :city, id: :project_city, placeholder: "Seattle",  class: "form-control" %>
+        </div>
+      </div>
+    </div>
 
   <ul class="field form-group">
     <h6 class="category">Desired Project Roles:</h6>
@@ -77,8 +98,8 @@
           <%= collection_check_boxes(:project, :employee_ids, @interns, :id, :name, {} ) do |x| %>
           <h6>
             <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
-            <p><% x.object.industry_experience.each do |y| %>
-              <%= y %>,
+            <p><% x.object.industries.each do |y| %>
+              <%= y.name %>,
             <% end %></p>
           </h6>
         <% end %>
@@ -90,8 +111,8 @@
         <%= collection_check_boxes(:project, :employee_ids, @analysts, :id, :name, {}) do |x| %>
           <h6>
             <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
-            <p><% x.object.industry_experience.each do |y| %>
-              <%= y %>,
+            <p><% x.object.industries.each do |y| %>
+              <%= y.name %>,
             <% end %></p>
           </h6>
         <% end %>
@@ -106,8 +127,8 @@
         <%= collection_check_boxes(:project, :employee_ids, @engagement_managers, :id, :name, {}) do |x| %>
           <h6>
             <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
-            <p><% x.object.industry_experience.each do |y| %>
-              <%= y %>,
+            <p><% x.object.industries.each do |y| %>
+              <%= y.name %>,
             <% end %></p>
           </h6>
         <% end %>
@@ -120,8 +141,8 @@
         <%= collection_check_boxes(:project, :employee_ids, @principals, :id, :name, {}) do |x| %>
           <h6>
             <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
-            <p><% x.object.industry_experience.each do |y| %>
-              <%= y %>,
+            <p><% x.object.industries.each do |y| %>
+              <%= y.name %>,
             <% end %></p>
           </h6>
         <% end %>
@@ -135,8 +156,8 @@
         <%= collection_check_boxes(:project, :employee_ids, @associates, :id, :name, {}) do |x| %>
           <h6>
             <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
-            <p><% x.object.industry_experience.each do |y| %>
-              <%= y %>,
+            <p><% x.object.industries.each do |y| %>
+              <%= y.name %>,
             <% end %></p>
           </h6>
         <% end %>
@@ -148,8 +169,8 @@
         <%= collection_check_boxes(:project, :employee_ids, @partners, :id, :name, {}) do |x| %>
           <h6>
             <%= x.label { x.check_box + x.object.name + " | " + x.object.country + ", " + x.object.state + " (" + x.object.city + ")"} %>
-            <p><% x.object.industry_experience.each do |y| %>
-              <%= y %>,
+            <p><% x.object.industries.each do |y| %>
+              <%= y.name %>,
             <% end %></p>
           </h6>
         <% end %>
