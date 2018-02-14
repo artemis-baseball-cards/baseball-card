@@ -17,6 +17,14 @@
   <h6>Future Work Opportunities</h6>
   <hr id="work-op">
   <p> <%= @company.future_work_opportunities %> </p>
+  <br>
+  <h6>Project History:</h6>
+  <hr id="work-op">
+  <% if @company.projects.any? %>
+    <% @company.projects.each do |project| %>
+      <p><%= project.title %></p>
+    <% end  %>
+  <% end %>
 </center><br>
 
 <hr>
