@@ -34,13 +34,34 @@
   </div>
 
   <ul class="field form-group">
-    <h6 class="category">Industry Type:</h6>
+    <h6 class="category">Industry/Project Type:</h6>
       <%= collection_check_boxes(:project, :industry_ids, @industries, :id, :name, {} ) do |t| %>
       <h6>
         <%= t.label { t.check_box + t.object.name } %>
       </h6>
     <% end %>
   </ul>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="field form-group">
+          <%= form.label "Country" %>
+          <%= form.text_field  :country, id: :project_country, placeholder: "United States",  class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="field form-group">
+          <%= form.label "State" %>
+          <%= form.text_field  :state, id: :project_state, placeholder: "Washington",  class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="field form-group">
+          <%= form.label "City" %>
+          <%= form.text_field  :city, id: :project_city, placeholder: "Seattle",  class: "form-control" %>
+        </div>
+      </div>
+    </div>
 
   <ul class="field form-group">
     <h6 class="category">Desired Project Roles:</h6>
