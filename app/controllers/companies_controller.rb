@@ -28,12 +28,13 @@ class CompaniesController < ApplicationController
     @company.destroy
     redirect_to companies_path
   end
-end
 
-def set_company
-  @company = Company.find(params[:id])
-end
 
-def company_params
-  params.require(:company).permit(:name, :company_goals, :personal_dev_goals, :future_work_opportunities)
+  def set_company
+    @company = Company.find(params[:id])
+  end
+
+  def company_params
+    params.require(:company).permit(:name, :company_goals, :personal_dev_goals, :future_work_opportunities)
+  end
 end
