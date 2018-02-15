@@ -54,6 +54,10 @@ class EmployeesController < ApplicationController
   end
 
   def create
+    @projects = Project.all
+    @skills = Skill.all
+    @roles = Role.all
+    @industries = Industry.all
     @employee = Employee.new(employee_params)
     @employee.user_id = current_user.id
     @atd_data = Employee.get_atd
