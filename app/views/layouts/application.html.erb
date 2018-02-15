@@ -29,7 +29,7 @@
               <li class="regular-nav-link"><%= link_to 'PROJECTS', projects_path %></li>
               <li class="regular-nav-link"><%= link_to 'EMPLOYEES', employees_path %></li>
               <% if current_user.superadmin_role? || current_user.supervisor_role? %>
-                <li class="regular-nav-link"><%= link_to 'COMPANIES', companies_path %></li>
+                <li class="regular-nav-link"><%= link_to 'CLIENTS', companies_path %></li>
               <% end %>
               <li class="regular-nav-link"><%= link_to 'SIGN OUT', destroy_user_session_path, :method => :delete %></li>
               <li id="small"><%= current_user.email %></li>
