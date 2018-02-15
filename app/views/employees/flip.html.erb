@@ -5,23 +5,30 @@
       <hr>
       <div class="results">
         <% if @employee.others.any? %>
-          <% @employee.others.each do |other| %>
+          <u><h5>End of projects:</h5></u>
+          <ul><% @employee.others.each do |other| %>
+            <li><%= other.end_project %></li>
+          <% end %></ul>
 
-          <h5>End project:</h5>
-          <p> <%= other.end_project %> </p>
+          <u><h5>Birthday:</h5></u>
+          <ul><% @employee.others.each do |other| %>
+            <li> <%= other.birthday %> </li>
+          <% end %></ul>
 
-          <h5>Birthday:</h5>
-          <p> <%= other.birthday %> </p>
+          <u><h5>Pulse survey:</h5></u>
+          <ul><% @employee.others.each do |other| %>
+            <li> <%= other.pulse_survey %> </li>
+          <% end %></ul>
 
-          <h5>Pulse survey:</h5>
-          <p> <%= other.pulse_survey %> </p>
+          <u><h5>Other comments:</h5></u>
+          <ul><% @employee.others.each do |other| %>
+            <li><%= other.occasion %></li>
+          <% end %></ul>
 
-          <h5>Other comments:</h5>
-          <p> <%= other.occasion %> </p>
           <hr>
-          <% end %>
         <% end %>
       </div>
+
       <% if current_user.superadmin_role? || current_user.supervisor_role? %>
         <%= link_to "Add Feedback", new_employee_other_path(@employee), id: "wos" %>
       <% end %>

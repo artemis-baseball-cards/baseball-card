@@ -108,6 +108,20 @@ http://artemis-baseball-cards.herokuapp.com/
           * Pulse survey shout outs
         * Comments
 
+* Adding users
+  * Prospective users sign up on the login page.
+  * An email for authorization will be automatically sent to the administrator that there is a user request pending.
+  * The administrator will login to the site using the administrator login & password.
+  * Navigating to the ```ADMIN``` Dashboard via the navigation bar, the Admin will select the ```Users``` tab located on the left sidebar.
+  * The admin will click on the pencil icon (edit) to the right of the prospective user. (New user requests are added to the top of the list of users.)
+  * The admin will have the option to add supervisor or administrator access to the user via ```Superadmin role``` or ```Supervisor role``` checkboxes, respectively. The ```User``` selection is automatically checked.
+  * Scrolling to the bottom of the page, the admin will check the ```Approved``` before clicking the ```Save``` button.
+  * The now approved user will be automatically notified via their email login that their access has been approved.
+  * The user can now login to the site with their authorized login and password.
+
+
+
+
 ## Known Bugs:
 
 * _No known bugs at this time._
