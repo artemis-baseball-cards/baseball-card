@@ -1,23 +1,24 @@
 <%= form_for [@employee, @other] do |f| %>
   <div class="container" id="other-container">
-    <div class="field form-group">
-      <%= f.label :occasion %>
-      <%= f.text_field :occasion, id: :other_occasion, placeholder: "Lorem ipsum dolor sit amet", class: "form-control" %>
-    </div>
 
     <div class="field form-group">
-      <%= f.label :end_project %>
-      <%= f.text_field :end_project, id: :other_end_project, placeholder: "Duis aute irure",  class: "form-control" %>
+      <%= f.label "End of Project Notes" %>
+      <%= f.text_field :end_project, id: :other_end_project, placeholder: "A pleasure to work with. Went the extra mile.",  class: "form-control" %>
     </div>
 
     <div class="field form-group">
       <%= f.label :birthday %>
-      <%= f.text_field :birthday, id: :other_birthday, placeholder: "Ut enim ad minim veniam",  class: "form-control" %>
+      <%= f.text_field :birthday, id: :other_birthday, placeholder: "I always look forward to our conversations",  class: "form-control" %>
     </div>
 
     <div class="field form-group">
       <%= f.label :pulse_survey %>
-      <%= f.text_area :pulse_survey, id: :other_pulse_survey, placeholder: "Excepteur sint occaecat cupidatat non proident",  class: "form-control" %>
+      <%= f.text_area :pulse_survey, id: :other_pulse_survey, placeholder: "I appreciate how she uses good humor and kindness when providing constructive criticism",  class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label "Other comments" %>
+      <%= f.text_field :occasion, id: :other_occasion, placeholder: "My go-to for recommendations of the best coffee shops in any city.", class: "form-control" %>
     </div>
 
     <div class="actions">
