@@ -4,31 +4,31 @@
   <%= form_for [@company, @client] do |f| %>
     <div class="form-group">
       <%= f.label :name %>
-      <%= f.text_field :name, class: "form-control"%>
+      <%= f.text_field :name, placeholder: "Jane Doe", class: "form-control" %>
     </div>
     <div class="form-group">
       <%= f.label :contact %>
-      <%= f.text_field :contact, class: "form-control"%>
+      <%= f.text_field :contact, placeholder: "janedoe@company.net / 555-555-5555", class: "form-control" %>
     </div>
     <div class="form-group">
       <%= f.label :position %>
-      <%= f.text_field :position, class: "form-control"%>
+      <%= f.text_field :position, placeholder: "Marketing specialist", class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :meetings %>
-      <%= f.text_field :meetings, class: "form-control"%>
+      <%= f.label "Meeting preferences" %>
+      <%= f.text_field :meetings, placeholder: "Early morning, Call her cell, keep to 30 minutes or less", class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :emails %>
-      <%= f.text_field :emails, class: "form-control"%>
+      <%= f.label "Email preferences" %>
+      <%= f.text_field :emails, placeholder: "Batch questions/comments for her on weekly update", class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :formatting %>
-      <%= f.text_field :formatting, class: "form-control"%>
+      <%= f.label "Communication format preferences" %>
+      <%= f.text_field :formatting, placeholder: "She likes bullet points", class: "form-control" %>
     </div>
     <div class="form-group">
       <%= f.label :other %>
-      <%= f.text_field :other, class: "form-control"%>
+      <%= f.text_field :other, placeholder: "She's not available on Mondays", class: "form-control" %>
     </div>
     <center><%= f.submit class: "btn new-button" %></center>
   <% end %>
