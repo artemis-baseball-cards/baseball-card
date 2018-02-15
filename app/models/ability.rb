@@ -10,7 +10,7 @@ class Ability
       can :read, :all
       can :access, :rails_admin
       can :dashboard, :all
-      can :manage, [Other, Employee]
+      can :manage, [Other, Employee, Project, Client]
     end
     if user.superadmin_role?
       can :manage, :all
