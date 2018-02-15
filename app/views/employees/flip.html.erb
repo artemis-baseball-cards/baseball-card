@@ -6,8 +6,6 @@
       <div class="results">
         <% if @employee.others.any? %>
           <% @employee.others.each do |other| %>
-          <h5>Occasion:</h5>
-          <p> <%= other.occasion %> </p>
 
           <h5>End project:</h5>
           <p> <%= other.end_project %> </p>
@@ -17,6 +15,9 @@
 
           <h5>Pulse survey:</h5>
           <p> <%= other.pulse_survey %> </p>
+
+          <h5>Other comments:</h5>
+          <p> <%= other.occasion %> </p>
           <hr>
           <% end %>
         <% end %>
