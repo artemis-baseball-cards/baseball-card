@@ -22,5 +22,13 @@ class User < ApplicationRecord
     end
   end
 
+  User.create! do |u|
+   u.email     = 'new@new.com'
+   u.password    = 'password'
+   u.password_confirmation = 'password'
+   u.superadmin_role = true
+   u.approved = true
+   end
+
   belongs_to :employee, optional: true
 end
