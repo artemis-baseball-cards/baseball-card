@@ -1,7 +1,8 @@
 <div class="all_areas container">
 
-  <% @atd_data.each do |area| %>
-    <h6 class="area"><%= area.first %></h6><br/>
+  <% if @atd_data %>
+    <% @atd_data.each do |area| %>
+      <h6 class="area"><%= area.first %></h6><br/>
+    <% end %>
   <% end %>
-
 </div>
