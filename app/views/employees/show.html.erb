@@ -53,10 +53,10 @@
         <p><%= @employee.city %>, <%= @employee.state %>, <%= @employee.country %></p>
 
         <h5>Willing to Travel:</h5>
-        <p><%= @employee.willing_to_travel %></p>
+        <p><%= @employee.willing_to_travel  ? 'Yes' : 'No' %></p>
 
         <h5>Will work remotely:</h5>
-        <p><%= @employee.remote %></p>
+        <p><%= @employee.remote ? 'Yes' : 'No' %></p>
 
         <h5>Project Roles:</h5>
         <% if @employee.roles %>

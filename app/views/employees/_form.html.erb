@@ -87,12 +87,12 @@
 
   <div class="field form-group">
     <%= form.label :willing_to_travel %>
-    <%= form.select :willing_to_travel, options_for_select([['Yes', 'Yes'] , ['No', 'No']], selected: @employee.willing_to_travel) %>
+    <%= form.select :willing_to_travel, options_for_select([['Yes', true] , ['No', false]], selected: @employee.willing_to_travel) %>
   </div>
 
   <div class="field form-group">
     <%= form.label "Work remotely" %>
-    <%= form.select :remote, options_for_select([['Yes', 'Yes'] , ['No', 'No']], selected: @employee.willing_to_travel) %>
+    <%= form.select :remote, options_for_select([['Yes', true] , ['No', false]], selected: @employee.willing_to_travel) %>
   </div>
 
   <div class="field form-group">
