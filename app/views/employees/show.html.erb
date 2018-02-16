@@ -55,6 +55,9 @@
         <h5>Willing to Travel:</h5>
         <p><%= @employee.willing_to_travel %></p>
 
+        <h5>Will work remotely:</h5>
+        <p><%= @employee.remote %></p>
+
         <h5>Project Roles:</h5>
         <% if @employee.roles %>
           <% @employee.roles.each do |role| %>

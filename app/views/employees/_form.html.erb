@@ -91,6 +91,11 @@
   </div>
 
   <div class="field form-group">
+    <%= form.label "Work remotely" %>
+    <%= form.select :remote, options_for_select([['Yes', 'Yes'] , ['No', 'No']], selected: @employee.willing_to_travel) %>
+  </div>
+
+  <div class="field form-group">
 
     <%= form.label :myers_briggs, "Myers Briggs" %>
     <%= form.text_area  :myers_briggs, id: :employee_myers_briggs, placeholder: "ESFJ- Extraversion, Sensing, Feeling, Judgment",  class: "form-control" %>
@@ -164,7 +169,7 @@
       </div>
     </div>
   <% end %>
-  
+
   <div class="field form-group">
     <%= form.label "Areas to Develop (choose three from below)" %>
     <%= form.text_field  :areas_to_develop, id: :employee_areas_to_develop, placeholder: "Flexibility, being a team player, adaptability",  class: "form-control"  %>
