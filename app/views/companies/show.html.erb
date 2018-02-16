@@ -36,7 +36,7 @@
     <div class="client">
       <% @company.clients.each do |client|%>
         <center><h5><%= client.name %></h5>
-        <%= link_to 'Edit', edit_company_client_path(client) %></center>
+        <%= link_to 'Edit', edit_company_client_path(@company, client) %></center>
         <center><h7 class="grey-text">Last updated: <%= time_ago_in_words @company.updated_at %> ago</h7></center>
         <div class="row">
           <div class="col-md-6">
