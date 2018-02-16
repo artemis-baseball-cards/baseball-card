@@ -8,23 +8,18 @@ class Employee < ApplicationRecord
   has_and_belongs_to_many :roles
   has_and_belongs_to_many :industries
   has_many :others
-  # scope :critical_thinking, -> { where("skills = ? ", ("{Critical thinking}"))}
-  scope :intern, -> { where("project_roles = ? ", ('{Intern}'))}
-  scope :analyst, -> { where("project_roles = ? ", ("{Analyst}"))}
-  scope :associate, -> { where("project_roles = ? ", ("{Associate}"))}
-  scope :engagement_manager, -> { where("project_roles = ? ", ("{Engagement Manager}"))}
-  scope :partner, -> { where("project_roles = ? ", ("{Partner}"))}
-  scope :principal, -> { where("project_roles = ? ", ("{Principal}"))}
 
-  scope :healthcare, -> { where("industry_experience = ? ", ('{healthcare}'))}
-  scope :private_equity, -> { where("industry_experience = ? ", ("{private_equity}"))}
-  scope :technology, -> { where("industry_experience = ? ", ("{technology}"))}
-  scope :startup, -> { where("industry_experience = ? ", ("{startup}"))}
-  scope :non_profit, -> { where("industry_experience = ? ", ("{non profit}"))}
-  scope :ecommerce, -> { where("industry_experience = ? ", ("{ecommerce}"))}
-  scope :retail, -> { where("industry_experience = ? ", ("{retail}"))}
-
-  scope :by_industry, -> (industry) { where("industry_experience like ?", "%#{industry}%")}
+  def self.get_by_role(employees, role_type)
+    roles = []
+    employees.each do |employee|
+      employee.roles.each do |role|
+        if role.name == role_type
+          roles.push(employee)
+        end
+      end
+    end
+    roles
+  end
 
   def self.get_data
     session = GoogleDrive::Session.from_service_account_key("client_secret.json")
