@@ -17,6 +17,7 @@ class Ability
       can :access, :rails_admin       # only allow admin users to access Rails Admin
       can :dashboard                  # allow access to dashboard
     end
+    
 
     #
     # The first argument to `can` is the action you are giving the user
