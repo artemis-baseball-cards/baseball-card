@@ -23,6 +23,16 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def update
+    @company = Company.find(params[:id])
+    if @company.update(company_params)
+      flash[:notice] = "Your client has been updated!"
+      redirect_to company_path
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @company = Company.find(params[:id])
     @company.destroy
