@@ -37,9 +37,9 @@
     <h6 class="category">Industry/Project Type:</h6>
     <% if @industries %>
       <%= collection_check_boxes(:project, :industry_ids, @industries, :id, :name, {} ) do |t| %>
-        <h6>
+        <p>
           <%= t.label { t.check_box + t.object.name } %>
-        </h6>
+        </p>
       <% end %>
     <% end %>
   </ul>
