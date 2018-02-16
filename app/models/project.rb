@@ -7,4 +7,5 @@ class Project < ApplicationRecord
   has_many :others
 
   validates :title, :company_id, :city, :state, :country, :skill_ids, :role_ids, :industry_ids, presence: true
+  validates :title, uniqueness:true
 end

@@ -3,6 +3,7 @@ Bundler.require
 
 class Employee < ApplicationRecord
   validates :name, :position, :life_quote, :quote, :motto, :strength, :myers_briggs, :birkman, :vision, :short_term_goal, :long_term_goal,  :objective_setting, :personal_goal, :mission, :expectation, :awesome, :need, :receive_feedback, :development, :personal_goal, :personal_goal_two, :personal_goal_three, :country, :state, :city, :areas_to_develop, presence: true
+  validates :name, uniqueness: true
 
   include Filterable
   has_and_belongs_to_many :projects
