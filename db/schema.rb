@@ -60,10 +60,10 @@ ActiveRecord::Schema.define(version: 20180214045324) do
     t.text "receive_feedback"
     t.text "development"
     t.boolean "manager", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "industry_experience", array: true
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string "project_roles", array: true
     t.string "country"
     t.string "state"
