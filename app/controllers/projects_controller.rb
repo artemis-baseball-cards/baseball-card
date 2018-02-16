@@ -37,12 +37,12 @@ class ProjectsController < ApplicationController
     @roles = Role.all
     @industries = Industry.all
     @companies = Company.all
-    @interns = Employee.intern
-    @analysts = Employee.analyst
-    @associates = Employee.associate
-    @engagement_managers = Employee.engagement_manager
-    @partners = Employee.partner
-    @principals = Employee.principal
+    @interns = Employee.get_by_role(@employees, "Intern")
+    @analysts = Employee.get_by_role(@employees, "Analyst")
+    @associates = Employee.get_by_role(@employees, "Associate")
+    @engagement_managers = Employee.get_by_role(@employees, "Engagement Manager")
+    @partners = Employee.get_by_role(@employees, "Partner")
+    @principals = Employee.get_by_role(@employees, "Principal")
     if @project.save
       flash[:notice] = "Your Project has been saved!"
       redirect_to projects_path
