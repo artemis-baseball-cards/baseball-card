@@ -42,7 +42,6 @@ class ClientsController < ApplicationController
   end
 
   def destroy
-    @company = Company.find(params[:company_id])
     @client = Client.find(params[:id])
     @client.destroy
     redirect_to company_path(@company)
