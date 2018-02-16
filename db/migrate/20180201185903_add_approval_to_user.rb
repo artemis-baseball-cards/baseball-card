@@ -4,7 +4,7 @@ class AddApprovalToUser < ActiveRecord::Migration[5.1]
     add_column :users, :approved, :boolean, :default => false, :null => false
 
     User.create! do |u|
-     u.email     = 'test@test.com'
+     u.email     = 'first@first.com'
      u.password    = 'password'
      u.password_confirmation = 'password'
      u.superadmin_role = true
