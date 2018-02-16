@@ -72,8 +72,8 @@ class EmployeesController < ApplicationController
   def edit
     @projects = Project.all
     @skills = Skill.all
-    @role = Role.all
-    @industry = Industry.all
+    @roles = Role.all
+    @industries = Industry.all
     @employee = Employee.find(params[:id])
   end
 
