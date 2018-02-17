@@ -161,21 +161,6 @@ http://baseball-card-env.ppxiu8phdg.us-west-2.elasticbeanstalk.com
   	  * Communication format preferences
   	  * Other
 
-* Initial login as Administrator (upon deployment)
-  * ```SIGN UP``` with personal credentials
-  * THEN Log in with seeded Admin credentials:
-    ```
-    Email: test@test.com
-    Password: password
-    ```
-  * Navigate to the ```ADMIN``` panel via the navbar
-  * Select ```Users``` from the left sidebar
-  * Click the edit (pencil) next to user entry with personal credentials (should be top-most)
-  * Select the checkbox for ```Superadmin role```
-  * Scroll to bottom of page and select checkbox for ```Approved```
-  * Click ```Save```
-  * Back in the User catalogue, click the delete (```X```) next to the bottom entry.
-  * Confirm the deletion of the seeded Admin User.
 
 
 * Adding users
