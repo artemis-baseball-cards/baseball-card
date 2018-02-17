@@ -127,6 +127,7 @@ http://baseball-card-env.ppxiu8phdg.us-west-2.elasticbeanstalk.com
           * Pulse survey shout outs
         * Comments
 
+
 * Project Baseball Cards
   * Project Title
   * Company (selected from available clients)
@@ -176,6 +177,7 @@ http://baseball-card-env.ppxiu8phdg.us-west-2.elasticbeanstalk.com
   * Back in the User catalogue, click the delete (```X```) next to the bottom entry.
   * Confirm the deletion of the seeded Admin User.
 
+
 * Adding users
   * Prospective users sign up on the login page.
   * An email for authorization will be automatically sent to the administrator that there is a user request pending.
@@ -185,7 +187,7 @@ http://baseball-card-env.ppxiu8phdg.us-west-2.elasticbeanstalk.com
   * The admin will have the option to add supervisor or administrator access to the user via ```Superadmin role``` or ```Supervisor role``` checkboxes, respectively. The ```User``` selection is automatically checked.
   * Scrolling to the bottom of the page, the admin will check the ```Approved``` before clicking the ```Save``` button.
   * The now approved user will be automatically notified via their email login that their access has been approved.
-  * The user  now login to the site with their authorized login and password.
+  * The user can now login to the site with their authorized login and password.
 
 
 ## Known Bugs:

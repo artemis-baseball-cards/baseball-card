@@ -16,10 +16,20 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
     if @company.save
-      flash[:notice] = "The Company has been saved!"
+      flash[:notice] = "The Client has been saved!"
       redirect_to companies_path
     else
       render :new
+    end
+  end
+
+  def update
+    @company = Company.find(params[:id])
+    if @company.update(company_params)
+      flash[:notice] = "Your client has been updated!"
+      redirect_to company_path
+    else
+      render :edit
     end
   end
 

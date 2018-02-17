@@ -2,29 +2,27 @@ require 'bundler'
 Bundler.require
 
 class Employee < ApplicationRecord
+  validates :name, :position, :life_quote, :quote, :motto, :strength, :myers_briggs, :birkman, :vision, :short_term_goal, :long_term_goal,  :objective_setting, :personal_goal, :mission, :expectation, :awesome, :need, :receive_feedback, :development, :personal_goal, :personal_goal_two, :personal_goal_three, :country, :state, :city, :areas_to_develop, presence: true
+  validates :name, uniqueness: true
+
   include Filterable
   has_and_belongs_to_many :projects
   has_and_belongs_to_many :skills
   has_and_belongs_to_many :roles
   has_and_belongs_to_many :industries
   has_many :others
-  # scope :critical_thinking, -> { where("skills = ? ", ("{Critical thinking}"))}
-  scope :intern, -> { where("project_roles = ? ", ('{Intern}'))}
-  scope :analyst, -> { where("project_roles = ? ", ("{Analyst}"))}
-  scope :associate, -> { where("project_roles = ? ", ("{Associate}"))}
-  scope :engagement_manager, -> { where("project_roles = ? ", ("{Engagement Manager}"))}
-  scope :partner, -> { where("project_roles = ? ", ("{Partner}"))}
-  scope :principal, -> { where("project_roles = ? ", ("{Principal}"))}
 
-  scope :healthcare, -> { where("industry_experience = ? ", ('{healthcare}'))}
-  scope :private_equity, -> { where("industry_experience = ? ", ("{private_equity}"))}
-  scope :technology, -> { where("industry_experience = ? ", ("{technology}"))}
-  scope :startup, -> { where("industry_experience = ? ", ("{startup}"))}
-  scope :non_profit, -> { where("industry_experience = ? ", ("{non profit}"))}
-  scope :ecommerce, -> { where("industry_experience = ? ", ("{ecommerce}"))}
-  scope :retail, -> { where("industry_experience = ? ", ("{retail}"))}
-
-  scope :by_industry, -> (industry) { where("industry_experience like ?", "%#{industry}%")}
+  def self.get_by_role(employees, role_type)
+    roles = []
+    employees.each do |employee|
+      employee.roles.each do |role|
+        if role.name == role_type
+          roles.push(employee)
+        end
+      end
+    end
+    roles
+  end
 
   def self.get_data
     session = GoogleDrive::Session.from_service_account_key("client_secret.json")

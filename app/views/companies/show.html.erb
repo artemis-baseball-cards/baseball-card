@@ -1,10 +1,11 @@
 <br>
 <center>
   <h1> <%= @company.name %> </h1>
+  <%= link_to 'Edit', edit_company_path(@company) %> | <%= link_to ' Destroy', @company, method: :delete, data: { confirm: 'Are you sure?' } %>
   <h2 class="grey-text">Last updated: <%= time_ago_in_words @company.updated_at %> ago</h2>
   <div class="goals">
     <div class="goal">
-      <h6>Company Goals</h6>
+      <h6>Client Goals</h6>
       <hr>
       <p> <%= @company.company_goals %> </p>
     </div>
@@ -28,13 +29,14 @@
 </center><br>
 
 <hr>
-<center><p id='client-heading'>Clients</p>
-<%= link_to "Add Client", new_company_client_path(@company), class: "new-button" %></center><br>
+<center><p id='client-heading'>Contacts</p>
+<%= link_to "Add Contact", new_company_client_path(@company), class: "new-button" %></center><br>
 <div class="clients">
   <% if @company.clients.any? %>
     <div class="client">
       <% @company.clients.each do |client|%>
-        <h5><center><%= client.name %></center></h5>
+        <center><h5><%= client.name %></h5>
+        <%= link_to 'Edit', edit_company_client_path(@company, client) %></center>
         <center><h7 class="grey-text">Last updated: <%= time_ago_in_words @company.updated_at %> ago</h7></center>
         <div class="row">
           <div class="col-md-6">
@@ -63,6 +65,6 @@
       <% end %>
     </div><br>
   <% else %>
-    <p>No Clients</p>
+    <p>No Contacts</p>
   <% end %>
 </div>

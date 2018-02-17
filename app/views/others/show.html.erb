@@ -1,12 +1,8 @@
 <p id="notice"><%= notice %></p>
 <div class="other-show-container">
-  <p>
-    <strong>Occasion:</strong>
-    <%= @other.occasion %>
-  </p>
 
   <p>
-    <strong>End project:</strong>
+    <strong>End of project:</strong>
     <%= @other.end_project %>
   </p>
 
@@ -18,6 +14,11 @@
   <p>
     <strong>Pulse survey:</strong>
     <%= @other.pulse_survey %>
+  </p>
+
+  <p>
+    <strong>Other comments:</strong>
+    <%= @other.occasion %>
   </p>
 
   <%= link_to 'Edit', edit_other_path(@other) %> |
